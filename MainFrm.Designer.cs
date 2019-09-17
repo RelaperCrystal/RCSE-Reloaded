@@ -172,16 +172,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.RibbonTab rtabHome;
-        private System.Windows.Forms.RibbonPanel rpanelOpen;
-        private System.Windows.Forms.RibbonButton rButtonOpen;
-        private System.Windows.Forms.RibbonOrbMenuItem orbitemFile;
-        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem2;
-        private System.Windows.Forms.RibbonOrbMenuItem ribbonOrbMenuItem3;
-        private System.Windows.Forms.RibbonButton ribbonButton1;
-        private System.Windows.Forms.RibbonOrbRecentItem recentOpen;
-        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem2;
-        private System.Windows.Forms.RibbonOrbRecentItem ribbonOrbRecentItem3;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem itemFile;
