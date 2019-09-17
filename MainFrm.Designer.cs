@@ -34,6 +34,7 @@
             this.itemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.itemNew = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSaveTo = new System.Windows.Forms.ToolStripMenuItem();
             this.split1 = new System.Windows.Forms.ToolStripSeparator();
             this.itemQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.itemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,6 +79,7 @@
             this.itemOpen,
             this.itemNew,
             this.itemSave,
+            this.itemSaveTo,
             this.split1,
             this.itemQuit});
             this.itemFile.Name = "itemFile";
@@ -88,33 +90,40 @@
             // itemOpen
             // 
             this.itemOpen.Name = "itemOpen";
-            this.itemOpen.Size = new System.Drawing.Size(118, 22);
+            this.itemOpen.Size = new System.Drawing.Size(180, 22);
             this.itemOpen.Text = "打开(&P)";
             this.itemOpen.Click += new System.EventHandler(this.itemOpen_Click);
             // 
             // itemNew
             // 
             this.itemNew.Name = "itemNew";
-            this.itemNew.Size = new System.Drawing.Size(118, 22);
+            this.itemNew.Size = new System.Drawing.Size(180, 22);
             this.itemNew.Text = "新建(&N)";
             this.itemNew.Click += new System.EventHandler(this.itemNew_Click);
             // 
             // itemSave
             // 
             this.itemSave.Name = "itemSave";
-            this.itemSave.Size = new System.Drawing.Size(118, 22);
+            this.itemSave.Size = new System.Drawing.Size(180, 22);
             this.itemSave.Text = "保存(&S)";
             this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
+            // 
+            // itemSaveTo
+            // 
+            this.itemSaveTo.Name = "itemSaveTo";
+            this.itemSaveTo.Size = new System.Drawing.Size(180, 22);
+            this.itemSaveTo.Text = "另存为(&A)";
+            this.itemSaveTo.Click += new System.EventHandler(this.itemSaveTo_Click);
             // 
             // split1
             // 
             this.split1.Name = "split1";
-            this.split1.Size = new System.Drawing.Size(115, 6);
+            this.split1.Size = new System.Drawing.Size(177, 6);
             // 
             // itemQuit
             // 
             this.itemQuit.Name = "itemQuit";
-            this.itemQuit.Size = new System.Drawing.Size(118, 22);
+            this.itemQuit.Size = new System.Drawing.Size(180, 22);
             this.itemQuit.Text = "退出(&Q)";
             this.itemQuit.Click += new System.EventHandler(this.itemQuit_Click);
             // 
@@ -176,7 +185,6 @@
             this.Icon = global::RCSE_Reloaded.Properties.Resources.rcse;
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
             this.Name = "MainFrm";
             this.Text = "RCSE v0.4 Beta";
             this.Load += new System.EventHandler(this.MainFrm_Load);
@@ -204,6 +212,7 @@
         private System.Windows.Forms.ToolStripMenuItem itemCSharp;
         private System.Windows.Forms.ToolStripMenuItem itemSave;
         private System.Windows.Forms.ToolStripStatusLabel tlabelStatus;
+        private System.Windows.Forms.ToolStripMenuItem itemSaveTo;
     }
 }
 

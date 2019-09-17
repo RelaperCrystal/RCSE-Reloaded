@@ -129,5 +129,21 @@ namespace RCSE_Reloaded
         {
 
         }
+
+        private void itemSaveTo_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "C# 源代码 (*.cs)|*.cs|C++ 源代码 (*.cpp)|*.cpp|Visual Basic 源代码 (*.vb)|*.vb|所有文件 (*.*)|*.*";
+            sfd.Title = "保存文件";
+            sfd.CheckPathExists = true;
+            sfd.AddExtension = true;
+            DialogResult dr = sfd.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                editor.Save(sfd.FileName);
+            }
+            isLoaded = true;
+            loadedContentPath = sfd.FileName;
+        }
     }
 }
