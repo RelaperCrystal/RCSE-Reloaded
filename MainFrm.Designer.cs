@@ -33,6 +33,7 @@
             this.itemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.itemOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.itemNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSave = new System.Windows.Forms.ToolStripMenuItem();
             this.split1 = new System.Windows.Forms.ToolStripSeparator();
             this.itemQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.itemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,8 +41,9 @@
             this.itemCSharp = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.itemSave = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // elementHost1
@@ -57,6 +59,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
             this.itemEdit,
@@ -67,6 +70,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(800, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // itemFile
             // 
@@ -84,26 +88,33 @@
             // itemOpen
             // 
             this.itemOpen.Name = "itemOpen";
-            this.itemOpen.Size = new System.Drawing.Size(180, 22);
+            this.itemOpen.Size = new System.Drawing.Size(118, 22);
             this.itemOpen.Text = "打开(&P)";
             this.itemOpen.Click += new System.EventHandler(this.itemOpen_Click);
             // 
             // itemNew
             // 
             this.itemNew.Name = "itemNew";
-            this.itemNew.Size = new System.Drawing.Size(180, 22);
+            this.itemNew.Size = new System.Drawing.Size(118, 22);
             this.itemNew.Text = "新建(&N)";
             this.itemNew.Click += new System.EventHandler(this.itemNew_Click);
+            // 
+            // itemSave
+            // 
+            this.itemSave.Name = "itemSave";
+            this.itemSave.Size = new System.Drawing.Size(118, 22);
+            this.itemSave.Text = "保存(&S)";
+            this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
             // 
             // split1
             // 
             this.split1.Name = "split1";
-            this.split1.Size = new System.Drawing.Size(177, 6);
+            this.split1.Size = new System.Drawing.Size(115, 6);
             // 
             // itemQuit
             // 
             this.itemQuit.Name = "itemQuit";
-            this.itemQuit.Size = new System.Drawing.Size(180, 22);
+            this.itemQuit.Size = new System.Drawing.Size(118, 22);
             this.itemQuit.Text = "退出(&Q)";
             this.itemQuit.Click += new System.EventHandler(this.itemQuit_Click);
             // 
@@ -136,23 +147,28 @@
             // 
             // statusStrip1
             // 
+            this.statusStrip1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tlabelStatus});
             this.statusStrip1.Location = new System.Drawing.Point(0, 428);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // itemSave
+            // tlabelStatus
             // 
-            this.itemSave.Name = "itemSave";
-            this.itemSave.Size = new System.Drawing.Size(180, 22);
-            this.itemSave.Text = "保存(&S)";
-            this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
+            this.tlabelStatus.ForeColor = System.Drawing.Color.White;
+            this.tlabelStatus.Name = "tlabelStatus";
+            this.tlabelStatus.Size = new System.Drawing.Size(32, 17);
+            this.tlabelStatus.Text = "就绪";
+            this.tlabelStatus.Click += new System.EventHandler(this.tlabelStatus_Click);
             // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.elementHost1);
@@ -166,6 +182,8 @@
             this.Load += new System.EventHandler(this.MainFrm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,6 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem itemQuit;
         private System.Windows.Forms.ToolStripMenuItem itemCSharp;
         private System.Windows.Forms.ToolStripMenuItem itemSave;
+        private System.Windows.Forms.ToolStripStatusLabel tlabelStatus;
     }
 }
 
