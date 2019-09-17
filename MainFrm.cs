@@ -54,7 +54,7 @@ namespace RCSE_Reloaded
         private void OpenFile()
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "C# 源代码 (*.cs)|*.cs|C++ 源代码 (*.cpp)|*.cpp|C++ 源代码 (*.cxx)|*.cxx|Visual Basic 源代码 (*.vb)|*.vb|XAML (*.xml)|*.xml|HTML (*.htm)|*.htm|HTML (*.html)|*.html|所有文件 (*.*)|*.*";
+            ofd.Filter = CommonVals.filters;
             ofd.Title = "打开文件";
             ofd.CheckFileExists = true;
             DialogResult dr = ofd.ShowDialog();
@@ -70,7 +70,7 @@ namespace RCSE_Reloaded
         private void SaveFile()
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "C# 源代码 (*.cs)|*.cs|C++ 源代码 (*.cpp)|*.cpp|C++ 源代码 (*.cxx)|*.cxx|Visual Basic 源代码 (*.vb)|*.vb|XAML (*.xml)|*.xml|HTML (*.htm)|*.htm|HTML (*.html)|*.html|所有文件 (*.*)|*.*";
+            sfd.Filter = CommonVals.filters;
             sfd.Title = "保存文件";
             sfd.CheckPathExists = true;
             sfd.AddExtension = true;
@@ -133,7 +133,7 @@ namespace RCSE_Reloaded
         private void itemSaveTo_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "C# 源代码 (*.cs)|*.cs|C++ 源代码 (*.cpp)|*.cpp|C++ 源代码 (*.cxx)|*.cxx|Visual Basic 源代码 (*.vb)|*.vb|XAML (*.xml)|*.xml|HTML (*.htm)|*.htm|HTML (*.html)|*.html|所有文件 (*.*)|*.*";
+            sfd.Filter = CommonVals.filters;
             sfd.Title = "保存文件";
             sfd.CheckPathExists = true;
             sfd.AddExtension = true;
