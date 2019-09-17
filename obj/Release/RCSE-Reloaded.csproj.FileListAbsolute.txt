@@ -1,0 +1,15 @@
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE_Reloaded.exe.config
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE_Reloaded.exe
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE_Reloaded.pdb
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.AvalonEdit.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\System.Windows.Forms.Ribbon.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.AvalonEdit.xml
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csprojAssemblyReference.cache
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.resources
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.Properties.Resources.resources
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csproj.GenerateResource.cache
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csproj.CoreCompileInputs.cache
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csproj.CopyComplete
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.exe
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.pdb
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.About.resources
