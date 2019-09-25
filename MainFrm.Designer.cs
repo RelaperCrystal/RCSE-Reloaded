@@ -41,18 +41,22 @@
             this.itemFormat = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCSharp = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tlabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
+            this.splitContainer.Panel2.SuspendLayout();
+            this.splitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // elementHost1
             // 
-            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.elementHost1.Location = new System.Drawing.Point(0, 25);
+            this.elementHost1.Location = new System.Drawing.Point(3, 3);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(800, 400);
+            this.elementHost1.Size = new System.Drawing.Size(524, 391);
             this.elementHost1.TabIndex = 1;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.elementHost1_ChildChanged);
@@ -90,40 +94,40 @@
             // itemOpen
             // 
             this.itemOpen.Name = "itemOpen";
-            this.itemOpen.Size = new System.Drawing.Size(180, 22);
+            this.itemOpen.Size = new System.Drawing.Size(128, 22);
             this.itemOpen.Text = "打开(&P)";
             this.itemOpen.Click += new System.EventHandler(this.itemOpen_Click);
             // 
             // itemNew
             // 
             this.itemNew.Name = "itemNew";
-            this.itemNew.Size = new System.Drawing.Size(180, 22);
+            this.itemNew.Size = new System.Drawing.Size(128, 22);
             this.itemNew.Text = "新建(&N)";
             this.itemNew.Click += new System.EventHandler(this.itemNew_Click);
             // 
             // itemSave
             // 
             this.itemSave.Name = "itemSave";
-            this.itemSave.Size = new System.Drawing.Size(180, 22);
+            this.itemSave.Size = new System.Drawing.Size(128, 22);
             this.itemSave.Text = "保存(&S)";
             this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
             // 
             // itemSaveTo
             // 
             this.itemSaveTo.Name = "itemSaveTo";
-            this.itemSaveTo.Size = new System.Drawing.Size(180, 22);
+            this.itemSaveTo.Size = new System.Drawing.Size(128, 22);
             this.itemSaveTo.Text = "另存为(&A)";
             this.itemSaveTo.Click += new System.EventHandler(this.itemSaveTo_Click);
             // 
             // split1
             // 
             this.split1.Name = "split1";
-            this.split1.Size = new System.Drawing.Size(177, 6);
+            this.split1.Size = new System.Drawing.Size(125, 6);
             // 
             // itemQuit
             // 
             this.itemQuit.Name = "itemQuit";
-            this.itemQuit.Size = new System.Drawing.Size(180, 22);
+            this.itemQuit.Size = new System.Drawing.Size(128, 22);
             this.itemQuit.Text = "退出(&Q)";
             this.itemQuit.Click += new System.EventHandler(this.itemQuit_Click);
             // 
@@ -150,9 +154,20 @@
             // 
             // itemHelp
             // 
+            this.itemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemAbout});
             this.itemHelp.Name = "itemHelp";
             this.itemHelp.Size = new System.Drawing.Size(61, 21);
             this.itemHelp.Text = "帮助(&H)";
+            this.itemHelp.Click += new System.EventHandler(this.itemHelp_Click);
+            // 
+            // itemAbout
+            // 
+            this.itemAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.itemAbout.Name = "itemAbout";
+            this.itemAbout.Size = new System.Drawing.Size(116, 22);
+            this.itemAbout.Text = "关于(&A)";
+            this.itemAbout.Click += new System.EventHandler(this.itemAbout_Click);
             // 
             // statusStrip1
             // 
@@ -173,14 +188,29 @@
             this.tlabelStatus.Text = "就绪";
             this.tlabelStatus.Click += new System.EventHandler(this.tlabelStatus_Click);
             // 
+            // splitContainer
+            // 
+            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitContainer.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel2
+            // 
+            this.splitContainer.Panel2.Controls.Add(this.elementHost1);
+            this.splitContainer.Panel2.SizeChanged += new System.EventHandler(this.splitContainer_Panel2_SizeChanged);
+            this.splitContainer.Size = new System.Drawing.Size(800, 397);
+            this.splitContainer.SplitterDistance = 266;
+            this.splitContainer.TabIndex = 4;
+            this.splitContainer.Resize += new System.EventHandler(this.splitContainer_Resize);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = global::RCSE_Reloaded.Properties.Resources.rcse;
             this.KeyPreview = true;
@@ -188,10 +218,14 @@
             this.Name = "MainFrm";
             this.Text = "RCSE v0.4 Beta";
             this.Load += new System.EventHandler(this.MainFrm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainFrm_SizeChanged_1);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
+            this.splitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,6 +247,8 @@
         private System.Windows.Forms.ToolStripMenuItem itemSave;
         private System.Windows.Forms.ToolStripStatusLabel tlabelStatus;
         private System.Windows.Forms.ToolStripMenuItem itemSaveTo;
+        private System.Windows.Forms.ToolStripMenuItem itemAbout;
+        private System.Windows.Forms.SplitContainer splitContainer;
     }
 }
 

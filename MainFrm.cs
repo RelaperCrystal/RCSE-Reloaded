@@ -16,6 +16,7 @@ namespace RCSE_Reloaded
         ICSharpCode.AvalonEdit.TextEditor editor;
         string loadedContentPath;
         bool isLoaded;
+        bool Changed;
         public MainFrm()
         {
             InitializeComponent();
@@ -27,8 +28,7 @@ namespace RCSE_Reloaded
 
         private void MainFrm_SizeChanged(object sender, EventArgs e)
         {
-            elementHost1.Width = this.Width;
-            elementHost1.Height = this.Height - 84;
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -65,6 +65,26 @@ namespace RCSE_Reloaded
                 editor.Load(ofd.FileName);
                 editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(ofd.FileName));
             }
+        }
+
+        private void SaveFileAdjust()
+        {
+            if(!isLoaded || loadedContentPath == null || loadedContentPath == String.Empty)
+            {
+                SaveFile();
+            }
+            else
+            {
+                editor.Save(loadedContentPath);
+            }
+            Changed = false;
+            editor.TextChanged += Editor_TextChanged;
+        }
+
+        private void Editor_TextChanged(object sender, EventArgs e)
+        {
+            this.Changed = true;
+            Text = "(已更改) " + this.Text;
         }
 
         private void SaveFile()
@@ -144,6 +164,42 @@ namespace RCSE_Reloaded
             }
             isLoaded = true;
             loadedContentPath = sfd.FileName;
+        }
+
+        private void itemHelp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void itemAbout_Click(object sender, EventArgs e)
+        {
+            new About().ShowDialog();
+        }
+
+        private void MainFrm_SizeChanged_1(object sender, EventArgs e)
+        {
+            int ThisHeight = this.Height;
+            int StatusHeight = this.statusStrip1.Height;
+            int MenuHeight = this.menuStrip1.Height;
+            int final = ThisHeight - StatusHeight;
+            int DeScale = final - 40;
+            int result = DeScale - MenuHeight;
+            splitContainer.Width = this.Width - 5;
+            splitContainer.Height = result;
+
+            
+        }
+
+        private void splitContainer_Resize(object sender, EventArgs e)
+        {
+            elementHost1.Width = splitContainer.Panel2.Width;
+            elementHost1.Height = splitContainer.Height;
+        }
+
+        private void splitContainer_Panel2_SizeChanged(object sender, EventArgs e)
+        {
+            elementHost1.Width = splitContainer.Panel2.Width;
+            elementHost1.Height = splitContainer.Height;
         }
     }
 }

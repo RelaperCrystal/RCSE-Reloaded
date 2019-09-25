@@ -137,5 +137,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="RCSE-Reloaded.API\RCSE-Reloaded.API.csproj">
+      <Project>{ad89a202-e9ac-49f3-8d37-6de09a1b4544}</Project>
+      <Name>RCSE-Reloaded.API</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
