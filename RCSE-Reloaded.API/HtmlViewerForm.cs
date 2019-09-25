@@ -25,7 +25,8 @@ namespace RCSE_Reloaded.API
             }
             catch(Exception ex)
             {
-
+                ErrorForm erf = new ErrorForm(ex);
+                erf.Show();
             }
         }
 

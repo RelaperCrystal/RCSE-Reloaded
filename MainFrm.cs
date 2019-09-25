@@ -39,7 +39,10 @@ namespace RCSE_Reloaded
 
         private void MainFrm_Load(object sender, EventArgs e)
         {
-
+#if DEBUG
+            DebugForm debug = new DebugForm(editor);
+            debug.Show();
+#endif
         }
 
         private void ribbon1_Click(object sender, EventArgs e)
