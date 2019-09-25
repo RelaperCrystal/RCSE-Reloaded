@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -98,6 +99,8 @@ namespace RCSE_Reloaded
             if(dr == DialogResult.OK)
             {
                 editor.Save(sfd.FileName);
+                isLoaded = true;
+                loadedContentPath = sfd.FileName;
             }
         }
 
@@ -161,9 +164,10 @@ namespace RCSE_Reloaded
             if (dr == DialogResult.OK)
             {
                 editor.Save(sfd.FileName);
+                isLoaded = true;
+                loadedContentPath = sfd.FileName;
             }
-            isLoaded = true;
-            loadedContentPath = sfd.FileName;
+            
         }
 
         private void itemHelp_Click(object sender, EventArgs e)
@@ -200,6 +204,59 @@ namespace RCSE_Reloaded
         {
             elementHost1.Width = splitContainer.Panel2.Width;
             elementHost1.Height = splitContainer.Height;
+        }
+
+        private void itemHTML_Click(object sender, EventArgs e)
+        {
+            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".html");
+        }
+
+        private void itemXAML_Click(object sender, EventArgs e)
+        {
+            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".xml");
+        }
+
+        private void itemVB_Click(object sender, EventArgs e)
+        {
+            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".vb");
+        }
+
+        private void itemPlainC_Click(object sender, EventArgs e)
+        {
+            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".c");
+        }
+
+        private void itemCPP_Click(object sender, EventArgs e)
+        {
+            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".cpp");
+        }
+
+        private void itemOpenInBrowser_Click(object sender, EventArgs e)
+        {
+            if(!isLoaded || loadedContentPath == null || loadedContentPath == "")
+            {
+                MessageBox.Show("错误：您必须先保存文件至少一次。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if(Changed)
+            {
+                SaveFileAdjust();
+            }
+            if(Path.GetExtension(loadedContentPath) == ".htm"|| Path.GetExtension(loadedContentPath) == ".html" || Path.GetExtension(loadedContentPath) == ".xml")
+            {
+                Process.Start(loadedContentPath);
+            }
+            else
+            {
+                MessageBox.Show("错误：不是 HTML 或 XAML 文件。\r\n如果确实是上述文件，请将其后缀名变为对应的后缀名。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+#if DEBUG
+                MessageBox.Show(loadedContentPath + "\r\n" + Path.GetExtension(loadedContentPath));
+#endif
+                return;
+            }
+
+
+            
         }
     }
 }

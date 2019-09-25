@@ -40,11 +40,19 @@
             this.itemEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.itemFormat = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCSharp = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemHTML = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemXAML = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemVB = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemCSeries = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemPlainC = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemCPP = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tlabelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
+            this.itemDebug = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemOpenInBrowser = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -68,6 +76,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
             this.itemEdit,
+            this.itemDebug,
             this.itemFormat,
             this.itemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -140,7 +149,11 @@
             // itemFormat
             // 
             this.itemFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemCSharp});
+            this.itemCSharp,
+            this.itemHTML,
+            this.itemXAML,
+            this.itemVB,
+            this.itemCSeries});
             this.itemFormat.Name = "itemFormat";
             this.itemFormat.Size = new System.Drawing.Size(62, 21);
             this.itemFormat.Text = "格式(&O)";
@@ -148,9 +161,53 @@
             // itemCSharp
             // 
             this.itemCSharp.Name = "itemCSharp";
-            this.itemCSharp.Size = new System.Drawing.Size(92, 22);
+            this.itemCSharp.Size = new System.Drawing.Size(180, 22);
             this.itemCSharp.Text = "C#";
             this.itemCSharp.Click += new System.EventHandler(this.itemCSharp_Click);
+            // 
+            // itemHTML
+            // 
+            this.itemHTML.Name = "itemHTML";
+            this.itemHTML.Size = new System.Drawing.Size(180, 22);
+            this.itemHTML.Text = "HTML";
+            this.itemHTML.Click += new System.EventHandler(this.itemHTML_Click);
+            // 
+            // itemXAML
+            // 
+            this.itemXAML.Name = "itemXAML";
+            this.itemXAML.Size = new System.Drawing.Size(180, 22);
+            this.itemXAML.Text = "XAML";
+            this.itemXAML.Click += new System.EventHandler(this.itemXAML_Click);
+            // 
+            // itemVB
+            // 
+            this.itemVB.Name = "itemVB";
+            this.itemVB.Size = new System.Drawing.Size(180, 22);
+            this.itemVB.Text = "Visual Basic";
+            this.itemVB.Click += new System.EventHandler(this.itemVB_Click);
+            // 
+            // itemCSeries
+            // 
+            this.itemCSeries.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemPlainC,
+            this.itemCPP});
+            this.itemCSeries.Name = "itemCSeries";
+            this.itemCSeries.Size = new System.Drawing.Size(180, 22);
+            this.itemCSeries.Text = "C";
+            // 
+            // itemPlainC
+            // 
+            this.itemPlainC.Name = "itemPlainC";
+            this.itemPlainC.Size = new System.Drawing.Size(180, 22);
+            this.itemPlainC.Text = "普通 C";
+            this.itemPlainC.Click += new System.EventHandler(this.itemPlainC_Click);
+            // 
+            // itemCPP
+            // 
+            this.itemCPP.Name = "itemCPP";
+            this.itemCPP.Size = new System.Drawing.Size(180, 22);
+            this.itemCPP.Text = "C++";
+            this.itemCPP.Click += new System.EventHandler(this.itemCPP_Click);
             // 
             // itemHelp
             // 
@@ -203,6 +260,21 @@
             this.splitContainer.TabIndex = 4;
             this.splitContainer.Resize += new System.EventHandler(this.splitContainer_Resize);
             // 
+            // itemDebug
+            // 
+            this.itemDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemOpenInBrowser});
+            this.itemDebug.Name = "itemDebug";
+            this.itemDebug.Size = new System.Drawing.Size(61, 21);
+            this.itemDebug.Text = "调试(&D)";
+            // 
+            // itemOpenInBrowser
+            // 
+            this.itemOpenInBrowser.Name = "itemOpenInBrowser";
+            this.itemOpenInBrowser.Size = new System.Drawing.Size(180, 22);
+            this.itemOpenInBrowser.Text = "在浏览器中打开...";
+            this.itemOpenInBrowser.Click += new System.EventHandler(this.itemOpenInBrowser_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -249,6 +321,14 @@
         private System.Windows.Forms.ToolStripMenuItem itemSaveTo;
         private System.Windows.Forms.ToolStripMenuItem itemAbout;
         private System.Windows.Forms.SplitContainer splitContainer;
+        private System.Windows.Forms.ToolStripMenuItem itemHTML;
+        private System.Windows.Forms.ToolStripMenuItem itemXAML;
+        private System.Windows.Forms.ToolStripMenuItem itemVB;
+        private System.Windows.Forms.ToolStripMenuItem itemCSeries;
+        private System.Windows.Forms.ToolStripMenuItem itemPlainC;
+        private System.Windows.Forms.ToolStripMenuItem itemCPP;
+        private System.Windows.Forms.ToolStripMenuItem itemDebug;
+        private System.Windows.Forms.ToolStripMenuItem itemOpenInBrowser;
     }
 }
 
