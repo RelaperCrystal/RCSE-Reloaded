@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCSE-Reloaded", "RCSE-Reloa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCSE-Reloaded.API", "RCSE-Reloaded.API\RCSE-Reloaded.API.csproj", "{AD89A202-E9AC-49F3-8D37-6DE09A1B4544}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalUpdater", "MinimalUpdater\MinimalUpdater.csproj", "{10077BF3-607D-42BE-9C0F-7BDEA4D289D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AD89A202-E9AC-49F3-8D37-6DE09A1B4544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD89A202-E9AC-49F3-8D37-6DE09A1B4544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD89A202-E9AC-49F3-8D37-6DE09A1B4544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10077BF3-607D-42BE-9C0F-7BDEA4D289D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10077BF3-607D-42BE-9C0F-7BDEA4D289D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10077BF3-607D-42BE-9C0F-7BDEA4D289D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10077BF3-607D-42BE-9C0F-7BDEA4D289D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

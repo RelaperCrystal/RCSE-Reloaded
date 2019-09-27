@@ -2,7 +2,6 @@ E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\R
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE_Reloaded.exe
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE_Reloaded.pdb
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.AvalonEdit.dll
-E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\System.Windows.Forms.Ribbon.dll
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.AvalonEdit.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csprojAssemblyReference.cache
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.resources
@@ -13,3 +12,10 @@ E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\R
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.exe
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.pdb
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.About.resources
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE-Reloaded.API.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\RCSE-Reloaded.API.pdb
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.xml
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.DebugForm.resources
