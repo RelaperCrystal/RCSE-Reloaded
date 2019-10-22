@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("GPL v3");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.itemFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,8 +58,12 @@
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.tabctrlOpreation = new System.Windows.Forms.TabControl();
             this.pageDebug = new System.Windows.Forms.TabPage();
+            this.buttonCompileNowCs = new System.Windows.Forms.Button();
             this.pageToolbox = new System.Windows.Forms.TabPage();
             this.lstvewToolbox = new System.Windows.Forms.ListView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.strpbtnNew = new System.Windows.Forms.ToolStripButton();
+            this.strpbtnSave = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -66,14 +71,17 @@
             this.splitContainer.Panel2.SuspendLayout();
             this.splitContainer.SuspendLayout();
             this.tabctrlOpreation.SuspendLayout();
+            this.pageDebug.SuspendLayout();
             this.pageToolbox.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // elementHost1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(3, 3);
+            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost1.Location = new System.Drawing.Point(0, 0);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(599, 391);
+            this.elementHost1.Size = new System.Drawing.Size(602, 397);
             this.elementHost1.TabIndex = 1;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.elementHost1_ChildChanged);
@@ -81,7 +89,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
             this.itemEdit,
@@ -90,7 +98,7 @@
             this.itemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(974, 25);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -104,6 +112,7 @@
             this.itemSaveTo,
             this.split1,
             this.itemQuit});
+            this.itemFile.ForeColor = System.Drawing.Color.White;
             this.itemFile.Name = "itemFile";
             this.itemFile.Size = new System.Drawing.Size(58, 21);
             this.itemFile.Text = "文件(&F)";
@@ -151,6 +160,7 @@
             // 
             // itemEdit
             // 
+            this.itemEdit.ForeColor = System.Drawing.Color.White;
             this.itemEdit.Name = "itemEdit";
             this.itemEdit.Size = new System.Drawing.Size(59, 21);
             this.itemEdit.Text = "编辑(&E)";
@@ -159,6 +169,7 @@
             // 
             this.itemDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemOpenInBrowser});
+            this.itemDebug.ForeColor = System.Drawing.Color.White;
             this.itemDebug.Name = "itemDebug";
             this.itemDebug.Size = new System.Drawing.Size(61, 21);
             this.itemDebug.Text = "调试(&D)";
@@ -178,6 +189,7 @@
             this.itemXAML,
             this.itemVB,
             this.itemCSeries});
+            this.itemFormat.ForeColor = System.Drawing.Color.White;
             this.itemFormat.Name = "itemFormat";
             this.itemFormat.Size = new System.Drawing.Size(62, 21);
             this.itemFormat.Text = "格式(&O)";
@@ -237,6 +249,7 @@
             // 
             this.itemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemAbout});
+            this.itemHelp.ForeColor = System.Drawing.Color.White;
             this.itemHelp.Name = "itemHelp";
             this.itemHelp.Size = new System.Drawing.Size(61, 21);
             this.itemHelp.Text = "帮助(&H)";
@@ -255,9 +268,9 @@
             this.statusStrip1.BackColor = System.Drawing.Color.DodgerBlue;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlabelStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 505);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(974, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -271,8 +284,7 @@
             // 
             // splitContainer
             // 
-            this.splitContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitContainer.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer.Location = new System.Drawing.Point(0, 50);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
@@ -290,7 +302,6 @@
             // 
             // tabctrlOpreation
             // 
-            this.tabctrlOpreation.Alignment = System.Windows.Forms.TabAlignment.Right;
             this.tabctrlOpreation.Controls.Add(this.pageDebug);
             this.tabctrlOpreation.Controls.Add(this.pageToolbox);
             this.tabctrlOpreation.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -303,21 +314,32 @@
             // 
             // pageDebug
             // 
-            this.pageDebug.Location = new System.Drawing.Point(4, 4);
+            this.pageDebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.pageDebug.Controls.Add(this.buttonCompileNowCs);
+            this.pageDebug.Location = new System.Drawing.Point(4, 22);
             this.pageDebug.Name = "pageDebug";
             this.pageDebug.Padding = new System.Windows.Forms.Padding(3);
-            this.pageDebug.Size = new System.Drawing.Size(168, 389);
+            this.pageDebug.Size = new System.Drawing.Size(186, 371);
             this.pageDebug.TabIndex = 0;
             this.pageDebug.Text = "调试";
-            this.pageDebug.UseVisualStyleBackColor = true;
+            // 
+            // buttonCompileNowCs
+            // 
+            this.buttonCompileNowCs.Location = new System.Drawing.Point(3, 3);
+            this.buttonCompileNowCs.Name = "buttonCompileNowCs";
+            this.buttonCompileNowCs.Size = new System.Drawing.Size(161, 21);
+            this.buttonCompileNowCs.TabIndex = 0;
+            this.buttonCompileNowCs.Text = "编译 C#";
+            this.buttonCompileNowCs.UseVisualStyleBackColor = true;
+            this.buttonCompileNowCs.Click += new System.EventHandler(this.buttonCompileNowCs_Click);
             // 
             // pageToolbox
             // 
             this.pageToolbox.Controls.Add(this.lstvewToolbox);
-            this.pageToolbox.Location = new System.Drawing.Point(4, 4);
+            this.pageToolbox.Location = new System.Drawing.Point(4, 22);
             this.pageToolbox.Name = "pageToolbox";
             this.pageToolbox.Padding = new System.Windows.Forms.Padding(3);
-            this.pageToolbox.Size = new System.Drawing.Size(168, 389);
+            this.pageToolbox.Size = new System.Drawing.Size(186, 371);
             this.pageToolbox.TabIndex = 1;
             this.pageToolbox.Text = "工具箱";
             this.pageToolbox.UseVisualStyleBackColor = true;
@@ -335,19 +357,53 @@
             listViewItem1});
             this.lstvewToolbox.Location = new System.Drawing.Point(3, 3);
             this.lstvewToolbox.Name = "lstvewToolbox";
-            this.lstvewToolbox.Size = new System.Drawing.Size(162, 383);
+            this.lstvewToolbox.Size = new System.Drawing.Size(180, 365);
             this.lstvewToolbox.TabIndex = 0;
             this.lstvewToolbox.UseCompatibleStateImageBehavior = false;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.strpbtnNew,
+            this.strpbtnSave});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(974, 25);
+            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // strpbtnNew
+            // 
+            this.strpbtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.strpbtnNew.Image = ((System.Drawing.Image)(resources.GetObject("strpbtnNew.Image")));
+            this.strpbtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.strpbtnNew.Name = "strpbtnNew";
+            this.strpbtnNew.Size = new System.Drawing.Size(23, 22);
+            this.strpbtnNew.Text = "toolStripButton1";
+            this.strpbtnNew.Click += new System.EventHandler(this.strpbtnNew_Click);
+            // 
+            // strpbtnSave
+            // 
+            this.strpbtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.strpbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("strpbtnSave.Image")));
+            this.strpbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.strpbtnSave.Name = "strpbtnSave";
+            this.strpbtnSave.Size = new System.Drawing.Size(23, 22);
+            this.strpbtnSave.Text = "toolStripButton2";
+            this.strpbtnSave.Click += new System.EventHandler(this.strpbtnSave_Click);
             // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.ClientSize = new System.Drawing.Size(974, 527);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::RCSE_Reloaded.Properties.Resources.rcse;
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -364,7 +420,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
             this.splitContainer.ResumeLayout(false);
             this.tabctrlOpreation.ResumeLayout(false);
+            this.pageDebug.ResumeLayout(false);
             this.pageToolbox.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -400,6 +459,10 @@
         private System.Windows.Forms.TabPage pageDebug;
         private System.Windows.Forms.TabPage pageToolbox;
         private System.Windows.Forms.ListView lstvewToolbox;
+        private System.Windows.Forms.Button buttonCompileNowCs;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton strpbtnNew;
+        private System.Windows.Forms.ToolStripButton strpbtnSave;
     }
 }
 

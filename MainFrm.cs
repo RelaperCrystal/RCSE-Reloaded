@@ -10,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework;
+using MetroFramework.Forms;
 namespace RCSE_Reloaded
 {
     public partial class MainFrm : Form
@@ -23,13 +25,18 @@ namespace RCSE_Reloaded
             InitializeComponent();
             editor = new ICSharpCode.AvalonEdit.TextEditor();
             elementHost1.Child = editor;
-            
+            ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
         }
 
-        private void MainFrm_SizeChanged(object sender, EventArgs e)
+        private void MainFrm_SizeChanged(object sender, EventArgs e) => ResetSize();
+
+        private void ResetSize()
         {
-            
+            splitContainer.Height = this.Height - menuStrip1.Height;
+            splitContainer.Height = splitContainer.Height - toolStrip1.Height;
+            splitContainer.Width = this.Width;
+            buttonCompileNowCs.Width = pageDebug.Width - 5;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -107,27 +114,25 @@ namespace RCSE_Reloaded
             }
         }
 
-        private void rButtonOpen_Click(object sender, EventArgs e)
-        {
-            OpenFile();
-        }
+        private void rButtonOpen_Click(object sender, EventArgs e) => OpenFile();
 
         #region 菜单
         private void itemQuit_Click(object sender, EventArgs e) => Close();
+        private void itemNew_Click(object sender, EventArgs e) => NewFile();
 
-        private void itemNew_Click(object sender, EventArgs e)
+        private void NewFile()
         {
             editor.Text = "";
             editor.SyntaxHighlighting = null;
+            isLoaded = false;
+            loadedContentPath = "";
+            Changed = false;
         }
         #endregion
 
         private void itemOpen_Click(object sender, EventArgs e) => OpenFile();
 
-        private void itemCSharp_Click(object sender, EventArgs e)
-        {
-            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".cs");
-        }
+        private void itemCSharp_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".cs");
 
         private void itemFile_Click(object sender, EventArgs e)
         {
@@ -136,7 +141,12 @@ namespace RCSE_Reloaded
 
         private void 保存SToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(isLoaded && loadedContentPath != null && loadedContentPath != String.Empty)
+            DetectAndSaveFile();
+        }
+
+        private void DetectAndSaveFile()
+        {
+            if (isLoaded && loadedContentPath != null && loadedContentPath != String.Empty)
             {
                 editor.Save(loadedContentPath);
             }
@@ -177,25 +187,8 @@ namespace RCSE_Reloaded
         {
 
         }
-
-        private void itemAbout_Click(object sender, EventArgs e)
-        {
-            new About().ShowDialog();
-        }
-
-        private void MainFrm_SizeChanged_1(object sender, EventArgs e)
-        {
-            int ThisHeight = this.Height;
-            int StatusHeight = this.statusStrip1.Height;
-            int MenuHeight = this.menuStrip1.Height;
-            int final = ThisHeight - StatusHeight;
-            int DeScale = final - 40;
-            int result = DeScale - MenuHeight;
-            splitContainer.Width = this.Width - 5;
-            splitContainer.Height = result;
-
-            
-        }
+        private void itemAbout_Click(object sender, EventArgs e) => new About().ShowDialog();
+        private void MainFrm_SizeChanged_1(object sender, EventArgs e) => ResetSize();
 
         private void splitContainer_Resize(object sender, EventArgs e)
         {
@@ -209,30 +202,11 @@ namespace RCSE_Reloaded
             elementHost1.Height = splitContainer.Height;
         }
 
-        private void itemHTML_Click(object sender, EventArgs e)
-        {
-            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".html");
-        }
-
-        private void itemXAML_Click(object sender, EventArgs e)
-        {
-            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".xml");
-        }
-
-        private void itemVB_Click(object sender, EventArgs e)
-        {
-            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".vb");
-        }
-
-        private void itemPlainC_Click(object sender, EventArgs e)
-        {
-            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".c");
-        }
-
-        private void itemCPP_Click(object sender, EventArgs e)
-        {
-            editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".cpp");
-        }
+        private void itemHTML_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".html");
+        private void itemXAML_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".xml");
+        private void itemVB_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".vb");
+        private void itemPlainC_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".c");
+        private void itemCPP_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".cpp");
 
         private void itemOpenInBrowser_Click(object sender, EventArgs e)
         {
@@ -261,5 +235,18 @@ namespace RCSE_Reloaded
 
             
         }
+
+        private void buttonCompileNowCs_Click(object sender, EventArgs e)
+        {
+            if(editor.Text == "")
+            {
+                MessageBox.Show("错误：编辑框为空。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+        }
+
+        private void strpbtnNew_Click(object sender, EventArgs e) => NewFile();
+        private void strpbtnSave_Click(object sender, EventArgs e) => DetectAndSaveFile();
     }
 }
