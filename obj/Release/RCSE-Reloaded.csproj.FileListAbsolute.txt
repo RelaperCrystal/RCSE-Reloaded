@@ -19,3 +19,8 @@ E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\R
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.DebugForm.resources
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\CommandLine.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\Common.Log.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\MetroFramework.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\MetroFramework.Fonts.dll
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\CommandLine.xml

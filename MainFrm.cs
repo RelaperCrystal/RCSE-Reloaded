@@ -293,6 +293,8 @@ namespace RCSE_Reloaded
                 return;
             }
 
+            CompilerManager.CompileFromString(editor.Text);
+            File.Move("rcse_compiled.cache.lk", "out.exe");
         }
 
         private void strpbtnNew_Click(object sender, EventArgs e) => NewFile();
