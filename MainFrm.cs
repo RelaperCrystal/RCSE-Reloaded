@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework;
 using MetroFramework.Forms;
+using RCSE_Reloaded.API;
+using CommandLine;
+
 namespace RCSE_Reloaded
 {
     public partial class MainFrm : Form
@@ -20,7 +23,7 @@ namespace RCSE_Reloaded
         string loadedContentPath;
         bool isLoaded;
         bool Changed;
-        public MainFrm(string[] args)
+        public MainFrm(CommandLineOptions options)
         {
             InitializeComponent();
             editor = new ICSharpCode.AvalonEdit.TextEditor();
@@ -28,7 +31,32 @@ namespace RCSE_Reloaded
             ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
 
-            
+            if(options != null && options.File != null && options.File != "")
+            {
+                if(File.Exists(options.File))
+                {
+                    OpenFileWithOptions(options);
+                }
+                else
+                {
+                    MessageBox.Show("无法从命令行解析文件。文件未找到。", "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void OpenFileWithOptions(CommandLineOptions options)
+        {
+            isLoaded = true;
+            loadedContentPath = options.File;
+            editor.Load(options.File);
+        }
+
+        private void OpenFileWithPath(string path)
+        {
+            isLoaded = true;
+            Changed = false;
+            loadedContentPath = path;
+            editor.Load(path);
         }
 
         private void MainFrm_SizeChanged(object sender, EventArgs e) => ResetSize();
@@ -54,9 +82,28 @@ namespace RCSE_Reloaded
 #endif
         }
 
+        public static void ParseArgsAndRun(string[] args)
+        {
+            ParserResult<CommandLineOptions> Option;
+            try
+            {
+                Option = Parser.Default.ParseArguments<CommandLineOptions>(args);
+                Option.WithParsed(RunParsed);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("无法解析命令行。\r\n" + ex.ToString(), "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void ribbon1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private static void RunParsed(CommandLineOptions cmdline)
+        {
+            Application.Run(new MainFrm(cmdline));
         }
 
         private void elementHost1_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)

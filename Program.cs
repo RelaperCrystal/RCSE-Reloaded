@@ -19,8 +19,8 @@ namespace RCSE_Reloaded
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            Application.Run(new MainFrm(args));
+
+            MainFrm.ParseArgsAndRun(args);
         }
 
     }
