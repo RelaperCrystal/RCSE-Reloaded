@@ -20,13 +20,15 @@ namespace RCSE_Reloaded
         string loadedContentPath;
         bool isLoaded;
         bool Changed;
-        public MainFrm()
+        public MainFrm(string[] args)
         {
             InitializeComponent();
             editor = new ICSharpCode.AvalonEdit.TextEditor();
             elementHost1.Child = editor;
             ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
+
+            
         }
 
         private void MainFrm_SizeChanged(object sender, EventArgs e) => ResetSize();
