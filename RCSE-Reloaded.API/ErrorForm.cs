@@ -18,6 +18,7 @@ namespace RCSE_Reloaded.API
         {
             InitializeComponent();
             exc = ex;
+            textErr.Text = ex.ToString();
         }
 
         private void actionRepository_Click(object sender, EventArgs e)
@@ -27,18 +28,23 @@ namespace RCSE_Reloaded.API
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(1);
         }
 
         private void ErrorForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Environment.Exit(1);
         }
 
         private void actionGenReport_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("** 以下文本已被复制到剪贴板 **\r\n来源: " + exc.Source + "\r\n详细信息: "+ exc.Message);
-            Clipboard.SetText("来源: " + exc.Source + "\r\n详细信息: " + exc.Message);
+            MessageBox.Show("** 以下文本已被复制到剪贴板 **\r\n" + exc.ToString());
+            Clipboard.SetText(exc.ToString());
+        }
+
+        private void ErrorForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

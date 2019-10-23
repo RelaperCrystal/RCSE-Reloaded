@@ -92,7 +92,7 @@ namespace RCSE_Reloaded
             }
             catch(Exception ex)
             {
-                MessageBox.Show("无法解析命令行。\r\n" + ex.ToString(), "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Run(new ErrorForm(ex));
             }
         }
 

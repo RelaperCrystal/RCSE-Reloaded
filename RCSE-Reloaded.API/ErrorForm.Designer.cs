@@ -36,6 +36,7 @@
             this.actionRepository = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.CommandLink();
             this.actionGenReport = new Microsoft.WindowsAPICodePack.Controls.WindowsForms.CommandLink();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.textErr = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +114,20 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // textErr
+            // 
+            this.textErr.Location = new System.Drawing.Point(23, 165);
+            this.textErr.Multiline = true;
+            this.textErr.Name = "textErr";
+            this.textErr.Size = new System.Drawing.Size(333, 119);
+            this.textErr.TabIndex = 7;
+            // 
             // ErrorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(376, 326);
+            this.Controls.Add(this.textErr);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.actionGenReport);
             this.Controls.Add(this.actionRepository);
@@ -133,6 +143,7 @@
             this.Name = "ErrorForm";
             this.Text = "错误";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ErrorForm_FormClosed);
+            this.Load += new System.EventHandler(this.ErrorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,5 +159,6 @@
         private Microsoft.WindowsAPICodePack.Controls.WindowsForms.CommandLink actionRepository;
         private Microsoft.WindowsAPICodePack.Controls.WindowsForms.CommandLink actionGenReport;
         private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.TextBox textErr;
     }
 }
