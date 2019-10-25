@@ -14,6 +14,7 @@ using MetroFramework;
 using MetroFramework.Forms;
 using RCSE_Reloaded.API;
 using CommandLine;
+using System.CodeDom.Compiler;
 
 namespace RCSE_Reloaded
 {
@@ -64,7 +65,7 @@ namespace RCSE_Reloaded
         private void ResetSize()
         {
             splitContainer.Height = this.Height - menuStrip1.Height;
-            splitContainer.Height = splitContainer.Height - toolStrip1.Height;
+            splitContainer.Height = splitContainer.Height - toolStrip1.Height - statusStrip1.Height;
             splitContainer.Width = this.Width;
             buttonCompileNowCs.Width = pageDebug.Width - 5;
         }
@@ -287,14 +288,35 @@ namespace RCSE_Reloaded
 
         private void buttonCompileNowCs_Click(object sender, EventArgs e)
         {
-            if(editor.Text == "")
+            CompileWithErrorHandler();
+        }
+
+        private void CompileWithErrorHandler()
+        {
+            if (editor.Text == "")
             {
                 MessageBox.Show("错误：编辑框为空。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            CompilerManager.CompileFromString(editor.Text);
-            File.Move("rcse_compiled.cache.lk", "out.exe");
+            CompilerResults cr = CompilerManager.CompileFromString(editor.Text);
+            OutputForm of = new OutputForm();
+            of.Owner = this;
+            string tempcr = "=================== 编译器输出 ===================";
+            foreach(string str in cr.Output)
+            {
+                tempcr = tempcr + "\r\n" + str;
+            }
+            of.OutputText = tempcr;
+            of.Show();
+
+            if (!File.Exists("rcse_compiled.cache.lk"))
+            {
+                MessageBox.Show("无法找到编译文件: 是否编译错误?", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            File.Move("rcse_compiled.cache.lk", "dbgcache.exe");
         }
 
         private void strpbtnNew_Click(object sender, EventArgs e) => NewFile();
