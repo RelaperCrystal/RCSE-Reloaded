@@ -23,6 +23,9 @@ namespace RCSE_Reloaded
         bool isLoaded;
         bool Changed;
         private static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
+        private static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
+
+        
 
         public MainFrm(CommandLineOptions options)
         {
@@ -33,6 +36,7 @@ namespace RCSE_Reloaded
             log.Info("编辑器加载完成");
             ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
+            CompilerManager.CompilerLog += CompilerManager_CompilerLog;
 
             log.Info("正在尝试解析命令行参数");
             if(options != null && options.File != null && options.File != "")
@@ -48,6 +52,11 @@ namespace RCSE_Reloaded
                     MessageBox.Show("无法从命令行解析文件。文件未找到。", "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void CompilerManager_CompilerLog(Type sender, string message)
+        {
+            logc.Info(message);
         }
 
         private void OpenFileWithOptions(CommandLineOptions options)
@@ -120,17 +129,22 @@ namespace RCSE_Reloaded
 
         private void OpenFile()
         {
+            log.Info("正在准备打开新文件");
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = CommonVals.filters;
             ofd.Title = "打开文件";
             ofd.CheckFileExists = true;
+            log.Info("正在弹出选择文件对话框");
             DialogResult dr = ofd.ShowDialog();
+            log.Info("文件选择对话框显示完成");
             if(dr == DialogResult.OK && File.Exists(ofd.FileName))
             {
+                log.Info("用户选择确定，文件存在");
                 isLoaded = true;
                 loadedContentPath = ofd.FileName;
                 editor.Load(ofd.FileName);
                 editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(ofd.FileName));
+                log.Info("成功加载文件");
             }
         }
 
@@ -156,12 +170,15 @@ namespace RCSE_Reloaded
 
         private void SaveFile()
         {
+            log.Info("正在准备另存为");
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = CommonVals.filters;
-            sfd.Title = "保存文件";
+            sfd.Title = "另存为";
             sfd.CheckPathExists = true;
             sfd.AddExtension = true;
+            log.Info("正在弹出另存为对话框");
             DialogResult dr = sfd.ShowDialog();
+            log.Info("另存为对话框弹出完毕");
             if(dr == DialogResult.OK)
             {
                 editor.Save(sfd.FileName);
@@ -187,9 +204,7 @@ namespace RCSE_Reloaded
         #endregion
 
         private void itemOpen_Click(object sender, EventArgs e) => OpenFile();
-
         private void itemCSharp_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".cs");
-
         private void itemFile_Click(object sender, EventArgs e)
         {
 
@@ -202,12 +217,15 @@ namespace RCSE_Reloaded
 
         private void DetectAndSaveFile()
         {
+            log.Info("保存文件中");
             if (isLoaded && loadedContentPath != null && loadedContentPath != String.Empty)
             {
+                log.Info("文件已被保存过，正在覆盖");
                 editor.Save(loadedContentPath);
             }
             else
             {
+                log.Info("文件未被保存过，正在执行另存为");
                 SaveFile();
             }
         }
@@ -224,19 +242,7 @@ namespace RCSE_Reloaded
 
         private void itemSaveTo_Click(object sender, EventArgs e)
         {
-            SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = CommonVals.filters;
-            sfd.Title = "保存文件";
-            sfd.CheckPathExists = true;
-            sfd.AddExtension = true;
-            DialogResult dr = sfd.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                editor.Save(sfd.FileName);
-                isLoaded = true;
-                loadedContentPath = sfd.FileName;
-            }
-            
+            SaveFile();
         }
 
         private void itemHelp_Click(object sender, EventArgs e)
@@ -299,13 +305,17 @@ namespace RCSE_Reloaded
 
         private void CompileWithErrorHandler()
         {
+            log.Info("编译程序启动");
             if (editor.Text == "")
             {
+                log.Info("编辑框为空");
                 MessageBox.Show("错误：编辑框为空。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            log.Info("正在进行编译");
             CompilerResults cr = CompilerManager.CompileFromString(editor.Text);
+            log.Info("输出框弹出");
             OutputForm of = new OutputForm();
             of.Owner = this;
             string tempcr = "=================== 编译器输出 ===================";
@@ -316,12 +326,15 @@ namespace RCSE_Reloaded
             of.OutputText = tempcr;
             of.Show();
 
+            log.Info("正在检查操作");
             if (!File.Exists("rcse_compiled.cache.lk"))
             {
+                log.Info("返回: 未能找到被编译文件");
                 MessageBox.Show("无法找到编译文件: 是否编译错误?", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            log.Info("编译成功，正在重命名文件");
             File.Move("rcse_compiled.cache.lk", "dbgcache.exe");
         }
 
@@ -333,9 +346,11 @@ namespace RCSE_Reloaded
             CompileWithErrorHandler();
             if (!File.Exists("rcse_compiled.cache.lk"))
             {
+                log.Info("运行状态: 运行失败");
                 tlabelStatus.Text = "运行失败";
                 return;
             }
+            log.Info("编译成功，启动程序");
             Process.Start("dbgcache.exe");
         }
     }

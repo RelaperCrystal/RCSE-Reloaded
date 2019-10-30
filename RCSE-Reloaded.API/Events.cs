@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace RCSE_Reloaded.API
 {
+    public delegate void LogEventHandler(Type sender, string message);
+    
     public class Events
     {
         public event EventHandler ProgramStartHandlingEvent;
 
         public delegate void FileChangedStateUpdateHandler(object sender, bool changed);
-        public event FileChangedStateUpdateHandler FileChangedStateUpdate;
+        public static event FileChangedStateUpdateHandler FileChangedStateUpdate;
 
         public delegate void FileSavingHandler(object sender, string targetPath);
-        public event FileSavingHandler FileSaving;
+        public static event FileSavingHandler FileSaving;
+
+        
     }
 }
