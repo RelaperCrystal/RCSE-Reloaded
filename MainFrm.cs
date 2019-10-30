@@ -22,22 +22,29 @@ namespace RCSE_Reloaded
         string loadedContentPath;
         bool isLoaded;
         bool Changed;
+        private static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
+
         public MainFrm(CommandLineOptions options)
         {
             InitializeComponent();
+            log.Info("主窗口组件加载完成");
             editor = new ICSharpCode.AvalonEdit.TextEditor();
             elementHost1.Child = editor;
+            log.Info("编辑器加载完成");
             ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
 
+            log.Info("正在尝试解析命令行参数");
             if(options != null && options.File != null && options.File != "")
             {
                 if(File.Exists(options.File))
                 {
+                    log.Info("文件存在，正在打开");
                     OpenFileWithOptions(options);
                 }
                 else
                 {
+                    log.Error("无法解析命令行参数");
                     MessageBox.Show("无法从命令行解析文件。文件未找到。", "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -91,6 +98,7 @@ namespace RCSE_Reloaded
             }
             catch(Exception ex)
             {
+                log.Fatal("在运行时发生错误。消息: " + ex.Message + "，来源: " + ex.Source, ex);
                 Application.Run(new ErrorForm(ex));
             }
         }

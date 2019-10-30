@@ -20,6 +20,7 @@ namespace RCSE_Reloaded
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            log4net.Config.XmlConfigurator.Configure();
             logger = LogManager.Log;
             logger.Info("[Main] Initialzing Program");
             MainFrm.ParseArgsAndRun(args, logger);
