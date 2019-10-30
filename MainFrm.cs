@@ -10,8 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework;
-using MetroFramework.Forms;
 using RCSE_Reloaded.API;
 using CommandLine;
 using System.CodeDom.Compiler;
@@ -83,7 +81,7 @@ namespace RCSE_Reloaded
 #endif
         }
 
-        public static void ParseArgsAndRun(string[] args)
+        public static void ParseArgsAndRun(string[] args, Logger logger)
         {
             ParserResult<CommandLineOptions> Option;
             try

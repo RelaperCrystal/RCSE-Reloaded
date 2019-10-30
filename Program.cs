@@ -11,6 +11,7 @@ namespace RCSE_Reloaded
 {
     static class Program
     {
+        static Logger logger;
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -19,8 +20,9 @@ namespace RCSE_Reloaded
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            MainFrm.ParseArgsAndRun(args);
+            logger = LogManager.Log;
+            logger.Info("[Main] Initialzing Program");
+            MainFrm.ParseArgsAndRun(args, logger);
         }
 
     }
