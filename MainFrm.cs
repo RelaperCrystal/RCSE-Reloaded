@@ -321,5 +321,16 @@ namespace RCSE_Reloaded
 
         private void strpbtnNew_Click(object sender, EventArgs e) => NewFile();
         private void strpbtnSave_Click(object sender, EventArgs e) => DetectAndSaveFile();
+
+        private void strpbtnRun_Click(object sender, EventArgs e)
+        {
+            CompileWithErrorHandler();
+            if (!File.Exists("rcse_compiled.cache.lk"))
+            {
+                tlabelStatus.Text = "运行失败";
+                return;
+            }
+            Process.Start("dbgcache.exe");
+        }
     }
 }

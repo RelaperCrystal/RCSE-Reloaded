@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("GPL v3");
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("GPL v3");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -64,6 +64,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.strpbtnNew = new System.Windows.Forms.ToolStripButton();
             this.strpbtnSave = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -257,9 +259,11 @@
             // 
             // itemAbout
             // 
+            this.itemAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.itemAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.itemAbout.ForeColor = System.Drawing.Color.White;
             this.itemAbout.Name = "itemAbout";
-            this.itemAbout.Size = new System.Drawing.Size(116, 22);
+            this.itemAbout.Size = new System.Drawing.Size(180, 22);
             this.itemAbout.Text = "关于(&A)";
             this.itemAbout.Click += new System.EventHandler(this.itemAbout_Click);
             // 
@@ -347,14 +351,14 @@
             // lstvewToolbox
             // 
             this.lstvewToolbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            listViewGroup1.Header = "协议";
-            listViewGroup1.Name = "lvgroupLicenses";
+            listViewGroup2.Header = "协议";
+            listViewGroup2.Name = "lvgroupLicenses";
             this.lstvewToolbox.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
+            listViewGroup2});
             this.lstvewToolbox.HideSelection = false;
-            listViewItem1.Group = listViewGroup1;
+            listViewItem2.Group = listViewGroup2;
             this.lstvewToolbox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem2});
             this.lstvewToolbox.Location = new System.Drawing.Point(3, 3);
             this.lstvewToolbox.Name = "lstvewToolbox";
             this.lstvewToolbox.Size = new System.Drawing.Size(180, 365);
@@ -366,7 +370,9 @@
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strpbtnNew,
-            this.strpbtnSave});
+            this.strpbtnSave,
+            this.toolStripSeparator1,
+            this.strpbtnRun});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(974, 25);
@@ -393,6 +399,21 @@
             this.strpbtnSave.Text = "toolStripButton2";
             this.strpbtnSave.Click += new System.EventHandler(this.strpbtnSave_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // strpbtnRun
+            // 
+            this.strpbtnRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.strpbtnRun.Image = ((System.Drawing.Image)(resources.GetObject("strpbtnRun.Image")));
+            this.strpbtnRun.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.strpbtnRun.Name = "strpbtnRun";
+            this.strpbtnRun.Size = new System.Drawing.Size(23, 22);
+            this.strpbtnRun.Text = "Run";
+            this.strpbtnRun.Click += new System.EventHandler(this.strpbtnRun_Click);
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -403,7 +424,6 @@
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::RCSE_Reloaded.Properties.Resources.rcse;
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -463,6 +483,8 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strpbtnNew;
         private System.Windows.Forms.ToolStripButton strpbtnSave;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton strpbtnRun;
     }
 }
 
