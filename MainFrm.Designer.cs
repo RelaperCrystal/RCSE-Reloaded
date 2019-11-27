@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("GPL v3");
+            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("GPL v3");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -66,6 +66,7 @@
             this.strpbtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
+            this.itemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -112,6 +113,7 @@
             this.itemNew,
             this.itemSave,
             this.itemSaveTo,
+            this.itemSetting,
             this.split1,
             this.itemQuit});
             this.itemFile.ForeColor = System.Drawing.Color.White;
@@ -123,40 +125,40 @@
             // itemOpen
             // 
             this.itemOpen.Name = "itemOpen";
-            this.itemOpen.Size = new System.Drawing.Size(128, 22);
+            this.itemOpen.Size = new System.Drawing.Size(180, 22);
             this.itemOpen.Text = "打开(&P)";
             this.itemOpen.Click += new System.EventHandler(this.itemOpen_Click);
             // 
             // itemNew
             // 
             this.itemNew.Name = "itemNew";
-            this.itemNew.Size = new System.Drawing.Size(128, 22);
+            this.itemNew.Size = new System.Drawing.Size(180, 22);
             this.itemNew.Text = "新建(&N)";
             this.itemNew.Click += new System.EventHandler(this.itemNew_Click);
             // 
             // itemSave
             // 
             this.itemSave.Name = "itemSave";
-            this.itemSave.Size = new System.Drawing.Size(128, 22);
+            this.itemSave.Size = new System.Drawing.Size(180, 22);
             this.itemSave.Text = "保存(&S)";
             this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
             // 
             // itemSaveTo
             // 
             this.itemSaveTo.Name = "itemSaveTo";
-            this.itemSaveTo.Size = new System.Drawing.Size(128, 22);
+            this.itemSaveTo.Size = new System.Drawing.Size(180, 22);
             this.itemSaveTo.Text = "另存为(&A)";
             this.itemSaveTo.Click += new System.EventHandler(this.itemSaveTo_Click);
             // 
             // split1
             // 
             this.split1.Name = "split1";
-            this.split1.Size = new System.Drawing.Size(125, 6);
+            this.split1.Size = new System.Drawing.Size(177, 6);
             // 
             // itemQuit
             // 
             this.itemQuit.Name = "itemQuit";
-            this.itemQuit.Size = new System.Drawing.Size(128, 22);
+            this.itemQuit.Size = new System.Drawing.Size(180, 22);
             this.itemQuit.Text = "退出(&Q)";
             this.itemQuit.Click += new System.EventHandler(this.itemQuit_Click);
             // 
@@ -179,7 +181,7 @@
             // itemOpenInBrowser
             // 
             this.itemOpenInBrowser.Name = "itemOpenInBrowser";
-            this.itemOpenInBrowser.Size = new System.Drawing.Size(169, 22);
+            this.itemOpenInBrowser.Size = new System.Drawing.Size(180, 22);
             this.itemOpenInBrowser.Text = "在浏览器中打开...";
             this.itemOpenInBrowser.Click += new System.EventHandler(this.itemOpenInBrowser_Click);
             // 
@@ -199,28 +201,28 @@
             // itemCSharp
             // 
             this.itemCSharp.Name = "itemCSharp";
-            this.itemCSharp.Size = new System.Drawing.Size(144, 22);
+            this.itemCSharp.Size = new System.Drawing.Size(180, 22);
             this.itemCSharp.Text = "C#";
             this.itemCSharp.Click += new System.EventHandler(this.itemCSharp_Click);
             // 
             // itemHTML
             // 
             this.itemHTML.Name = "itemHTML";
-            this.itemHTML.Size = new System.Drawing.Size(144, 22);
+            this.itemHTML.Size = new System.Drawing.Size(180, 22);
             this.itemHTML.Text = "HTML";
             this.itemHTML.Click += new System.EventHandler(this.itemHTML_Click);
             // 
             // itemXAML
             // 
             this.itemXAML.Name = "itemXAML";
-            this.itemXAML.Size = new System.Drawing.Size(144, 22);
+            this.itemXAML.Size = new System.Drawing.Size(180, 22);
             this.itemXAML.Text = "XAML";
             this.itemXAML.Click += new System.EventHandler(this.itemXAML_Click);
             // 
             // itemVB
             // 
             this.itemVB.Name = "itemVB";
-            this.itemVB.Size = new System.Drawing.Size(144, 22);
+            this.itemVB.Size = new System.Drawing.Size(180, 22);
             this.itemVB.Text = "Visual Basic";
             this.itemVB.Click += new System.EventHandler(this.itemVB_Click);
             // 
@@ -230,7 +232,7 @@
             this.itemPlainC,
             this.itemCPP});
             this.itemCSeries.Name = "itemCSeries";
-            this.itemCSeries.Size = new System.Drawing.Size(144, 22);
+            this.itemCSeries.Size = new System.Drawing.Size(180, 22);
             this.itemCSeries.Text = "C";
             // 
             // itemPlainC
@@ -351,14 +353,14 @@
             // lstvewToolbox
             // 
             this.lstvewToolbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            listViewGroup2.Header = "协议";
-            listViewGroup2.Name = "lvgroupLicenses";
+            listViewGroup1.Header = "协议";
+            listViewGroup1.Name = "lvgroupLicenses";
             this.lstvewToolbox.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup2});
+            listViewGroup1});
             this.lstvewToolbox.HideSelection = false;
-            listViewItem2.Group = listViewGroup2;
+            listViewItem1.Group = listViewGroup1;
             this.lstvewToolbox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem2});
+            listViewItem1});
             this.lstvewToolbox.Location = new System.Drawing.Point(3, 3);
             this.lstvewToolbox.Name = "lstvewToolbox";
             this.lstvewToolbox.Size = new System.Drawing.Size(180, 365);
@@ -413,6 +415,13 @@
             this.strpbtnRun.Size = new System.Drawing.Size(23, 22);
             this.strpbtnRun.Text = "Run";
             this.strpbtnRun.Click += new System.EventHandler(this.strpbtnRun_Click);
+            // 
+            // itemSetting
+            // 
+            this.itemSetting.Name = "itemSetting";
+            this.itemSetting.Size = new System.Drawing.Size(180, 22);
+            this.itemSetting.Text = "设置";
+            this.itemSetting.Click += new System.EventHandler(this.itemSetting_Click);
             // 
             // MainFrm
             // 
@@ -485,6 +494,7 @@
         private System.Windows.Forms.ToolStripButton strpbtnSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton strpbtnRun;
+        private System.Windows.Forms.ToolStripMenuItem itemSetting;
     }
 }
 

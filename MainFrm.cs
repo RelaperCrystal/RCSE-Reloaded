@@ -95,7 +95,80 @@ namespace RCSE_Reloaded
             DebugForm debug = new DebugForm(editor);
             debug.Show();
 #endif
+            RefreshSettings();
         }
+
+        public void ApplyAndSaveConfiguration(Setting settings)
+        {
+            Properties.Settings.Default.UseMainMenu = settings.UseMainMenu;
+            Properties.Settings.Default.UseLightTheme = settings.UseWhiteColor;
+            RefreshSettings();
+        }
+
+        public void RefreshSettings()
+        {
+            if(Properties.Settings.Default.UseMainMenu)
+            {
+                CreateMainMenu();
+            }
+        }
+
+        #region MainMenu
+
+        MainMenu nativeMenu;
+        private MenuItem nativeFile;
+        MenuItem nativeNew;
+        MenuItem nativeOpen;
+        MenuItem nativeSettings;
+        MenuItem nativeSaveTo;
+        MenuItem nativeSave;
+        MenuItem nativeExit;
+
+        public void CreateMainMenu()
+        {
+            nativeMenu = new MainMenu();
+
+            nativeFile = new MenuItem();
+
+            nativeOpen = new MenuItem();
+            nativeNew = new MenuItem();
+            nativeSettings = new MenuItem();
+            nativeSaveTo = new MenuItem();
+            nativeSave = new MenuItem();
+            nativeExit = new MenuItem();
+
+            nativeOpen.Text = "打开(&P)";
+            nativeNew.Text = "新建(&N)";
+            nativeSettings.Text = "设置";
+            nativeSaveTo.Text = "另存为(&A)";
+            nativeSave.Text = "保存(&S)";
+            nativeExit.Text = "退出(&Q)";
+            nativeFile.Text = "文件(&F)";
+
+            nativeOpen.Click += NativeOpen_Click;
+            nativeNew.Click += NativeNew_Click;
+            nativeSettings.Click += itemSetting_Click;
+            nativeSaveTo.Click += itemSaveTo_Click;
+            nativeSave.Click += 保存SToolStripMenuItem_Click;
+            nativeExit.Click += itemQuit_Click;
+
+            menuStrip1.Visible = false;
+
+            nativeFile.MenuItems.Add(nativeNew);
+            nativeFile.MenuItems.Add(nativeSettings);
+            nativeFile.MenuItems.Add(nativeSaveTo);
+            nativeFile.MenuItems.Add(nativeSave);
+            nativeFile.MenuItems.Add(nativeSettings);
+            nativeFile.MenuItems.Add(nativeExit);
+
+            nativeMenu.MenuItems.Add(nativeFile);
+            Menu = nativeMenu;
+        }
+
+        private void NativeNew_Click(object sender, EventArgs e) => itemNew_Click(sender, e);
+        private void NativeOpen_Click(object sender, EventArgs e) => itemOpen_Click(sender, e);
+
+        #endregion
 
         public static void ParseArgsAndRun(string[] args, Logger logger)
         {
@@ -352,6 +425,11 @@ namespace RCSE_Reloaded
             }
             log.Info("编译成功，启动程序");
             Process.Start("dbgcache.exe");
+        }
+
+        private void itemSetting_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
