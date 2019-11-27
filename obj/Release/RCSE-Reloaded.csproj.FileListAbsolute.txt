@@ -36,3 +36,4 @@ E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\R
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.CSharp.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.Xml.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\log4net.xml
+E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.SettingsFrm.resources

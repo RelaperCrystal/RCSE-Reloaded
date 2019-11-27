@@ -122,7 +122,23 @@ namespace RCSE_Reloaded
         MenuItem nativeSettings;
         MenuItem nativeSaveTo;
         MenuItem nativeSave;
+        MenuItem nativeSplit1;
         MenuItem nativeExit;
+
+        MenuItem nativeEdit;
+
+        MenuItem nativeDebug;
+        MenuItem nativeOpenInBrowser;
+
+        MenuItem nativeFormat;
+        MenuItem nativeHTML;
+        MenuItem nativeXAML;
+        MenuItem nativeVB;
+        MenuItem nativeC;
+
+        MenuItem nativeHelp;
+        MenuItem nativeAbout;
+        private MenuItem nativeCSharp;
 
         public void CreateMainMenu()
         {
@@ -136,12 +152,14 @@ namespace RCSE_Reloaded
             nativeSaveTo = new MenuItem();
             nativeSave = new MenuItem();
             nativeExit = new MenuItem();
+            nativeSplit1 = new MenuItem();
 
             nativeOpen.Text = "打开(&P)";
             nativeNew.Text = "新建(&N)";
             nativeSettings.Text = "设置";
             nativeSaveTo.Text = "另存为(&A)";
             nativeSave.Text = "保存(&S)";
+            nativeSplit1.Text = "-";
             nativeExit.Text = "退出(&Q)";
             nativeFile.Text = "文件(&F)";
 
@@ -159,9 +177,59 @@ namespace RCSE_Reloaded
             nativeFile.MenuItems.Add(nativeSaveTo);
             nativeFile.MenuItems.Add(nativeSave);
             nativeFile.MenuItems.Add(nativeSettings);
+            nativeFile.MenuItems.Add(nativeSplit1);
             nativeFile.MenuItems.Add(nativeExit);
 
+            nativeEdit = new MenuItem();
+            nativeEdit.Text = "编辑(&E)";
+
+            nativeDebug = new MenuItem();
+            nativeOpenInBrowser = new MenuItem();
+
+            nativeDebug.Text = "调试(&D)";
+            nativeOpenInBrowser.Text = itemOpenInBrowser.Text;
+            nativeDebug.MenuItems.Add(nativeOpenInBrowser);
+
+            nativeFormat = new MenuItem();
+            nativeHTML = new MenuItem();
+            nativeXAML = new MenuItem();
+            nativeVB = new MenuItem();
+            nativeC = new MenuItem();
+
+            nativeFormat.Text = itemFormat.Text;
+            nativeCSharp = new MenuItem();
+            nativeCSharp.Text = itemCSharp.Text;
+            nativeHTML.Text = itemHTML.Text;
+            nativeXAML.Text = itemXAML.Text;
+            nativeVB.Text = itemVB.Text;
+            nativeC.Text = itemCSeries.Text;
+
+            nativeFormat.MenuItems.Add(nativeCSharp);
+            nativeFormat.MenuItems.Add(nativeHTML);
+            nativeFormat.MenuItems.Add(nativeXAML);
+            nativeFormat.MenuItems.Add(nativeVB);
+            nativeFormat.MenuItems.Add(nativeC);
+
+            nativeHelp = new MenuItem();
+            nativeAbout = new MenuItem();
+
+            nativeOpenInBrowser.Click += itemOpenInBrowser_Click;
+            nativeCSharp.Click += itemCSharp_Click;
+            nativeHTML.Click += itemHTML_Click;
+            nativeXAML.Click += itemXAML_Click;
+            nativeVB.Click += itemXAML_Click;
+
+            nativeHelp.Text = itemHelp.Text;
+            nativeAbout.Text = itemAbout.Text;
+
+            nativeAbout.Click += itemAbout_Click;
+            nativeHelp.MenuItems.Add(nativeAbout);
+
             nativeMenu.MenuItems.Add(nativeFile);
+            nativeMenu.MenuItems.Add(nativeEdit);
+            nativeMenu.MenuItems.Add(nativeDebug);
+            nativeMenu.MenuItems.Add(nativeFormat);
+            nativeMenu.MenuItems.Add(nativeHelp);
             Menu = nativeMenu;
         }
 
@@ -429,7 +497,8 @@ namespace RCSE_Reloaded
 
         private void itemSetting_Click(object sender, EventArgs e)
         {
-
+            SettingsFrm settingsFrm = new SettingsFrm(this);
+            settingsFrm.Show();
         }
     }
 }

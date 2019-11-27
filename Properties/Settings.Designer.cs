@@ -25,7 +25,7 @@ namespace RCSE_Reloaded.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool UseMainMenu {
             get {
                 return ((bool)(this["UseMainMenu"]));
