@@ -10,3 +10,10 @@
 | 协议     | ![GitHub](https://img.shields.io/github/license/RelaperCrystal/RCSE-Reloaded) |
 | 当前版本 | ![GitHub release (latest by date)](https://img.shields.io/github/v/release/RelaperCrystal/RCSE-Reloaded) |
 
+## RC 版本
+
+RC 相比之前的测试版更新可能会更缓慢，也会更稳定。
+
+## 安装程序
+
+安装程序使用 Inno Setup 向导创建，使用非官方简体中文语言包。

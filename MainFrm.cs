@@ -102,6 +102,7 @@ namespace RCSE_Reloaded
         {
             Properties.Settings.Default.UseMainMenu = settings.UseMainMenu;
             Properties.Settings.Default.UseLightTheme = settings.UseWhiteColor;
+            Properties.Settings.Default.Save();
             RefreshSettings();
         }
 
