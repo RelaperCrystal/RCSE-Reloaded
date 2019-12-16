@@ -20,20 +20,23 @@ RC 相比之前的测试版更新可能会更缓慢，也会更稳定。
 
 ## 构建
 
-> **正在升级到 Visual Studio 2019，请暂时不要进行任何项目打开操作。所有Nuget包都丢失了，所以要重新安装。正在分析列出所有前 Nuget 包表。**
+> 已经还原所有 Nuget 包，并使用 VS2019 成功打开。不需要的 MetroFramework 已经被清理。升级部分包。
 
-> **Because of upgrading to Visual Studio 2019, do not open the solution or project. All Nuget packages were lost, I'm still recovering these damages. Hopefully it will build successfully again.**
-
-| 包名                     | 版本  | 用途                       |
-| ------------------------ | ----- | -------------------------- |
-| AvalonEdit               | 6.0.0 | 编辑器核心功能支持         |
-| CommandLineParser        | 2.6.0 | 命令行功能与启动支持       |
-| Common.Log               |       | 废弃                       |
-| ICSharpCode.NRefactory   | 5.5.1 | 保留以作将来代码自动完成   |
-| log4net                  | 2.0.8 | 日志功能支持               |
-| WindowsAPICodePack-Core  | 1.1.1 | 错误窗口与部分其它功能支持 |
-| WindowsAPICodePack-Shell | 1.1.1 | 错误窗口与部分其它功能支持 |
+| 包名                     | 版本       | 用途                       |
+| ------------------------ | ---------- | -------------------------- |
+| AvalonEdit               | 6.0.0      | 编辑器核心功能支持         |
+| CommandLineParser        | 2.6.0      | 命令行功能与启动支持       |
+| Common.Log               |            | 废弃                       |
+| ICSharpCode.NRefactory   | 5.5.1      | 保留以作将来代码自动完成   |
+| log4net                  | 2.0.8      | 日志功能支持               |
+| WindowsAPICodePack-Core  | **1.1.2**  | 错误窗口与部分其它功能支持 |
+| WindowsAPICodePack-Shell | 1.1.1      | 错误窗口与部分其它功能支持 |
+| Mono.Cecil               | **0.11.1** | 保留                       |
 
 需要以上包才能构建 RCSE。
 
 可以在源码根目录下输入`msbuild`程序来进行构建。
+
+## 扩展
+
+使用 Microsoft Code Anylasis 扩展。可能会使用 CodeMaid 扩展。

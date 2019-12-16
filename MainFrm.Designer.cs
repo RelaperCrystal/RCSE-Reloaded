@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewGroup listViewGroup1 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("GPL v3");
+            System.Windows.Forms.ListViewGroup listViewGroup2 = new System.Windows.Forms.ListViewGroup("协议", System.Windows.Forms.HorizontalAlignment.Left);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("GPL v3");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -38,6 +38,8 @@
             this.itemNew = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSave = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSaveTo = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.split1 = new System.Windows.Forms.ToolStripSeparator();
             this.itemQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.itemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +68,6 @@
             this.strpbtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
-            this.itemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
@@ -82,9 +83,11 @@
             // elementHost1
             // 
             this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Margin = new System.Windows.Forms.Padding(4);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(602, 397);
+            this.elementHost1.Size = new System.Drawing.Size(903, 596);
             this.elementHost1.TabIndex = 1;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.elementHost1_ChildChanged);
@@ -93,6 +96,8 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
             this.itemEdit,
@@ -101,7 +106,7 @@
             this.itemHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(974, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1461, 32);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -113,52 +118,67 @@
             this.itemNew,
             this.itemSave,
             this.itemSaveTo,
+            this.itemPrint,
             this.itemSetting,
             this.split1,
             this.itemQuit});
             this.itemFile.ForeColor = System.Drawing.Color.White;
             this.itemFile.Name = "itemFile";
-            this.itemFile.Size = new System.Drawing.Size(58, 21);
+            this.itemFile.Size = new System.Drawing.Size(84, 28);
             this.itemFile.Text = "文件(&F)";
             this.itemFile.Click += new System.EventHandler(this.itemFile_Click);
             // 
             // itemOpen
             // 
             this.itemOpen.Name = "itemOpen";
-            this.itemOpen.Size = new System.Drawing.Size(180, 22);
+            this.itemOpen.Size = new System.Drawing.Size(270, 34);
             this.itemOpen.Text = "打开(&P)";
             this.itemOpen.Click += new System.EventHandler(this.itemOpen_Click);
             // 
             // itemNew
             // 
             this.itemNew.Name = "itemNew";
-            this.itemNew.Size = new System.Drawing.Size(180, 22);
+            this.itemNew.Size = new System.Drawing.Size(270, 34);
             this.itemNew.Text = "新建(&N)";
             this.itemNew.Click += new System.EventHandler(this.itemNew_Click);
             // 
             // itemSave
             // 
             this.itemSave.Name = "itemSave";
-            this.itemSave.Size = new System.Drawing.Size(180, 22);
+            this.itemSave.Size = new System.Drawing.Size(270, 34);
             this.itemSave.Text = "保存(&S)";
             this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
             // 
             // itemSaveTo
             // 
             this.itemSaveTo.Name = "itemSaveTo";
-            this.itemSaveTo.Size = new System.Drawing.Size(180, 22);
+            this.itemSaveTo.Size = new System.Drawing.Size(270, 34);
             this.itemSaveTo.Text = "另存为(&A)";
             this.itemSaveTo.Click += new System.EventHandler(this.itemSaveTo_Click);
+            // 
+            // itemPrint
+            // 
+            this.itemPrint.Name = "itemPrint";
+            this.itemPrint.Size = new System.Drawing.Size(270, 34);
+            this.itemPrint.Text = "打印(&P)";
+            this.itemPrint.Click += new System.EventHandler(this.itemPrint_Click);
+            // 
+            // itemSetting
+            // 
+            this.itemSetting.Name = "itemSetting";
+            this.itemSetting.Size = new System.Drawing.Size(270, 34);
+            this.itemSetting.Text = "设置";
+            this.itemSetting.Click += new System.EventHandler(this.itemSetting_Click);
             // 
             // split1
             // 
             this.split1.Name = "split1";
-            this.split1.Size = new System.Drawing.Size(177, 6);
+            this.split1.Size = new System.Drawing.Size(267, 6);
             // 
             // itemQuit
             // 
             this.itemQuit.Name = "itemQuit";
-            this.itemQuit.Size = new System.Drawing.Size(180, 22);
+            this.itemQuit.Size = new System.Drawing.Size(270, 34);
             this.itemQuit.Text = "退出(&Q)";
             this.itemQuit.Click += new System.EventHandler(this.itemQuit_Click);
             // 
@@ -166,7 +186,7 @@
             // 
             this.itemEdit.ForeColor = System.Drawing.Color.White;
             this.itemEdit.Name = "itemEdit";
-            this.itemEdit.Size = new System.Drawing.Size(59, 21);
+            this.itemEdit.Size = new System.Drawing.Size(84, 28);
             this.itemEdit.Text = "编辑(&E)";
             // 
             // itemDebug
@@ -175,13 +195,13 @@
             this.itemOpenInBrowser});
             this.itemDebug.ForeColor = System.Drawing.Color.White;
             this.itemDebug.Name = "itemDebug";
-            this.itemDebug.Size = new System.Drawing.Size(61, 21);
+            this.itemDebug.Size = new System.Drawing.Size(88, 28);
             this.itemDebug.Text = "调试(&D)";
             // 
             // itemOpenInBrowser
             // 
             this.itemOpenInBrowser.Name = "itemOpenInBrowser";
-            this.itemOpenInBrowser.Size = new System.Drawing.Size(180, 22);
+            this.itemOpenInBrowser.Size = new System.Drawing.Size(248, 34);
             this.itemOpenInBrowser.Text = "在浏览器中打开...";
             this.itemOpenInBrowser.Click += new System.EventHandler(this.itemOpenInBrowser_Click);
             // 
@@ -195,34 +215,34 @@
             this.itemCSeries});
             this.itemFormat.ForeColor = System.Drawing.Color.White;
             this.itemFormat.Name = "itemFormat";
-            this.itemFormat.Size = new System.Drawing.Size(62, 21);
+            this.itemFormat.Size = new System.Drawing.Size(89, 28);
             this.itemFormat.Text = "格式(&O)";
             // 
             // itemCSharp
             // 
             this.itemCSharp.Name = "itemCSharp";
-            this.itemCSharp.Size = new System.Drawing.Size(180, 22);
+            this.itemCSharp.Size = new System.Drawing.Size(209, 34);
             this.itemCSharp.Text = "C#";
             this.itemCSharp.Click += new System.EventHandler(this.itemCSharp_Click);
             // 
             // itemHTML
             // 
             this.itemHTML.Name = "itemHTML";
-            this.itemHTML.Size = new System.Drawing.Size(180, 22);
+            this.itemHTML.Size = new System.Drawing.Size(209, 34);
             this.itemHTML.Text = "HTML";
             this.itemHTML.Click += new System.EventHandler(this.itemHTML_Click);
             // 
             // itemXAML
             // 
             this.itemXAML.Name = "itemXAML";
-            this.itemXAML.Size = new System.Drawing.Size(180, 22);
+            this.itemXAML.Size = new System.Drawing.Size(209, 34);
             this.itemXAML.Text = "XAML";
             this.itemXAML.Click += new System.EventHandler(this.itemXAML_Click);
             // 
             // itemVB
             // 
             this.itemVB.Name = "itemVB";
-            this.itemVB.Size = new System.Drawing.Size(180, 22);
+            this.itemVB.Size = new System.Drawing.Size(209, 34);
             this.itemVB.Text = "Visual Basic";
             this.itemVB.Click += new System.EventHandler(this.itemVB_Click);
             // 
@@ -232,20 +252,20 @@
             this.itemPlainC,
             this.itemCPP});
             this.itemCSeries.Name = "itemCSeries";
-            this.itemCSeries.Size = new System.Drawing.Size(180, 22);
+            this.itemCSeries.Size = new System.Drawing.Size(209, 34);
             this.itemCSeries.Text = "C";
             // 
             // itemPlainC
             // 
             this.itemPlainC.Name = "itemPlainC";
-            this.itemPlainC.Size = new System.Drawing.Size(112, 22);
+            this.itemPlainC.Size = new System.Drawing.Size(163, 34);
             this.itemPlainC.Text = "普通 C";
             this.itemPlainC.Click += new System.EventHandler(this.itemPlainC_Click);
             // 
             // itemCPP
             // 
             this.itemCPP.Name = "itemCPP";
-            this.itemCPP.Size = new System.Drawing.Size(112, 22);
+            this.itemCPP.Size = new System.Drawing.Size(163, 34);
             this.itemCPP.Text = "C++";
             this.itemCPP.Click += new System.EventHandler(this.itemCPP_Click);
             // 
@@ -255,7 +275,7 @@
             this.itemAbout});
             this.itemHelp.ForeColor = System.Drawing.Color.White;
             this.itemHelp.Name = "itemHelp";
-            this.itemHelp.Size = new System.Drawing.Size(61, 21);
+            this.itemHelp.Size = new System.Drawing.Size(88, 28);
             this.itemHelp.Text = "帮助(&H)";
             this.itemHelp.Click += new System.EventHandler(this.itemHelp_Click);
             // 
@@ -265,18 +285,20 @@
             this.itemAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.itemAbout.ForeColor = System.Drawing.Color.White;
             this.itemAbout.Name = "itemAbout";
-            this.itemAbout.Size = new System.Drawing.Size(180, 22);
+            this.itemAbout.Size = new System.Drawing.Size(171, 34);
             this.itemAbout.Text = "关于(&A)";
             this.itemAbout.Click += new System.EventHandler(this.itemAbout_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlabelStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 505);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 759);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(974, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1461, 31);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -284,13 +306,14 @@
             // 
             this.tlabelStatus.ForeColor = System.Drawing.Color.White;
             this.tlabelStatus.Name = "tlabelStatus";
-            this.tlabelStatus.Size = new System.Drawing.Size(32, 17);
+            this.tlabelStatus.Size = new System.Drawing.Size(46, 24);
             this.tlabelStatus.Text = "就绪";
             this.tlabelStatus.Click += new System.EventHandler(this.tlabelStatus_Click);
             // 
             // splitContainer
             // 
-            this.splitContainer.Location = new System.Drawing.Point(0, 50);
+            this.splitContainer.Location = new System.Drawing.Point(0, 75);
+            this.splitContainer.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
@@ -301,8 +324,9 @@
             // 
             this.splitContainer.Panel2.Controls.Add(this.elementHost1);
             this.splitContainer.Panel2.SizeChanged += new System.EventHandler(this.splitContainer_Panel2_SizeChanged);
-            this.splitContainer.Size = new System.Drawing.Size(800, 397);
-            this.splitContainer.SplitterDistance = 194;
+            this.splitContainer.Size = new System.Drawing.Size(1200, 596);
+            this.splitContainer.SplitterDistance = 291;
+            this.splitContainer.SplitterWidth = 6;
             this.splitContainer.TabIndex = 4;
             this.splitContainer.Resize += new System.EventHandler(this.splitContainer_Resize);
             // 
@@ -311,29 +335,33 @@
             this.tabctrlOpreation.Controls.Add(this.pageDebug);
             this.tabctrlOpreation.Controls.Add(this.pageToolbox);
             this.tabctrlOpreation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabctrlOpreation.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tabctrlOpreation.Location = new System.Drawing.Point(0, 0);
+            this.tabctrlOpreation.Margin = new System.Windows.Forms.Padding(4);
             this.tabctrlOpreation.Multiline = true;
             this.tabctrlOpreation.Name = "tabctrlOpreation";
             this.tabctrlOpreation.SelectedIndex = 0;
-            this.tabctrlOpreation.Size = new System.Drawing.Size(194, 397);
+            this.tabctrlOpreation.Size = new System.Drawing.Size(291, 596);
             this.tabctrlOpreation.TabIndex = 0;
             // 
             // pageDebug
             // 
             this.pageDebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pageDebug.Controls.Add(this.buttonCompileNowCs);
-            this.pageDebug.Location = new System.Drawing.Point(4, 22);
+            this.pageDebug.Location = new System.Drawing.Point(4, 33);
+            this.pageDebug.Margin = new System.Windows.Forms.Padding(4);
             this.pageDebug.Name = "pageDebug";
-            this.pageDebug.Padding = new System.Windows.Forms.Padding(3);
-            this.pageDebug.Size = new System.Drawing.Size(186, 371);
+            this.pageDebug.Padding = new System.Windows.Forms.Padding(4);
+            this.pageDebug.Size = new System.Drawing.Size(283, 559);
             this.pageDebug.TabIndex = 0;
             this.pageDebug.Text = "调试";
             // 
             // buttonCompileNowCs
             // 
-            this.buttonCompileNowCs.Location = new System.Drawing.Point(3, 3);
+            this.buttonCompileNowCs.Location = new System.Drawing.Point(4, 4);
+            this.buttonCompileNowCs.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCompileNowCs.Name = "buttonCompileNowCs";
-            this.buttonCompileNowCs.Size = new System.Drawing.Size(161, 21);
+            this.buttonCompileNowCs.Size = new System.Drawing.Size(275, 32);
             this.buttonCompileNowCs.TabIndex = 0;
             this.buttonCompileNowCs.Text = "编译 C#";
             this.buttonCompileNowCs.UseVisualStyleBackColor = true;
@@ -342,10 +370,11 @@
             // pageToolbox
             // 
             this.pageToolbox.Controls.Add(this.lstvewToolbox);
-            this.pageToolbox.Location = new System.Drawing.Point(4, 22);
+            this.pageToolbox.Location = new System.Drawing.Point(4, 28);
+            this.pageToolbox.Margin = new System.Windows.Forms.Padding(4);
             this.pageToolbox.Name = "pageToolbox";
-            this.pageToolbox.Padding = new System.Windows.Forms.Padding(3);
-            this.pageToolbox.Size = new System.Drawing.Size(186, 371);
+            this.pageToolbox.Padding = new System.Windows.Forms.Padding(4);
+            this.pageToolbox.Size = new System.Drawing.Size(283, 564);
             this.pageToolbox.TabIndex = 1;
             this.pageToolbox.Text = "工具箱";
             this.pageToolbox.UseVisualStyleBackColor = true;
@@ -353,31 +382,34 @@
             // lstvewToolbox
             // 
             this.lstvewToolbox.Dock = System.Windows.Forms.DockStyle.Fill;
-            listViewGroup1.Header = "协议";
-            listViewGroup1.Name = "lvgroupLicenses";
+            listViewGroup2.Header = "协议";
+            listViewGroup2.Name = "lvgroupLicenses";
             this.lstvewToolbox.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            listViewGroup1});
+            listViewGroup2});
             this.lstvewToolbox.HideSelection = false;
-            listViewItem1.Group = listViewGroup1;
+            listViewItem2.Group = listViewGroup2;
             this.lstvewToolbox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.lstvewToolbox.Location = new System.Drawing.Point(3, 3);
+            listViewItem2});
+            this.lstvewToolbox.Location = new System.Drawing.Point(4, 4);
+            this.lstvewToolbox.Margin = new System.Windows.Forms.Padding(4);
             this.lstvewToolbox.Name = "lstvewToolbox";
-            this.lstvewToolbox.Size = new System.Drawing.Size(180, 365);
+            this.lstvewToolbox.Size = new System.Drawing.Size(275, 556);
             this.lstvewToolbox.TabIndex = 0;
             this.lstvewToolbox.UseCompatibleStateImageBehavior = false;
             // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strpbtnNew,
             this.strpbtnSave,
             this.toolStripSeparator1,
             this.strpbtnRun});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 32);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(974, 25);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.toolStrip1.Size = new System.Drawing.Size(1461, 33);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -387,7 +419,7 @@
             this.strpbtnNew.Image = ((System.Drawing.Image)(resources.GetObject("strpbtnNew.Image")));
             this.strpbtnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.strpbtnNew.Name = "strpbtnNew";
-            this.strpbtnNew.Size = new System.Drawing.Size(23, 22);
+            this.strpbtnNew.Size = new System.Drawing.Size(34, 28);
             this.strpbtnNew.Text = "toolStripButton1";
             this.strpbtnNew.Click += new System.EventHandler(this.strpbtnNew_Click);
             // 
@@ -397,14 +429,14 @@
             this.strpbtnSave.Image = ((System.Drawing.Image)(resources.GetObject("strpbtnSave.Image")));
             this.strpbtnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.strpbtnSave.Name = "strpbtnSave";
-            this.strpbtnSave.Size = new System.Drawing.Size(23, 22);
+            this.strpbtnSave.Size = new System.Drawing.Size(34, 28);
             this.strpbtnSave.Text = "toolStripButton2";
             this.strpbtnSave.Click += new System.EventHandler(this.strpbtnSave_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // strpbtnRun
             // 
@@ -412,23 +444,16 @@
             this.strpbtnRun.Image = ((System.Drawing.Image)(resources.GetObject("strpbtnRun.Image")));
             this.strpbtnRun.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.strpbtnRun.Name = "strpbtnRun";
-            this.strpbtnRun.Size = new System.Drawing.Size(23, 22);
+            this.strpbtnRun.Size = new System.Drawing.Size(34, 28);
             this.strpbtnRun.Text = "Run";
             this.strpbtnRun.Click += new System.EventHandler(this.strpbtnRun_Click);
             // 
-            // itemSetting
-            // 
-            this.itemSetting.Name = "itemSetting";
-            this.itemSetting.Size = new System.Drawing.Size(180, 22);
-            this.itemSetting.Text = "设置";
-            this.itemSetting.Click += new System.EventHandler(this.itemSetting_Click);
-            // 
             // MainFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(974, 527);
+            this.ClientSize = new System.Drawing.Size(1461, 790);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.statusStrip1);
@@ -436,6 +461,7 @@
             this.Icon = global::RCSE_Reloaded.Properties.Resources.rcse;
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainFrm";
             this.Text = "RCSE v0.4 Beta";
             this.Load += new System.EventHandler(this.MainFrm_Load);
@@ -495,6 +521,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton strpbtnRun;
         private System.Windows.Forms.ToolStripMenuItem itemSetting;
+        private System.Windows.Forms.ToolStripMenuItem itemPrint;
     }
 }
 

@@ -37,3 +37,45 @@ E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\R
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.Xml.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\bin\Release\log4net.xml
 E:\Source\repos\Windows\WPF\Visual Solutions\RCSE-Remastered\RCSE-Reloaded\obj\Release\RCSE_Reloaded.SettingsFrm.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE_Reloaded.exe.config
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE_Reloaded.exe
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE_Reloaded.pdb
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\CommandLine.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Common.Log.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.AvalonEdit.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.Cecil.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.CSharp.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.Xml.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\log4net.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.Mdb.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.Pdb.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.Rocks.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE-Reloaded.API.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE-Reloaded.API.pdb
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\CommandLine.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.AvalonEdit.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.Cecil.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.CSharp.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\ICSharpCode.NRefactory.Xml.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\log4net.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.pdb
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.Mdb.pdb
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.Pdb.pdb
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.Rocks.pdb
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csprojAssemblyReference.cache
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.About.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.DebugForm.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.Properties.Resources.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.SettingsFrm.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csproj.GenerateResource.cache
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csproj.CopyComplete
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.exe
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.pdb

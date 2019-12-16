@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using RCSE_Reloaded.API;
 using CommandLine;
 using System.CodeDom.Compiler;
+using System.Drawing.Printing;
 
 namespace RCSE_Reloaded
 {
@@ -123,6 +124,7 @@ namespace RCSE_Reloaded
         MenuItem nativeSettings;
         MenuItem nativeSaveTo;
         MenuItem nativeSave;
+        MenuItem nativePrint;
         MenuItem nativeSplit1;
         MenuItem nativeExit;
 
@@ -152,6 +154,7 @@ namespace RCSE_Reloaded
             nativeSettings = new MenuItem();
             nativeSaveTo = new MenuItem();
             nativeSave = new MenuItem();
+            nativePrint = new MenuItem();
             nativeExit = new MenuItem();
             nativeSplit1 = new MenuItem();
 
@@ -159,6 +162,7 @@ namespace RCSE_Reloaded
             nativeNew.Text = "新建(&N)";
             nativeSettings.Text = "设置";
             nativeSaveTo.Text = "另存为(&A)";
+            nativePrint.Text = itemPrint.Text;
             nativeSave.Text = "保存(&S)";
             nativeSplit1.Text = "-";
             nativeExit.Text = "退出(&Q)";
@@ -169,6 +173,7 @@ namespace RCSE_Reloaded
             nativeSettings.Click += itemSetting_Click;
             nativeSaveTo.Click += itemSaveTo_Click;
             nativeSave.Click += 保存SToolStripMenuItem_Click;
+            nativePrint.Click += itemPrint_Click;
             nativeExit.Click += itemQuit_Click;
 
             menuStrip1.Visible = false;
@@ -177,6 +182,7 @@ namespace RCSE_Reloaded
             nativeFile.MenuItems.Add(nativeSettings);
             nativeFile.MenuItems.Add(nativeSaveTo);
             nativeFile.MenuItems.Add(nativeSave);
+            nativeFile.MenuItems.Add(nativePrint);
             nativeFile.MenuItems.Add(nativeSettings);
             nativeFile.MenuItems.Add(nativeSplit1);
             nativeFile.MenuItems.Add(nativeExit);
@@ -391,7 +397,7 @@ namespace RCSE_Reloaded
         {
 
         }
-        private void itemAbout_Click(object sender, EventArgs e) => new About().ShowDialog();
+        private void itemAbout_Click(object sender, EventArgs e) => new NewAbout().ShowDialog();
         private void MainFrm_SizeChanged_1(object sender, EventArgs e) => ResetSize();
 
         private void splitContainer_Resize(object sender, EventArgs e)
@@ -500,6 +506,45 @@ namespace RCSE_Reloaded
         {
             SettingsFrm settingsFrm = new SettingsFrm(this);
             settingsFrm.Show();
+        }
+
+        private void itemPrint_Click(object sender, EventArgs e)
+        {
+            PrintDocument pd = new PrintDocument();
+            pd.DocumentName = "RCSE Text";
+            pd.PrintPage += printDocument_PrintA4Page;
+            PrintDialog pdi = new PrintDialog();
+            if(pdi.ShowDialog() == DialogResult.OK)
+            {
+                log.Info("用户确定进行打印");
+                pd.PrinterSettings = pdi.PrinterSettings;
+                
+                pd.Print();
+            }
+            else
+            {
+                log.Info("用户取消打印，正在强制清理对象");
+                GC.Collect();
+            }
+        }
+
+        private void printDocument_PrintA4Page(object sender, PrintPageEventArgs e)
+        {
+            Font titleFont = new Font("黑体", 11, System.Drawing.FontStyle.Bold);//标题字体           
+            Font fntTxt = new Font("宋体", 10, System.Drawing.FontStyle.Regular);//正文文字         
+            Font fntTxt1 = new Font("宋体", 8, System.Drawing.FontStyle.Regular);//正文文字           
+            System.Drawing.Brush brush = new SolidBrush(System.Drawing.Color.Black);//画刷           
+            System.Drawing.Pen pen = new System.Drawing.Pen(System.Drawing.Color.Black);           //线条颜色         
+
+            try
+            {
+                e.Graphics.DrawString(editor.Text, fntTxt, brush, 0, 0);
+
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
     }
 }

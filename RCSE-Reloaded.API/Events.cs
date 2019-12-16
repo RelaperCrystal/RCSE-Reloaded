@@ -10,7 +10,7 @@ namespace RCSE_Reloaded.API
     
     public class Events
     {
-        public event EventHandler ProgramStartHandlingEvent;
+        public static event EventHandler ProgramStartHandlingEvent;
 
         public delegate void FileChangedStateUpdateHandler(object sender, bool changed);
         public static event FileChangedStateUpdateHandler FileChangedStateUpdate;
@@ -18,6 +18,7 @@ namespace RCSE_Reloaded.API
         public delegate void FileSavingHandler(object sender, string targetPath);
         public static event FileSavingHandler FileSaving;
 
-        
+        internal static void ActivateFileSaving(object sender, string targetPath) => FileSaving(sender, targetPath);
+        internal static void ActivateFileChangedStateUpdate(object sender, bool changed) => FileChangedStateUpdate(sender, changed);
     }
 }
