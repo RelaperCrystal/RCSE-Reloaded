@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ICSharpCode.AvalonEdit;
@@ -28,7 +30,7 @@ namespace RCSE_Reloaded
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(textBox1.Te);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(textBox1.Text);
         }
     }
 }
