@@ -25,5 +25,10 @@ namespace RCSE_Reloaded
             ErrorForm errorForm = new ErrorForm(new Exception("使用调试工具生成"));
             errorForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(textBox1.Te);
+        }
     }
 }

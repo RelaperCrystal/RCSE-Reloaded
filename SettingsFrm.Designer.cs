@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsFrm));
             this.groupDisplay = new System.Windows.Forms.GroupBox();
             this.checkLightColor = new System.Windows.Forms.CheckBox();
             this.labelMainMenu = new System.Windows.Forms.Label();
@@ -38,60 +39,41 @@
             // 
             // groupDisplay
             // 
+            resources.ApplyResources(this.groupDisplay, "groupDisplay");
             this.groupDisplay.Controls.Add(this.checkLightColor);
             this.groupDisplay.Controls.Add(this.labelMainMenu);
             this.groupDisplay.Controls.Add(this.checkUseMainMenu);
-            this.groupDisplay.Location = new System.Drawing.Point(12, 12);
             this.groupDisplay.Name = "groupDisplay";
-            this.groupDisplay.Size = new System.Drawing.Size(287, 233);
-            this.groupDisplay.TabIndex = 0;
             this.groupDisplay.TabStop = false;
-            this.groupDisplay.Text = "外观";
             // 
             // checkLightColor
             // 
-            this.checkLightColor.AutoSize = true;
-            this.checkLightColor.Enabled = false;
-            this.checkLightColor.Location = new System.Drawing.Point(6, 74);
+            resources.ApplyResources(this.checkLightColor, "checkLightColor");
             this.checkLightColor.Name = "checkLightColor";
-            this.checkLightColor.Size = new System.Drawing.Size(96, 16);
-            this.checkLightColor.TabIndex = 2;
-            this.checkLightColor.Text = "使用亮色主题";
             this.checkLightColor.UseVisualStyleBackColor = true;
             // 
             // labelMainMenu
             // 
-            this.labelMainMenu.Location = new System.Drawing.Point(23, 39);
+            resources.ApplyResources(this.labelMainMenu, "labelMainMenu");
             this.labelMainMenu.Name = "labelMainMenu";
-            this.labelMainMenu.Size = new System.Drawing.Size(258, 32);
-            this.labelMainMenu.TabIndex = 1;
-            this.labelMainMenu.Text = "使用 MainMenu 替代 MenuStrip 作为 RCSE 的菜单栏控件。";
             // 
             // checkUseMainMenu
             // 
-            this.checkUseMainMenu.AutoSize = true;
-            this.checkUseMainMenu.Location = new System.Drawing.Point(6, 20);
+            resources.ApplyResources(this.checkUseMainMenu, "checkUseMainMenu");
             this.checkUseMainMenu.Name = "checkUseMainMenu";
-            this.checkUseMainMenu.Size = new System.Drawing.Size(120, 16);
-            this.checkUseMainMenu.TabIndex = 1;
-            this.checkUseMainMenu.Text = "使用仿原生菜单栏";
             this.checkUseMainMenu.UseVisualStyleBackColor = true;
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(305, 12);
+            resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 23);
-            this.buttonOK.TabIndex = 1;
-            this.buttonOK.Text = "确定";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // SettingsFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(392, 253);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -100,7 +82,6 @@
             this.Name = "SettingsFrm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "设置";
             this.Load += new System.EventHandler(this.SettingsFrm_Load);
             this.groupDisplay.ResumeLayout(false);
             this.groupDisplay.PerformLayout();

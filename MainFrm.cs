@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RCSE_Reloaded.API;
+using RCSE_Reloaded.API.Localization;
 using CommandLine;
 using System.CodeDom.Compiler;
 using System.Drawing.Printing;
@@ -26,7 +27,7 @@ namespace RCSE_Reloaded
         private static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
         private static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
 
-        
+        Language CurrentLanguage { get; set; }
 
         public MainFrm(CommandLineOptions options)
         {
@@ -38,6 +39,16 @@ namespace RCSE_Reloaded
             ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
             CompilerManager.CompilerLog += CompilerManager_CompilerLog;
+
+            if(Properties.Settings.Default.Language == "none")
+            {
+                CurrentLanguage = LangIDHelper.GetLanguage();
+                Properties.Settings.Default.Language = System.Threading.Thread.CurrentThread.CurrentCulture.Name;
+            }
+            else
+            {
+                CurrentLanguage = LangIDHelper.GetLanguage(Properties.Settings.Default.Language);
+            }
 
             log.Info("正在尝试解析命令行参数");
             if(options != null && options.File != null && options.File != "")
@@ -544,6 +555,15 @@ namespace RCSE_Reloaded
             catch (Exception ee)
             {
                 MessageBox.Show(ee.Message);
+            }
+        }
+
+        public static void SetFormLanguage(MainFrm form)
+        {
+            Language lang = form.CurrentLanguage;
+            if(form.CurrentLanguage != Language.English && form.CurrentLanguage != Language.SimpChinese)
+            {
+
             }
         }
     }
