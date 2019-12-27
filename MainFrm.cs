@@ -61,7 +61,14 @@ namespace RCSE_Reloaded
                 else
                 {
                     log.Error("无法解析命令行参数");
-                    MessageBox.Show("无法从命令行解析文件。文件未找到。", "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
+                    {
+                        MessageBox.Show("Cannot parse & open file from console, \r\nbecause there's error on console.", "Console Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("无法从命令行解析文件。文件未找到。", "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
@@ -433,7 +440,15 @@ namespace RCSE_Reloaded
         {
             if(!isLoaded || loadedContentPath == null || loadedContentPath == "")
             {
-                MessageBox.Show("错误：您必须先保存文件至少一次。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
+                {
+                    MessageBox.Show("错误：您必须先保存文件至少一次。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("You must save this file as least once.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
                 return;
             }
             if(Changed)
@@ -446,7 +461,14 @@ namespace RCSE_Reloaded
             }
             else
             {
-                MessageBox.Show("错误：不是 HTML 或 XAML 文件。\r\n如果确实是上述文件，请将其后缀名变为对应的后缀名。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
+                {
+                    MessageBox.Show("错误：不是 HTML 或 XML 文件。\r\n如果确实是上述文件，请将其后缀名变为对应的后缀名。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Error: Not HTML or XML file. \r\nIf the file you wanna open in browser, are HTML or XAML files, please\r\nrename the extension to .htm, .html, or .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 #if DEBUG
                 MessageBox.Show(loadedContentPath + "\r\n" + Path.GetExtension(loadedContentPath));
 #endif
@@ -468,7 +490,15 @@ namespace RCSE_Reloaded
             if (editor.Text == "")
             {
                 log.Info("编辑框为空");
-                MessageBox.Show("错误：编辑框为空。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
+                {
+                    MessageBox.Show("错误：编辑框为空。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("The textbox is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 return;
             }
 
@@ -477,8 +507,10 @@ namespace RCSE_Reloaded
             log.Info("输出框弹出");
             OutputForm of = new OutputForm();
             of.Owner = this;
-            string tempcr = "=================== 编译器输出 ===================";
-            foreach(string str in cr.Output)
+            string tempcr = System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN"
+                ? "================ Compiler Output ================"
+                : "=================== 编译器输出 ===================";
+            foreach (string str in cr.Output)
             {
                 tempcr = tempcr + "\r\n" + str;
             }
