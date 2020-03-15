@@ -34,15 +34,17 @@
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.checkUseMainMenu = new System.Windows.Forms.CheckBox();
             this.buttonOK = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupDisplay
             // 
-            resources.ApplyResources(this.groupDisplay, "groupDisplay");
+            this.groupDisplay.Controls.Add(this.checkBox1);
             this.groupDisplay.Controls.Add(this.checkLightColor);
             this.groupDisplay.Controls.Add(this.labelMainMenu);
             this.groupDisplay.Controls.Add(this.checkUseMainMenu);
+            resources.ApplyResources(this.groupDisplay, "groupDisplay");
             this.groupDisplay.Name = "groupDisplay";
             this.groupDisplay.TabStop = false;
             // 
@@ -70,6 +72,14 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // SettingsFrm
             // 
             resources.ApplyResources(this, "$this");
@@ -96,5 +106,6 @@
         private System.Windows.Forms.CheckBox checkUseMainMenu;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.CheckBox checkLightColor;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

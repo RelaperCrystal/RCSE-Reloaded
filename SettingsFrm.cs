@@ -23,6 +23,7 @@ namespace RCSE_Reloaded
         {
             this.checkUseMainMenu.Checked = Properties.Settings.Default.UseMainMenu;
             this.checkLightColor.Checked = Properties.Settings.Default.UseLightTheme;
+            this.checkBox1.Checked = Properties.Settings.Default.UseFluentDesign;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace RCSE_Reloaded
             Setting set = new Setting();
             set.UseMainMenu = checkUseMainMenu.Checked;
             set.UseWhiteColor = checkLightColor.Checked;
+            set.UseFluentDesign = checkBox1.Checked;
             frm.ApplyAndSaveConfiguration(set);
         }
     }

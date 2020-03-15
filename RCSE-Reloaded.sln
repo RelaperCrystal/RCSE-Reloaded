@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.852
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCSE-Reloaded", "RCSE-Reloaded.csproj", "{89B0B7C2-7ADF-4AFF-A10D-E74C9AAD5255}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCSE-Reloaded.API", "RCSE-Reloaded.API\RCSE-Reloaded.API.csproj", "{AD89A202-E9AC-49F3-8D37-6DE09A1B4544}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinimalUpdater", "MinimalUpdater\MinimalUpdater.csproj", "{10077BF3-607D-42BE-9C0F-7BDEA4D289D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{C1EF28DC-7FEA-411F-94D4-E43F70465BF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

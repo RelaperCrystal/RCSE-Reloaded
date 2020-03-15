@@ -15,5 +15,6 @@ namespace RCSE_Reloaded
     {
         public bool UseMainMenu;
         public bool UseWhiteColor;
+        public bool UseFluentDesign;
     }
 }

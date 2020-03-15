@@ -15,6 +15,12 @@ using RCSE_Reloaded.API.Localization;
 using CommandLine;
 using System.CodeDom.Compiler;
 using System.Drawing.Printing;
+using System.Net;
+using Newtonsoft.Json;
+using System.Reflection;
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+using RCSE_Reloaded.API.FluentService;
 
 namespace RCSE_Reloaded
 {
@@ -39,6 +45,7 @@ namespace RCSE_Reloaded
             ResetSize();
             this.SizeChanged += MainFrm_SizeChanged;
             CompilerManager.CompilerLog += CompilerManager_CompilerLog;
+            editor.TextChanged += Editor_TextChanged;
 
             if(Properties.Settings.Default.Language == "none")
             {
@@ -108,28 +115,76 @@ namespace RCSE_Reloaded
 
         }
 
+        public Task<bool> IsVersionCurrent()
+        {
+            WebClient wc = new WebClient();
+            Dictionary<string, string> d = new Dictionary<string, string>();
+            string ver = wc.DownloadString("https://pastebin.com/raw/9T8ffyun");
+            d = JsonConvert.DeserializeObject<Dictionary<string, string>>(ver);
+            string thisVer = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            return !string.IsNullOrEmpty(ver) && thisVer != ver ? Task.FromResult<bool>(false) : Task.FromResult<bool>(true);
+        }
+
+        [System.Diagnostics.Conditional("_UWP")]
+        public async void CallVersionToast()
+        {
+            bool current = await IsVersionCurrent();
+            if(!current)
+            {
+                string title = "RCSE 更新通知";
+                string content = "RCSE 收到了新的版本更新。详情请点击查看。";
+                string xmlString =
+    $@"<toast><visual>
+       <binding template='ToastGeneric'>
+       <text>{title}</text>
+       <text>{content}</text>
+       </binding>
+      </visual></toast>";
+                // XmlDocument toastXml = new XmlDocument();
+                // toastXml.LoadXml(xmlString);
+
+                // ToastNotification tn = new ToastNotification(toastXml);
+                // ToastNotificationManager.CreateToastNotifier().Show(tn);
+            }
+        }
+
         private void MainFrm_Load(object sender, EventArgs e)
         {
 #if DEBUG
             DebugForm debug = new DebugForm(editor);
             debug.Show();
+
+           
 #endif
-            RefreshSettings();
+            if(Properties.Settings.Default.UseFluentDesign)
+            {
+                MessageBox.Show("软件当前使用 Fluent Design 中的亚克力特效，在 Windows Forms 中使用\r\n没有可靠文献。请在文件 -> 设置中选择是否使用。");
+                Transparent.SetBlur(this.Handle);
+                this.TransparencyKey = Color.Black;
+                LogManager.GetLogger(typeof(MainFrm)).Warn("正在使用亚克力特效");
+            }
+            CallVersionToast();
+            RefreshSettings(true);
         }
 
         public void ApplyAndSaveConfiguration(Setting settings)
         {
             Properties.Settings.Default.UseMainMenu = settings.UseMainMenu;
             Properties.Settings.Default.UseLightTheme = settings.UseWhiteColor;
+            Properties.Settings.Default.UseFluentDesign = settings.UseFluentDesign;
             Properties.Settings.Default.Save();
             RefreshSettings();
         }
 
-        public void RefreshSettings()
+        public void RefreshSettings(bool start = false)
         {
             if(Properties.Settings.Default.UseMainMenu)
             {
                 CreateMainMenu();
+            }
+            if(!start)
+            {
+                MessageBox.Show("Fluent Design 的设置需要在重启 RCSE 后生效。");
             }
         }
 
@@ -308,6 +363,11 @@ namespace RCSE_Reloaded
                 log.Info("用户选择确定，文件存在");
                 isLoaded = true;
                 loadedContentPath = ofd.FileName;
+                if (ofd.FileName.EndsWith(".pko"))
+                {
+                    HighlightingManager.Instance.GetDefinitionByExtension(".txt");
+                    return;
+                }
                 editor.Load(ofd.FileName);
                 editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(ofd.FileName));
                 log.Info("成功加载文件");
@@ -325,13 +385,18 @@ namespace RCSE_Reloaded
                 editor.Save(loadedContentPath);
             }
             Changed = false;
-            editor.TextChanged += Editor_TextChanged;
+            this.Text.Remove(0, 6);
         }
 
         private void Editor_TextChanged(object sender, EventArgs e)
         {
-            this.Changed = true;
-            Text = "(已更改) " + this.Text;
+            if(!Changed)
+            {
+                this.Changed = true;
+                Text = "(已更改) " + this.Text;
+
+            }
+            
         }
 
         private void SaveFile()
@@ -345,11 +410,22 @@ namespace RCSE_Reloaded
             log.Info("正在弹出另存为对话框");
             DialogResult dr = sfd.ShowDialog();
             log.Info("另存为对话框弹出完毕");
-            if(dr == DialogResult.OK)
+            if(dr == DialogResult.OK && sfd.FileName.EndsWith(".pko") != true)
             {
                 editor.Save(sfd.FileName);
                 isLoaded = true;
                 loadedContentPath = sfd.FileName;
+            }
+            else if(sfd.FileName.EndsWith(".pko"))
+            {
+                try
+                {
+                    Panko.SaveAsPanko(sfd.FileName, editor.Text);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Panko 编码器错误: \r\n" + ex.ToString(), "Panko 编码器", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -578,7 +654,7 @@ namespace RCSE_Reloaded
             Font fntTxt1 = new Font("宋体", 8, System.Drawing.FontStyle.Regular);//正文文字           
             System.Drawing.Brush brush = new SolidBrush(System.Drawing.Color.Black);//画刷           
             System.Drawing.Pen pen = new System.Drawing.Pen(System.Drawing.Color.Black);           //线条颜色         
-
+            
             try
             {
                 e.Graphics.DrawString(editor.Text, fntTxt, brush, 0, 0);
@@ -595,7 +671,39 @@ namespace RCSE_Reloaded
             Language lang = form.CurrentLanguage;
             if(form.CurrentLanguage != Language.English && form.CurrentLanguage != Language.SimpChinese)
             {
+                
+            }
+        }
 
+        private void itemCopy_Click(object sender, EventArgs e) => editor.Copy();
+        private void itemCut_Click(object sender, EventArgs e) => editor.Cut();
+        private void itemPaste_Click(object sender, EventArgs e) => editor.Paste();
+
+        private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            log.Info("用户尝试退出");
+            DialogResult result;
+            if(Changed)
+            {
+                if(e.CloseReason == CloseReason.WindowsShutDown)
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("请先正常保存并关闭后再关机。", "错误");
+                    return;
+                }
+                result = MessageBox.Show("此文件已被更改。\r\n如继续关闭，您将失去正在编辑的内容。是否保存后再关闭？", "警告", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                switch(result)
+                {
+                    case DialogResult.Cancel:
+                        e.Cancel = true;
+                        break;
+                    case DialogResult.Yes:
+                        DetectAndSaveFile();
+                        break;
+                    default:
+                    case DialogResult.No:
+                        return;
+                }
             }
         }
     }

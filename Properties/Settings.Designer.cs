@@ -58,5 +58,17 @@ namespace RCSE_Reloaded.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UseFluentDesign {
+            get {
+                return ((bool)(this["UseFluentDesign"]));
+            }
+            set {
+                this["UseFluentDesign"] = value;
+            }
+        }
     }
 }
