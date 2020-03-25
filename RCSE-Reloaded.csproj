@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>RCSE_Reloaded</RootNamespace>
     <AssemblyName>RCSE_Reloaded</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>false</Deterministic>
@@ -29,6 +29,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -94,6 +95,12 @@
     <Compile Include="FindDlg.Designer.cs">
       <DependentUpon>FindDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeetFileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeetFileDialog.Designer.cs">
+      <DependentUpon>MeetFileDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedRes\English.Designer.cs">
       <DependentUpon>English.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -115,6 +122,7 @@
     <Compile Include="ClassifierParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RCSEApplication.cs" />
     <Compile Include="SettingsFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +137,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindDlg.resx">
       <DependentUpon>FindDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.zh-Hans.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MeetFileDialog.resx">
+      <DependentUpon>MeetFileDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LocalizedRes\English.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -195,6 +209,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CrystalEngine\CrystalEngine.csproj">
+      <Project>{8CB6F6CD-4443-4F63-8670-C388FDB71FCD}</Project>
+      <Name>CrystalEngine</Name>
+    </ProjectReference>
     <ProjectReference Include="RCSE-Reloaded.API\RCSE-Reloaded.API.csproj">
       <Project>{ad89a202-e9ac-49f3-8d37-6de09a1b4544}</Project>
       <Name>RCSE-Reloaded.API</Name>

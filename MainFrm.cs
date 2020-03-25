@@ -21,10 +21,11 @@ using System.Reflection;
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 using RCSE_Reloaded.API.FluentService;
+using RCSE_Reloaded.API.Launches.Form;
 
 namespace RCSE_Reloaded
 {
-    public partial class MainFrm : Form
+    public partial class MainFrm : Form, ILaunchForm
     {
         ICSharpCode.AvalonEdit.TextEditor editor;
         string loadedContentPath;
@@ -34,6 +35,8 @@ namespace RCSE_Reloaded
         private static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
 
         Language CurrentLanguage { get; set; }
+
+        public bool CanExit => throw new NotImplementedException();
 
         public MainFrm(CommandLineOptions options)
         {
@@ -153,7 +156,9 @@ namespace RCSE_Reloaded
 #if DEBUG
             DebugForm debug = new DebugForm(editor);
             debug.Show();
-
+            editor.Text = "请注意，个别杀毒软件将本软件列为病毒。本人郑重宣布，此软件非病毒。\r\n" +
+                "------------------------------------------\r\nAttention\r\n\r\nSome AntiVirus softwares mark RCSE as virus.\r\n" +
+                "I declare this software is not a virus.";
            
 #endif
             if(Properties.Settings.Default.UseFluentDesign)
@@ -162,6 +167,11 @@ namespace RCSE_Reloaded
                 Transparent.SetBlur(this.Handle);
                 this.TransparencyKey = Color.Black;
                 LogManager.GetLogger(typeof(MainFrm)).Warn("正在使用亚克力特效");
+            }
+            
+            if(CommonVals.isSnapshot)
+            {
+                Text = "RCSE Snapshot - code version " + CommonVals.snapshot + " for " + CommonVals.verNumber;
             }
             CallVersionToast();
             RefreshSettings(true);
@@ -374,11 +384,11 @@ namespace RCSE_Reloaded
             }
         }
 
-        private void SaveFileAdjust()
+        void SaveFileAdjust()
         {
             if(!isLoaded || loadedContentPath == null || loadedContentPath == String.Empty)
             {
-                SaveFile();
+                InternalSaveFile();
             }
             else
             {
@@ -399,7 +409,9 @@ namespace RCSE_Reloaded
             
         }
 
-        private void SaveFile()
+        void ILaunchForm.SaveFile() => InternalSaveFile();
+
+        private void InternalSaveFile()
         {
             log.Info("正在准备另存为");
             SaveFileDialog sfd = new SaveFileDialog();
@@ -410,23 +422,24 @@ namespace RCSE_Reloaded
             log.Info("正在弹出另存为对话框");
             DialogResult dr = sfd.ShowDialog();
             log.Info("另存为对话框弹出完毕");
-            if(dr == DialogResult.OK && sfd.FileName.EndsWith(".pko") != true)
+            if (dr == DialogResult.OK)
             {
                 editor.Save(sfd.FileName);
                 isLoaded = true;
                 loadedContentPath = sfd.FileName;
             }
-            else if(sfd.FileName.EndsWith(".pko"))
+            /* else if(sfd.FileName.EndsWith(".pko"))
             {
                 try
                 {
-                    Panko.SaveAsPanko(sfd.FileName, editor.Text);
+                    // Panko.SaveAsPanko(sfd.FileName, editor.Text);
+                    
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show("Panko 编码器错误: \r\n" + ex.ToString(), "Panko 编码器", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
+            }*/
         }
 
         private void rButtonOpen_Click(object sender, EventArgs e) => OpenFile();
@@ -468,7 +481,7 @@ namespace RCSE_Reloaded
             else
             {
                 log.Info("文件未被保存过，正在执行另存为");
-                SaveFile();
+                InternalSaveFile();
             }
         }
 
@@ -484,7 +497,7 @@ namespace RCSE_Reloaded
 
         private void itemSaveTo_Click(object sender, EventArgs e)
         {
-            SaveFile();
+            InternalSaveFile();
         }
 
         private void itemHelp_Click(object sender, EventArgs e)
@@ -705,6 +718,61 @@ namespace RCSE_Reloaded
                         return;
                 }
             }
+        }
+
+        private void itemMeetFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        void ILaunchForm.DetectAndSaveFile()
+        {
+            DetectAndSaveFile();
+        }
+
+        public void Start() => Show();
+        public void Exit() => Close();
+
+        public void LaunchWithArgs(string[] args)
+        {
+            ParseArgsAndRun(args, new Logger());
+        }
+
+        public void ExceptionOccoured(Exception ex)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void itemSysInfo_Click(object sender, EventArgs e)
+        {
+            Process.Start("sysinfo");
+        }
+
+        #region 表达式事件处理器
+        private void itemUndo_Click(object sender, EventArgs e) => editor.Undo();
+        private void itemRedo_Click(object sender, EventArgs e) => editor.Redo();
+        private void itemSelectAll_Click(object sender, EventArgs e) => editor.SelectAll();
+        private void itemInsertDateTime_Click(object sender, EventArgs e) => editor.AppendText(DateTime.Now.ToString());
+        #endregion
+
+        private void itemSearchWithBing_Click(object sender, EventArgs e)
+        {
+            string text = editor.SelectedText;
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                Process.Start("https://cn.bing.com/search?q=" + text);
+            }
+            else return;
+        }
+
+        private void itemNewWindow_Click(object sender, EventArgs e)
+        {
+            new MainFrm(new CommandLineOptions()).Show();
+        }
+
+        private void itemEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

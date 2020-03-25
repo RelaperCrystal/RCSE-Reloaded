@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Common.Log;
 using CommandLine;
 using CommandLine.Text;
+using CrystalEngine.Logging;
 
 namespace RCSE_Reloaded
 {
@@ -21,8 +22,14 @@ namespace RCSE_Reloaded
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             log4net.Config.XmlConfigurator.Configure();
-            
-            MainFrm.ParseArgsAndRun(args, logger);
+
+            EngineLog el = new EngineLog();
+            el.Info("RCSE - Intergrated Application Routine", "");
+            el.Info("RCSE - Starting", "");
+            RCSEApplication app = new RCSEApplication();
+            el.Info("RCSE - Application Created", "");
+            app.Launching(args);
+            el.Info("RCSE - Application Running", "");
         }
 
     }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RCSE_Reloaded.API
+namespace CrystalEngine.Simple
 {
     public static class Panko
     {
@@ -13,13 +13,9 @@ namespace RCSE_Reloaded.API
         {
             FileStream fs = File.OpenWrite(fileName);
             BinaryWriter bw = new BinaryWriter(fs);
-            bw.Seek(0, SeekOrigin.Begin);
-            bw.Write(1);
-            bw.Seek(1, SeekOrigin.Current);
+            bw.Write(2);
             bw.Write(false);
-            bw.Seek(1, SeekOrigin.Current);
-            bw.Write(0);
-            bw.Seek(1, SeekOrigin.Current);
+            bw.Write(1);
             bw.Write(Encoding.UTF8.GetBytes(text));
             bw.Close();
         }
@@ -31,20 +27,17 @@ namespace RCSE_Reloaded.API
                 FileStream fs = File.OpenRead(fileName);
                 BinaryReader br = new BinaryReader(fs);
                 version = br.ReadInt32();
-                fs.Position++;
                 isCompressed = br.ReadBoolean();
-                fs.Position++;
                 tool = br.ReadInt32();
-                fs.Position++;
                 string result = br.ReadString();
                 return result;
             }
             catch(Exception ex)
             {
-                version = 1;
+                version = 2;
                 isCompressed = false;
-                tool = 0;
-                return "Panko解码器错误: " + ex.ToString();
+                tool = 1;
+                return "Panko Decoder Error: " + ex.ToString();
             }
         }
 

@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RCSE_Reloaded.API</RootNamespace>
     <AssemblyName>RCSE-Reloaded.API</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -74,6 +75,7 @@
       <DependentUpon>HtmlViewerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\IPlugin.cs" />
+    <Compile Include="Launches\Form\ILaunchForm.cs" />
     <Compile Include="Localization\LangIDHelper.cs" />
     <Compile Include="NewAbout.cs">
       <SubType>Form</SubType>
@@ -87,7 +89,6 @@
     <Compile Include="OutputForm.Designer.cs">
       <DependentUpon>OutputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panko.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -131,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NetworkServices\Update\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrystalEngine\CrystalEngine.csproj">
+      <Project>{8cb6f6cd-4443-4f63-8670-c388fdb71fcd}</Project>
+      <Name>CrystalEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
