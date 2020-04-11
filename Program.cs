@@ -7,6 +7,7 @@ using Common.Log;
 using CommandLine;
 using CommandLine.Text;
 using CrystalEngine.Logging;
+using RCSE_Reloaded.API;
 
 namespace RCSE_Reloaded
 {
@@ -23,6 +24,11 @@ namespace RCSE_Reloaded
             Application.SetCompatibleTextRenderingDefault(false);
             log4net.Config.XmlConfigurator.Configure();
 
+            API.Common.LegacyFormVersionNeeded += Common_LegacyFormVersionNeeded;
+            API.Common.IsSnapshotNeeded += Common_IsSnapshotNeeded;
+            API.Common.VersionNeeded += Common_VersionNeeded;
+            API.Common.SnapshotNumberNeeded += Common_SnapshotNumberNeeded;
+
             EngineLog el = new EngineLog();
             el.Info("RCSE - Intergrated Application Routine", "");
             el.Info("RCSE - Starting", "");
@@ -32,5 +38,12 @@ namespace RCSE_Reloaded
             el.Info("RCSE - Application Running", "");
         }
 
+        private static string Common_VersionNeeded() => CommonVals.verNumber;
+
+        private static bool Common_IsSnapshotNeeded() => CommonVals.isSnapshot;
+
+        private static string Common_LegacyFormVersionNeeded() => CommonVals.legacyFormVersion;
+
+        private static string Common_SnapshotNumberNeeded() => CommonVals.snapshot;
     }
 }

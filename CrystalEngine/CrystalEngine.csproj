@@ -30,6 +30,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>SimpleEditor.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,6 +68,9 @@
     <EmbeddedResource Include="Simple\Dialogs\InputBox.resx">
       <DependentUpon>InputBox.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SimpleEditor.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

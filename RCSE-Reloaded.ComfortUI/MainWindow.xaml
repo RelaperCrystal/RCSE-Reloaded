@@ -1,0 +1,56 @@
+﻿<Window x:Class="RCSE_Reloaded.ComfortUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RCSE_Reloaded.ComfortUI"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        mc:Ignorable="d"
+        Title="RCSE ComfortUI Early Test" Height="450" Width="800" VerticalAlignment="Top" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Grid x:Name="MainGrid">
+        <Menu x:Name="MainMenu" Height="22" VerticalAlignment="Top" Width="793" DockPanel.Dock="Top" Margin="0, 100, 0, 0">
+                <MenuItem Header="文件(F)" Height="22" Width="51">
+                    <MenuItem x:Name="ItemNew" Header="新建(N)" HorizontalAlignment="Left" Height="22" Width="147" Margin="0,0,-1.667,0" Click="MenuItem_Click"/>
+                    <MenuItem x:Name="ItemNewWindow" Header="新窗口(W)" HorizontalAlignment="Left" Height="22" Width="145" IsEnabled="False"/>
+                    <MenuItem x:Name="ItemOpen" Header="打开(O)" HorizontalAlignment="Left" Height="22" Width="146" Margin="0,0,-0.667,0"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="147"/>
+                    <MenuItem x:Name="ItemSave" Header="保存(S)" Height="22"/>
+                    <MenuItem x:Name="ItemSaveTo" Header="另存为(A)" Height="22"/>
+                    <MenuItem x:Name="ItemPrint" Header="打印(P)" Height="22"/>
+                    <MenuItem x:Name="ItemSettings" Header="设置(E)" Height="22"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="147"/>
+                    <MenuItem x:Name="ItemExit" Header="退出(X)" Height="22" Click="ItemExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="编辑(E)" Height="22" Width="51">
+                    <MenuItem x:Name="ItemCopy" Header="复制(C)" Height="22"/>
+                    <MenuItem x:Name="ItemCut" Header="剪切(U)" Height="22"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="147"/>
+                    <MenuItem x:Name="ItemPaste" Header="粘贴(P)" Height="22"/>
+                    <MenuItem x:Name="ItemUndo" Header="撤销(N)" Height="22"/>
+                    <MenuItem x:Name="ItemRedo" Header="重做(R)" Height="22"/>
+                    <MenuItem x:Name="ItemSelectAll" Header="全选(A)" Height="22"/>
+                    <Separator HorizontalAlignment="Left" Height="1" Width="147"/>
+                    <MenuItem x:Name="ItemDateTime" Header="日期与时间..." Height="22"/>
+                    <MenuItem x:Name="ItemBingSearch" Header="使用 Bing 搜索..." Height="22"/>
+                </MenuItem>
+                <MenuItem Header="调试(D)">
+                    <MenuItem x:Name="ItemOpenWithBrowser" Header="在浏览器中打开..." Height="22"/>
+                </MenuItem>
+                <MenuItem Header="格式(O)">
+                    <MenuItem x:Name="ItemCSharp" Header="HTML" Height="22"/>
+                    <MenuItem x:Name="ItemHTML" Header="HTML" Height="22"/>
+                    <MenuItem x:Name="ItemXAML" Header="XAML" Height="22"/>
+                    <MenuItem x:Name="ItemVB" Header="Visual Basic" Height="22"/>
+                    <MenuItem Header="C" Height="22">
+                        <MenuItem x:Name="ItemCPP" Header="C++" Height="22"/>
+                        <MenuItem x:Name="ItemC" Header="普通 C" Height="22"/>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <avalonEdit:TextEditor x:Name="Editor" FontFamily="Consolas" FontSize="10pt" Margin="0,22,0,21"/>
+
+        <StatusBar x:Name="MainStatus" HorizontalAlignment="Stretch" Height="21" Margin="0,350,0,0" VerticalAlignment="Top" Width="793" DockPanel.Dock="Bottom">
+            <StatusBarItem x:Name="ItemStatus" Content="就绪" Height="12" VerticalAlignment="Top" Margin="0,-15,0,0" Width="789"/>
+        </StatusBar>
+    </Grid>
+</Window>

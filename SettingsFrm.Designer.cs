@@ -30,16 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsFrm));
             this.groupDisplay = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkLightColor = new System.Windows.Forms.CheckBox();
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.checkUseMainMenu = new System.Windows.Forms.CheckBox();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupDisplay
             // 
+            this.groupDisplay.Controls.Add(this.label1);
             this.groupDisplay.Controls.Add(this.checkBox1);
             this.groupDisplay.Controls.Add(this.checkLightColor);
             this.groupDisplay.Controls.Add(this.labelMainMenu);
@@ -47,6 +49,14 @@
             resources.ApplyResources(this.groupDisplay, "groupDisplay");
             this.groupDisplay.Name = "groupDisplay";
             this.groupDisplay.TabStop = false;
+            // 
+            // checkBox1
+            // 
+            resources.ApplyResources(this.checkBox1, "checkBox1");
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // checkLightColor
             // 
@@ -72,13 +82,11 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // checkBox1
+            // label1
             // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Name = "label1";
             // 
             // SettingsFrm
             // 
@@ -107,5 +115,6 @@
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.CheckBox checkLightColor;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

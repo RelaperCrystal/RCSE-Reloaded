@@ -27,12 +27,20 @@ namespace RCSE_Reloaded
 {
     public partial class MainFrm : Form, ILaunchForm
     {
+        internal ICSharpCode.AvalonEdit.TextEditor Editor
+        {
+            get
+            {
+                return editor;
+            }
+        }
+
         ICSharpCode.AvalonEdit.TextEditor editor;
-        string loadedContentPath;
-        bool isLoaded;
-        bool Changed;
-        private static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
-        private static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
+        internal string loadedContentPath;
+        internal bool isLoaded;
+        internal bool Changed;
+        internal static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
+        internal static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
 
         Language CurrentLanguage { get; set; }
 
@@ -40,6 +48,7 @@ namespace RCSE_Reloaded
 
         public MainFrm(CommandLineOptions options)
         {
+            log.Info("Legacy Form 版本 " + CommonVals.legacyFormVersion);
             InitializeComponent();
             log.Info("主窗口组件加载完成");
             editor = new ICSharpCode.AvalonEdit.TextEditor();
@@ -118,6 +127,7 @@ namespace RCSE_Reloaded
 
         }
 
+        /*
         public Task<bool> IsVersionCurrent()
         {
             WebClient wc = new WebClient();
@@ -127,29 +137,8 @@ namespace RCSE_Reloaded
             string thisVer = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             return !string.IsNullOrEmpty(ver) && thisVer != ver ? Task.FromResult<bool>(false) : Task.FromResult<bool>(true);
         }
+        */
 
-        [System.Diagnostics.Conditional("_UWP")]
-        public async void CallVersionToast()
-        {
-            bool current = await IsVersionCurrent();
-            if(!current)
-            {
-                string title = "RCSE 更新通知";
-                string content = "RCSE 收到了新的版本更新。详情请点击查看。";
-                string xmlString =
-    $@"<toast><visual>
-       <binding template='ToastGeneric'>
-       <text>{title}</text>
-       <text>{content}</text>
-       </binding>
-      </visual></toast>";
-                // XmlDocument toastXml = new XmlDocument();
-                // toastXml.LoadXml(xmlString);
-
-                // ToastNotification tn = new ToastNotification(toastXml);
-                // ToastNotificationManager.CreateToastNotifier().Show(tn);
-            }
-        }
 
         private void MainFrm_Load(object sender, EventArgs e)
         {
@@ -157,23 +146,39 @@ namespace RCSE_Reloaded
             DebugForm debug = new DebugForm(editor);
             debug.Show();
             editor.Text = "请注意，个别杀毒软件将本软件列为病毒。本人郑重宣布，此软件非病毒。\r\n" +
-                "------------------------------------------\r\nAttention\r\n\r\nSome AntiVirus softwares mark RCSE as virus.\r\n" +
+                "------------------------------------------\r\nAttention\r\n\r\nSome AntiVirus softwares mark" + CommonVals.programShortName +" as virus.\r\n" +
                 "I declare this software is not a virus.";
+            MessageBox.Show("载入测试");
            
 #endif
             if(Properties.Settings.Default.UseFluentDesign)
             {
-                MessageBox.Show("软件当前使用 Fluent Design 中的亚克力特效，在 Windows Forms 中使用\r\n没有可靠文献。请在文件 -> 设置中选择是否使用。");
+                MessageBox.Show(CommonVals.programName + " 当前使用 Fluent Design 中的亚克力特效，在 Windows Forms 中使用\r\n没有可靠文献。请在文件 -> 设置中选择是否使用。");
                 Transparent.SetBlur(this.Handle);
                 this.TransparencyKey = Color.Black;
                 LogManager.GetLogger(typeof(MainFrm)).Warn("正在使用亚克力特效");
             }
-            
-            if(CommonVals.isSnapshot)
+
+            if (!Properties.Settings.Default.UseFluentDesign)
             {
-                Text = "RCSE Snapshot - code version " + CommonVals.snapshot + " for " + CommonVals.verNumber;
+                // 无法访问是因为 isSnapshot 是常量，
+                // 然而会被更改
+                if (CommonVals.isSnapshot)
+                {
+                    Text = CommonVals.programName + " Snapshot - code version " + CommonVals.snapshot + " for " + CommonVals.verNumber;
+                }
+                else
+                {
+#pragma warning disable CS0162 // 检测到无法访问的代码
+                    Text = CommonVals.programName + " " + CommonVals.verNumber;
+#pragma warning restore CS0162 // 检测到无法访问的代码
+                }
             }
-            CallVersionToast();
+            else
+            {
+                Text = "";
+            }
+
             RefreshSettings(true);
         }
 
@@ -194,7 +199,7 @@ namespace RCSE_Reloaded
             }
             if(!start)
             {
-                MessageBox.Show("Fluent Design 的设置需要在重启 RCSE 后生效。");
+                MessageBox.Show("Fluent Design 的设置需要在重启" + CommonVals.programShortName + " 后生效。");
             }
         }
 
@@ -204,6 +209,7 @@ namespace RCSE_Reloaded
         private MenuItem nativeFile;
         MenuItem nativeNew;
         MenuItem nativeOpen;
+        MenuItem nativeNewWindow;
         MenuItem nativeSettings;
         MenuItem nativeSaveTo;
         MenuItem nativeSave;
@@ -212,6 +218,16 @@ namespace RCSE_Reloaded
         MenuItem nativeExit;
 
         MenuItem nativeEdit;
+        MenuItem nativeCopy;
+        MenuItem nativeCut;
+        MenuItem nativeSplit2;
+        MenuItem nativePaste;
+        MenuItem nativeUndo;
+        MenuItem nativeRedo;
+        MenuItem nativeSelectAll;
+        MenuItem nativeSplit3;
+        MenuItem nativeDateTime;
+        MenuItem nativeBingSearch;
 
         MenuItem nativeDebug;
         MenuItem nativeOpenInBrowser;
@@ -234,6 +250,7 @@ namespace RCSE_Reloaded
 
             nativeOpen = new MenuItem();
             nativeNew = new MenuItem();
+            nativeNewWindow = new MenuItem();
             nativeSettings = new MenuItem();
             nativeSaveTo = new MenuItem();
             nativeSave = new MenuItem();
@@ -241,15 +258,16 @@ namespace RCSE_Reloaded
             nativeExit = new MenuItem();
             nativeSplit1 = new MenuItem();
 
-            nativeOpen.Text = "打开(&P)";
-            nativeNew.Text = "新建(&N)";
-            nativeSettings.Text = "设置";
-            nativeSaveTo.Text = "另存为(&A)";
+            nativeOpen.Text = itemOpen.Text;
+            nativeNew.Text = itemNew.Text;
+            nativeNewWindow.Text = itemNewWindow.Text;
+            nativeSettings.Text = itemSetting.Text;
+            nativeSaveTo.Text = itemSaveTo.Text;
             nativePrint.Text = itemPrint.Text;
-            nativeSave.Text = "保存(&S)";
+            nativeSave.Text = itemSave.Text;
             nativeSplit1.Text = "-";
-            nativeExit.Text = "退出(&Q)";
-            nativeFile.Text = "文件(&F)";
+            nativeExit.Text = itemQuit.Text;
+            nativeFile.Text = itemFile.Text;
 
             nativeOpen.Click += NativeOpen_Click;
             nativeNew.Click += NativeNew_Click;
@@ -258,10 +276,13 @@ namespace RCSE_Reloaded
             nativeSave.Click += 保存SToolStripMenuItem_Click;
             nativePrint.Click += itemPrint_Click;
             nativeExit.Click += itemQuit_Click;
+            nativeNewWindow.Click += itemNewWindow_Click;
 
             menuStrip1.Visible = false;
 
             nativeFile.MenuItems.Add(nativeNew);
+            nativeFile.MenuItems.Add(nativeOpen);
+            nativeFile.MenuItems.Add(nativeNewWindow);
             nativeFile.MenuItems.Add(nativeSettings);
             nativeFile.MenuItems.Add(nativeSaveTo);
             nativeFile.MenuItems.Add(nativeSave);
@@ -271,7 +292,50 @@ namespace RCSE_Reloaded
             nativeFile.MenuItems.Add(nativeExit);
 
             nativeEdit = new MenuItem();
+            nativeCopy = new MenuItem();
+            nativeCut = new MenuItem();
+            nativePaste = new MenuItem();
+            nativeUndo = new MenuItem();
+            nativeRedo = new MenuItem();
+            nativeSelectAll = new MenuItem();
+            nativeDateTime = new MenuItem();
+            nativeBingSearch = new MenuItem();
+
             nativeEdit.Text = "编辑(&E)";
+            nativeCopy.Text = itemCopy.Text;
+            nativeCut.Text = itemCut.Text;
+            nativePaste.Text = itemPaste.Text;
+            nativeUndo.Text = itemUndo.Text;
+            nativeRedo.Text = itemRedo.Text;
+            nativeSelectAll.Text = itemSelectAll.Text;
+            nativeDateTime.Text = itemInsertDateTime.Text;
+            nativeBingSearch.Text = itemSearchWithBing.Text;
+
+            nativeSplit2 = new MenuItem();
+            nativeSplit2.Text = "-";
+
+            nativeEdit.MenuItems.Add(nativeCopy);
+            nativeEdit.MenuItems.Add(nativeCut);
+            nativeEdit.MenuItems.Add(nativeSplit2);
+            nativeEdit.MenuItems.Add(nativePaste);
+            nativeEdit.MenuItems.Add(nativeUndo);
+            nativeEdit.MenuItems.Add(nativeRedo);
+            nativeEdit.MenuItems.Add(nativeSelectAll);
+
+            nativeSplit3 = new MenuItem();
+            nativeSplit3.Text = "-";
+
+            nativeEdit.MenuItems.Add(nativeDateTime);
+            nativeEdit.MenuItems.Add(nativeBingSearch);
+
+            nativeCopy.Click += itemCopy_Click;
+            nativeCut.Click += itemCut_Click;
+            nativePaste.Click += itemPaste_Click;
+            nativeUndo.Click += itemUndo_Click;
+            nativeRedo.Click += itemRedo_Click;
+            nativeSelectAll.Click += itemSelectAll_Click;
+            nativeDateTime.Click += itemInsertDateTime_Click;
+            nativeBingSearch.Click += itemSearchWithBing_Click;
 
             nativeDebug = new MenuItem();
             nativeOpenInBrowser = new MenuItem();
@@ -643,7 +707,7 @@ namespace RCSE_Reloaded
         private void itemPrint_Click(object sender, EventArgs e)
         {
             PrintDocument pd = new PrintDocument();
-            pd.DocumentName = "RCSE Text";
+            pd.DocumentName = CommonVals.programShortName + " Text";
             pd.PrintPage += printDocument_PrintA4Page;
             PrintDialog pdi = new PrintDialog();
             if(pdi.ShowDialog() == DialogResult.OK)
