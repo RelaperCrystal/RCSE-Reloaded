@@ -20,8 +20,24 @@ namespace RCSE_Reloaded.API
 
         private void NewAbout_Load(object sender, EventArgs e)
         {
-            label3.Text = "版本: " + Assembly.GetExecutingAssembly().GetName().Version.ToString()
-                + "\r\n\r\n本软件希望其对您可能有用，但不负有任何担保责任。";
+            label3.Text = $"版本: {Version}\r\n\r\n本软件希望其对您可能有用，但不负有任何担保责任。";
+        }
+
+        private string Version
+        {
+            get
+            {
+                string result;
+                if (Common.IsSnapshot)
+                {
+                    result = Common.SnapshotNumber + "(for " + Common.Version + ")\r\n主窗口版本: " + Common.LegacyFormVersion;
+                }
+                else
+                {
+                    result = Common.Version;
+                }
+                return result;
+            }
         }
 
         private void buttonThanks_Click(object sender, EventArgs e)
