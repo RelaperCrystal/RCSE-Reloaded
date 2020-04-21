@@ -116,10 +116,7 @@ namespace RCSE_Reloaded
 
         private void ResetSize()
         {
-            splitContainer.Height = this.Height - menuStrip1.Height;
-            splitContainer.Height = splitContainer.Height - toolStrip1.Height - statusStrip1.Height;
-            splitContainer.Width = this.Width;
-            buttonCompileNowCs.Width = pageDebug.Width - 5;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -308,7 +305,7 @@ namespace RCSE_Reloaded
             nativeUndo.Text = itemUndo.Text;
             nativeRedo.Text = itemRedo.Text;
             nativeSelectAll.Text = itemSelectAll.Text;
-            nativeDateTime.Text = itemInsertDateTime.Text;
+//            nativeDateTime.Text = itemInsert.Text;
             nativeBingSearch.Text = itemSearchWithBing.Text;
 
             nativeSplit2 = new MenuItem();
@@ -573,14 +570,10 @@ namespace RCSE_Reloaded
 
         private void splitContainer_Resize(object sender, EventArgs e)
         {
-            elementHost1.Width = splitContainer.Panel2.Width;
-            elementHost1.Height = splitContainer.Height;
         }
 
         private void splitContainer_Panel2_SizeChanged(object sender, EventArgs e)
         {
-            elementHost1.Width = splitContainer.Panel2.Width;
-            elementHost1.Height = splitContainer.Height;
         }
 
         private void itemHTML_Click(object sender, EventArgs e) => editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(".html");
@@ -630,11 +623,6 @@ namespace RCSE_Reloaded
 
 
             
-        }
-
-        private void buttonCompileNowCs_Click(object sender, EventArgs e)
-        {
-            CompileWithErrorHandler();
         }
 
         private void CompileWithErrorHandler()
@@ -837,6 +825,13 @@ namespace RCSE_Reloaded
         private void itemEdit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolCompile_Click(object sender, EventArgs e) => CompileWithErrorHandler();
+
+        private void itemInsertLicense_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("尚未实现");
         }
     }
 }

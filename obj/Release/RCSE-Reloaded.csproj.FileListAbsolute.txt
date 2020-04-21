@@ -93,3 +93,4 @@ C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\zh-CN\RCSE_
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csproj.CoreCompileInputs.cache
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSC.dll
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.ErrorForm.resources
+C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.FrmInsertLicense.resources

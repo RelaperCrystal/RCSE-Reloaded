@@ -111,6 +111,12 @@
     <Compile Include="FindDlg.Designer.cs">
       <DependentUpon>FindDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmInsertLicense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInsertLicense.Designer.cs">
+      <DependentUpon>FrmInsertLicense.cs</DependentUpon>
+    </Compile>
     <Compile Include="Launcher\FormHooks\FormHook.cs" />
     <Compile Include="MeetFileDialog.cs">
       <SubType>Form</SubType>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindDlg.resx">
       <DependentUpon>FindDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInsertLicense.resx">
+      <DependentUpon>FrmInsertLicense.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.zh-Hans.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
@@ -216,6 +225,8 @@
     <Content Include="icons\rcse.ico" />
     <Content Include="RCSC.dll" />
     <Content Include="rcse.ico" />
+    <None Include="Resources\CSfile_6224.png" />
+    <None Include="Resources\RCS_csharp.png" />
     <Content Include="RibbonMarkup.xml" />
   </ItemGroup>
   <ItemGroup>

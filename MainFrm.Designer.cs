@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
-            this.splitContainer = new System.Windows.Forms.SplitContainer();
-            this.tabctrlOpreation = new System.Windows.Forms.TabControl();
-            this.pageDebug = new System.Windows.Forms.TabPage();
-            this.buttonCompileNowCs = new System.Windows.Forms.Button();
-            this.pageToolbox = new System.Windows.Forms.TabPage();
-            this.lstvewToolbox = new System.Windows.Forms.ListView();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.itemFile = new System.Windows.Forms.ToolStripMenuItem();
             this.itemNew = new System.Windows.Forms.ToolStripMenuItem();
@@ -57,7 +50,6 @@
             this.itemRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.itemInsertDateTime = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSearchWithBing = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.itemOpenInBrowser = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,80 +75,15 @@
             this.strpbtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
-            this.splitContainer.Panel1.SuspendLayout();
-            this.splitContainer.Panel2.SuspendLayout();
-            this.splitContainer.SuspendLayout();
-            this.tabctrlOpreation.SuspendLayout();
-            this.pageDebug.SuspendLayout();
-            this.pageToolbox.SuspendLayout();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.toolCompile = new System.Windows.Forms.ToolStripButton();
+            this.toolInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemDateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemInsertLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer
-            // 
-            resources.ApplyResources(this.splitContainer, "splitContainer");
-            this.splitContainer.Name = "splitContainer";
-            // 
-            // splitContainer.Panel1
-            // 
-            this.splitContainer.Panel1.Controls.Add(this.tabctrlOpreation);
-            // 
-            // splitContainer.Panel2
-            // 
-            this.splitContainer.Panel2.Controls.Add(this.elementHost1);
-            this.splitContainer.Panel2.SizeChanged += new System.EventHandler(this.splitContainer_Panel2_SizeChanged);
-            this.splitContainer.Resize += new System.EventHandler(this.splitContainer_Resize);
-            // 
-            // tabctrlOpreation
-            // 
-            this.tabctrlOpreation.Controls.Add(this.pageDebug);
-            this.tabctrlOpreation.Controls.Add(this.pageToolbox);
-            resources.ApplyResources(this.tabctrlOpreation, "tabctrlOpreation");
-            this.tabctrlOpreation.Multiline = true;
-            this.tabctrlOpreation.Name = "tabctrlOpreation";
-            this.tabctrlOpreation.SelectedIndex = 0;
-            // 
-            // pageDebug
-            // 
-            this.pageDebug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pageDebug.Controls.Add(this.buttonCompileNowCs);
-            resources.ApplyResources(this.pageDebug, "pageDebug");
-            this.pageDebug.Name = "pageDebug";
-            // 
-            // buttonCompileNowCs
-            // 
-            resources.ApplyResources(this.buttonCompileNowCs, "buttonCompileNowCs");
-            this.buttonCompileNowCs.Name = "buttonCompileNowCs";
-            this.buttonCompileNowCs.UseVisualStyleBackColor = true;
-            this.buttonCompileNowCs.Click += new System.EventHandler(this.buttonCompileNowCs_Click);
-            // 
-            // pageToolbox
-            // 
-            this.pageToolbox.Controls.Add(this.lstvewToolbox);
-            resources.ApplyResources(this.pageToolbox, "pageToolbox");
-            this.pageToolbox.Name = "pageToolbox";
-            this.pageToolbox.UseVisualStyleBackColor = true;
-            // 
-            // lstvewToolbox
-            // 
-            resources.ApplyResources(this.lstvewToolbox, "lstvewToolbox");
-            this.lstvewToolbox.Groups.AddRange(new System.Windows.Forms.ListViewGroup[] {
-            ((System.Windows.Forms.ListViewGroup)(resources.GetObject("lstvewToolbox.Groups")))});
-            this.lstvewToolbox.HideSelection = false;
-            this.lstvewToolbox.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lstvewToolbox.Items")))});
-            this.lstvewToolbox.Name = "lstvewToolbox";
-            this.lstvewToolbox.UseCompatibleStateImageBehavior = false;
-            // 
-            // elementHost1
-            // 
-            resources.ApplyResources(this.elementHost1, "elementHost1");
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.ChildChanged += new System.EventHandler<System.Windows.Forms.Integration.ChildChangedEventArgs>(this.elementHost1_ChildChanged);
-            this.elementHost1.Child = null;
             // 
             // menuStrip1
             // 
@@ -260,7 +187,7 @@
             this.itemRedo,
             this.itemSelectAll,
             this.toolStripMenuItem3,
-            this.itemInsertDateTime,
+            this.toolInsert,
             this.itemSearchWithBing});
             this.itemEdit.ForeColor = System.Drawing.Color.White;
             this.itemEdit.Name = "itemEdit";
@@ -312,12 +239,6 @@
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
-            // 
-            // itemInsertDateTime
-            // 
-            this.itemInsertDateTime.Name = "itemInsertDateTime";
-            resources.ApplyResources(this.itemInsertDateTime, "itemInsertDateTime");
-            this.itemInsertDateTime.Click += new System.EventHandler(this.itemInsertDateTime_Click);
             // 
             // itemSearchWithBing
             // 
@@ -475,7 +396,8 @@
             this.strpbtnNew,
             this.strpbtnSave,
             this.toolStripSeparator1,
-            this.strpbtnRun});
+            this.strpbtnRun,
+            this.toolCompile});
             resources.ApplyResources(this.toolStrip1, "toolStrip1");
             this.toolStrip1.Name = "toolStrip1";
             // 
@@ -505,13 +427,46 @@
             this.strpbtnRun.Name = "strpbtnRun";
             this.strpbtnRun.Click += new System.EventHandler(this.strpbtnRun_Click);
             // 
+            // elementHost1
+            // 
+            resources.ApplyResources(this.elementHost1, "elementHost1");
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Child = null;
+            // 
+            // toolCompile
+            // 
+            this.toolCompile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolCompile, "toolCompile");
+            this.toolCompile.Name = "toolCompile";
+            this.toolCompile.Click += new System.EventHandler(this.toolCompile_Click);
+            // 
+            // toolInsert
+            // 
+            this.toolInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemDateTime,
+            this.itemInsertLicense});
+            this.toolInsert.Name = "toolInsert";
+            resources.ApplyResources(this.toolInsert, "toolInsert");
+            // 
+            // itemDateTime
+            // 
+            this.itemDateTime.Name = "itemDateTime";
+            resources.ApplyResources(this.itemDateTime, "itemDateTime");
+            this.itemDateTime.Click += new System.EventHandler(this.itemInsertDateTime_Click);
+            // 
+            // itemInsertLicense
+            // 
+            this.itemInsertLicense.Name = "itemInsertLicense";
+            resources.ApplyResources(this.itemInsertLicense, "itemInsertLicense");
+            this.itemInsertLicense.Click += new System.EventHandler(this.itemInsertLicense_Click);
+            // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.splitContainer);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = global::RCSE_Reloaded.Properties.Resources.rcse;
@@ -521,13 +476,6 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFrm_FormClosing);
             this.Load += new System.EventHandler(this.MainFrm_Load);
             this.SizeChanged += new System.EventHandler(this.MainFrm_SizeChanged_1);
-            this.splitContainer.Panel1.ResumeLayout(false);
-            this.splitContainer.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
-            this.splitContainer.ResumeLayout(false);
-            this.tabctrlOpreation.ResumeLayout(false);
-            this.pageDebug.ResumeLayout(false);
-            this.pageToolbox.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -540,7 +488,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Integration.ElementHost elementHost1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem itemFile;
         private System.Windows.Forms.ToolStripMenuItem itemEdit;
@@ -556,7 +503,6 @@
         private System.Windows.Forms.ToolStripStatusLabel tlabelStatus;
         private System.Windows.Forms.ToolStripMenuItem itemSaveTo;
         private System.Windows.Forms.ToolStripMenuItem itemAbout;
-        private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.ToolStripMenuItem itemHTML;
         private System.Windows.Forms.ToolStripMenuItem itemXAML;
         private System.Windows.Forms.ToolStripMenuItem itemVB;
@@ -565,11 +511,6 @@
         private System.Windows.Forms.ToolStripMenuItem itemCPP;
         private System.Windows.Forms.ToolStripMenuItem itemDebug;
         private System.Windows.Forms.ToolStripMenuItem itemOpenInBrowser;
-        private System.Windows.Forms.TabControl tabctrlOpreation;
-        private System.Windows.Forms.TabPage pageDebug;
-        private System.Windows.Forms.TabPage pageToolbox;
-        private System.Windows.Forms.ListView lstvewToolbox;
-        private System.Windows.Forms.Button buttonCompileNowCs;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton strpbtnNew;
         private System.Windows.Forms.ToolStripButton strpbtnSave;
@@ -590,10 +531,14 @@
         private System.Windows.Forms.ToolStripMenuItem itemRedo;
         private System.Windows.Forms.ToolStripMenuItem itemSelectAll;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem itemInsertDateTime;
         private System.Windows.Forms.ToolStripMenuItem itemSearchWithBing;
         private System.Windows.Forms.ToolStripMenuItem itemNewWindow;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private System.Windows.Forms.ToolStripButton toolCompile;
+        private System.Windows.Forms.ToolStripMenuItem toolInsert;
+        private System.Windows.Forms.ToolStripMenuItem itemDateTime;
+        private System.Windows.Forms.ToolStripMenuItem itemInsertLicense;
     }
 }
 
