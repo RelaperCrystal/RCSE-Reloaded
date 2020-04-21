@@ -65,21 +65,9 @@
     <Compile Include="CommandLineOptions.cs" />
     <Compile Include="Common.cs" />
     <Compile Include="CompilerManager.cs" />
-    <Compile Include="ErrorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ErrorForm.Designer.cs">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Events.cs" />
     <Compile Include="FluentService\Transparent.cs" />
     <Compile Include="FolderTree.cs" />
-    <Compile Include="HtmlViewerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HtmlViewerForm.Designer.cs">
-      <DependentUpon>HtmlViewerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\IPlugin.cs" />
     <Compile Include="Launches\Form\ILaunchForm.cs" />
     <Compile Include="Localization\LangIDHelper.cs" />
@@ -103,18 +91,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ErrorForm.en.resx">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ErrorForm.resx">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ErrorForm.zh-CN.resx">
-      <DependentUpon>ErrorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="HtmlViewerForm.resx">
-      <DependentUpon>HtmlViewerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewAbout.en.resx">
       <DependentUpon>NewAbout.cs</DependentUpon>
     </EmbeddedResource>
