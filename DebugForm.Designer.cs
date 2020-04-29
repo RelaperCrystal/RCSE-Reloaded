@@ -41,7 +41,7 @@
             // propertyGrid1
             // 
             this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
-            this.propertyGrid1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.propertyGrid1.Margin = new System.Windows.Forms.Padding(4);
             this.propertyGrid1.Name = "propertyGrid1";
             this.propertyGrid1.Size = new System.Drawing.Size(279, 411);
             this.propertyGrid1.TabIndex = 0;
@@ -49,11 +49,11 @@
             // buttonShowErrorFrm
             // 
             this.buttonShowErrorFrm.Location = new System.Drawing.Point(291, 3);
-            this.buttonShowErrorFrm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonShowErrorFrm.Margin = new System.Windows.Forms.Padding(4);
             this.buttonShowErrorFrm.Name = "buttonShowErrorFrm";
             this.buttonShowErrorFrm.Size = new System.Drawing.Size(276, 34);
             this.buttonShowErrorFrm.TabIndex = 1;
-            this.buttonShowErrorFrm.Text = "显示错误窗口";
+            this.buttonShowErrorFrm.Text = "引发异常";
             this.buttonShowErrorFrm.UseVisualStyleBackColor = true;
             this.buttonShowErrorFrm.Click += new System.EventHandler(this.buttonShowErrorFrm_Click);
             // 
@@ -70,7 +70,7 @@
             // buttonReset
             // 
             this.buttonReset.Location = new System.Drawing.Point(291, 46);
-            this.buttonReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonReset.Margin = new System.Windows.Forms.Padding(4);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(276, 34);
             this.buttonReset.TabIndex = 3;
@@ -117,7 +117,7 @@
             this.Controls.Add(this.propertyGrid1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DebugForm";

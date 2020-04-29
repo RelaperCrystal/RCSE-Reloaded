@@ -24,8 +24,7 @@ namespace RCSE_Reloaded
 
         private void buttonShowErrorFrm_Click(object sender, EventArgs e)
         {
-            ErrorForm errorForm = new ErrorForm(new Exception("使用调试工具生成"));
-            errorForm.Show();
+            throw new ArgumentException();
         }
 
         private void button1_Click(object sender, EventArgs e)
