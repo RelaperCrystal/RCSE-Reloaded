@@ -8,13 +8,15 @@ _快照火热发行中！ 前往 Releases 页面了解更多！_
 
 | 名称     | Badge                                                        |
 | -------- | ------------------------------------------------------------ |
-| 构建     | [![Build Status](https://endermanmc.visualstudio.com/RCSEReloaded-CI/_apis/build/status/RelaperCrystal.RCSE-Reloaded?branchName=master)](https://endermanmc.visualstudio.com/RCSEReloaded-CI/_build/latest?definitionId=6&branchName=master) |
+| 构建     | ![Azure DevOps builds](https://img.shields.io/azure-devops/build/EndermanMC/3294c2da-3353-4772-aaf9-f5375d96fc9e/6?style=flat-square) |
 | 协议     | ![GitHub](https://img.shields.io/github/license/RelaperCrystal/RCSE-Reloaded) |
 | 当前版本 | ![GitHub release (latest by date)](https://img.shields.io/github/v/release/RelaperCrystal/RCSE-Reloaded) |
 
-## RC 版本
+## 版本说明
 
-RC 相比之前的测试版更新可能会更缓慢，也会更稳定。
+快照版是下一个版本的预览版，每次修改不论大小都会有一个自己的快照版，但是大部分快照版都是不发布二进制文件的。Alpha 版是快照版之上的版本，稳定性比快照版好，通常在下一个版本的所有主要新增内容完成后发布，不再添加大功能。Beta 版是 Alpha 之上的版本，不再添加任何功能，仅做微调和 Bug 修复。发布候选是 Beta 之上的版本，不再添加任何功能，注重修复问题。其后便是正式版，为了修复 bug 通常会有正式版之后的小版本。
+
+一个版本的所有预览版本共享一个分支，在正式发布后与 master 合并并且移除该预览分支。
 
 ## 安装程序
 
