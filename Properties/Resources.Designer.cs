@@ -61,6 +61,15 @@ namespace RCSE_Reloaded.Properties {
         }
         
         /// <summary>
+        ///   查找类似  的本地化字符串。
+        /// </summary>
+        internal static string GPL3 {
+            get {
+                return ResourceManager.GetString("GPL3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap RCS_csharp {

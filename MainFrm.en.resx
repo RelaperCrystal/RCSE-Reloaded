@@ -117,138 +117,66 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="elementHost1.Text" xml:space="preserve">
-    <value>C</value>
-  </data>
-  <data name="pageDebug.Text" xml:space="preserve">
-    <value>Debug</value>
-  </data>
-  <data name="buttonCompileNowCs.Text" xml:space="preserve">
-    <value>Compile C#</value>
-  </data>
-  <data name="pageToolbox.Text" xml:space="preserve">
-    <value>Toolbox</value>
-  </data>
-  <data name="lstvewToolbox.Groups" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACJTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0dyb3VwDAAAAAZIZWFkZXIPSGVhZGVyQWxpZ25tZW50A1Rh
-        ZwROYW1lCkl0ZW1zQ291bnQFSXRlbTAFSXRlbTEFSXRlbTIFSXRlbTMFSXRlbTQFSXRlbTUFSXRlbTYB
-        BAIBAAQEBAQEBAQoU3lzdGVtLldpbmRvd3MuRm9ybXMuSG9yaXpvbnRhbEFsaWdubWVudAIAAAAIIVN5
-        c3RlbS5XaW5kb3dzLkZvcm1zLkxpc3RWaWV3SXRlbQIAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlz
-        dFZpZXdJdGVtAgAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0CAAAAIVN5c3RlbS5X
-        aW5kb3dzLkZvcm1zLkxpc3RWaWV3SXRlbQIAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJ
-        dGVtAgAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0CAAAAIVN5c3RlbS5XaW5kb3dz
-        LkZvcm1zLkxpc3RWaWV3SXRlbQIAAAACAAAABgMAAAAITGljZW5zZXMF/P///yhTeXN0ZW0uV2luZG93
-        cy5Gb3Jtcy5Ib3Jpem9udGFsQWxpZ25tZW50AQAAAAd2YWx1ZV9fAAgCAAAAAAAAAAoGBQAAAA9sdmdy
-        b3VwTGljZW5zZXMHAAAACQYAAAAJBwAAAAkIAAAACQkAAAAJCgAAAAkLAAAACQwAAAAMDQAAAFFTeXN0
-        ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
-        PWIwM2Y1ZjdmMTFkNTBhM2EFBgAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0IAAAA
-        BFRleHQKSW1hZ2VJbmRleAlCYWNrQ29sb3IHQ2hlY2tlZARGb250CUZvcmVDb2xvchdVc2VJdGVtU3R5
-        bGVGb3JTdWJJdGVtcwVHcm91cAEABAAEBAAECBRTeXN0ZW0uRHJhd2luZy5Db2xvcg0AAAABE1N5c3Rl
-        bS5EcmF3aW5nLkZvbnQNAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yDQAAAAEiU3lzdGVtLldpbmRvd3Mu
-        Rm9ybXMuTGlzdFZpZXdHcm91cAIAAAACAAAABg4AAAAGR1BMIHYz/////wXx////FFN5c3RlbS5EcmF3
-        aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHDQAAAAoAAAAAAAAA
-        ABgAAQAACRAAAAAB7/////H///8KAAAAAAAAAAAaAAEAAQkBAAAAAQcAAAAGAAAABhMAAAAGR1BMIHYz
-        /////wHs////8f///woAAAAAAAAAABgAAQAACRUAAAAB6v////H///8KAAAAAAAAAAAaAAEAAQkBAAAA
-        AQgAAAAGAAAABhgAAAAGR1BMIHYz/////wHn////8f///woAAAAAAAAAABgAAQAACRoAAAAB5f////H/
-        //8KAAAAAAAAAAAaAAEAAQkBAAAAAQkAAAAGAAAABh0AAAAGR1BMIHYz/////wHi////8f///woAAAAA
-        AAAAABgAAQAACR8AAAAB4P////H///8KAAAAAAAAAAAaAAEAAQkBAAAAAQoAAAAGAAAABiIAAAAGR1BM
-        IHYz/////wHd////8f///woAAAAAAAAAABgAAQAACSQAAAAB2/////H///8KAAAAAAAAAAAaAAEAAQkB
-        AAAAAQsAAAAGAAAABicAAAAGR1BMIHYz/////wHY////8f///woAAAAAAAAAABgAAQAACSkAAAAB1v//
-        //H///8KAAAAAAAAAAAaAAEAAQkBAAAAAQwAAAAGAAAABiwAAAAGR1BMIHYz/////wHT////8f///woA
-        AAAAAAAAABgAAQAACS4AAAAB0f////H///8KAAAAAAAAAAAaAAEAAQkBAAAABRAAAAATU3lzdGVtLkRy
-        YXdpbmcuRm9udAQAAAAETmFtZQRTaXplBVN0eWxlBFVuaXQBAAQECxhTeXN0ZW0uRHJhd2luZy5Gb250
-        U3R5bGUNAAAAG1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdA0AAAANAAAABjEAAAAM5b6u6L2v6ZuF
-        6buRAAAQQQXO////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIDQAAAAAAAAAF
-        zf///xtTeXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACA0AAAADAAAAARUAAAAQ
-        AAAABjQAAAAM5b6u6L2v6ZuF6buRAAAQQQHL////zv///wAAAAAByv///83///8DAAAAARoAAAAQAAAA
-        BjcAAAAM5b6u6L2v6ZuF6buRAAAQQQHI////zv///wAAAAABx////83///8DAAAAAR8AAAAQAAAABjoA
-        AAAM5b6u6L2v6ZuF6buRAAAQQQHF////zv///wAAAAABxP///83///8DAAAAASQAAAAQAAAABj0AAAAM
-        5b6u6L2v6ZuF6buRAAAQQQHC////zv///wAAAAABwf///83///8DAAAAASkAAAAQAAAABkAAAAAM5b6u
-        6L2v6ZuF6buRAAAQQQG/////zv///wAAAAABvv///83///8DAAAAAS4AAAAQAAAABkMAAAAM5b6u6L2v
-        6ZuF6buRAAAQQQG8////zv///wAAAAABu////83///8DAAAACw==
-</value>
-  </data>
-  <data name="lstvewToolbox.Items" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkMAwAAAFFTeXN0
-        ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
-        PWIwM2Y1ZjdmMTFkNTBhM2EFAQAAACFTeXN0ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0IAAAA
-        BFRleHQKSW1hZ2VJbmRleAlCYWNrQ29sb3IHQ2hlY2tlZARGb250CUZvcmVDb2xvchdVc2VJdGVtU3R5
-        bGVGb3JTdWJJdGVtcwVHcm91cAEABAAEBAAECBRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAABE1N5c3Rl
-        bS5EcmF3aW5nLkZvbnQDAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAAEiU3lzdGVtLldpbmRvd3Mu
-        Rm9ybXMuTGlzdFZpZXdHcm91cAIAAAACAAAABgQAAAAGR1BMIHYz/////wX7////FFN5c3RlbS5EcmF3
-        aW5nLkNvbG9yBAAAAARuYW1lBXZhbHVlCmtub3duQ29sb3IFc3RhdGUBAAAACQcHAwAAAAoAAAAAAAAA
-        ABgAAQAACQYAAAAB+f////v///8KAAAAAAAAAAAaAAEAAQkIAAAABQYAAAATU3lzdGVtLkRyYXdpbmcu
-        Rm9udAQAAAAETmFtZQRTaXplBVN0eWxlBFVuaXQBAAQECxhTeXN0ZW0uRHJhd2luZy5Gb250U3R5bGUD
-        AAAAG1N5c3RlbS5EcmF3aW5nLkdyYXBoaWNzVW5pdAMAAAADAAAABgkAAAAM5b6u6L2v6ZuF6buRAAAQ
-        QQX2////GFN5c3RlbS5EcmF3aW5nLkZvbnRTdHlsZQEAAAAHdmFsdWVfXwAIAwAAAAAAAAAF9f///xtT
-        eXN0ZW0uRHJhd2luZy5HcmFwaGljc1VuaXQBAAAAB3ZhbHVlX18ACAMAAAADAAAABQgAAAAiU3lzdGVt
-        LldpbmRvd3MuRm9ybXMuTGlzdFZpZXdHcm91cAwAAAAGSGVhZGVyD0hlYWRlckFsaWdubWVudANUYWcE
-        TmFtZQpJdGVtc0NvdW50BUl0ZW0wBUl0ZW0xBUl0ZW0yBUl0ZW0zBUl0ZW00BUl0ZW01BUl0ZW02AQQC
-        AQAEBAQEBAQEKFN5c3RlbS5XaW5kb3dzLkZvcm1zLkhvcml6b250YWxBbGlnbm1lbnQCAAAACCFTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0CAAAAIVN5c3RlbS5XaW5kb3dzLkZvcm1zLkxpc3RW
-        aWV3SXRlbQIAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtAgAAACFTeXN0ZW0uV2lu
-        ZG93cy5Gb3Jtcy5MaXN0Vmlld0l0ZW0CAAAAIVN5c3RlbS5XaW5kb3dzLkZvcm1zLkxpc3RWaWV3SXRl
-        bQIAAAAhU3lzdGVtLldpbmRvd3MuRm9ybXMuTGlzdFZpZXdJdGVtAgAAACFTeXN0ZW0uV2luZG93cy5G
-        b3Jtcy5MaXN0Vmlld0l0ZW0CAAAAAgAAAAYMAAAACExpY2Vuc2VzBfP///8oU3lzdGVtLldpbmRvd3Mu
-        Rm9ybXMuSG9yaXpvbnRhbEFsaWdubWVudAEAAAAHdmFsdWVfXwAIAgAAAAAAAAAKBg4AAAAPbHZncm91
-        cExpY2Vuc2VzBwAAAAkPAAAACRAAAAAJEQAAAAkSAAAACRMAAAAJFAAAAAkBAAAAAQ8AAAABAAAABhYA
-        AAAGR1BMIHYz/////wHp////+////woAAAAAAAAAABgAAQAACRgAAAAB5/////v///8KAAAAAAAAAAAa
-        AAEAAQkIAAAAARAAAAABAAAABhsAAAAGR1BMIHYz/////wHk////+////woAAAAAAAAAABgAAQAACR0A
-        AAAB4v////v///8KAAAAAAAAAAAaAAEAAQkIAAAAAREAAAABAAAABiAAAAAGR1BMIHYz/////wHf////
-        +////woAAAAAAAAAABgAAQAACSIAAAAB3f////v///8KAAAAAAAAAAAaAAEAAQkIAAAAARIAAAABAAAA
-        BiUAAAAGR1BMIHYz/////wHa////+////woAAAAAAAAAABgAAQAACScAAAAB2P////v///8KAAAAAAAA
-        AAAaAAEAAQkIAAAAARMAAAABAAAABioAAAAGR1BMIHYz/////wHV////+////woAAAAAAAAAABgAAQAA
-        CSwAAAAB0/////v///8KAAAAAAAAAAAaAAEAAQkIAAAAARQAAAABAAAABi8AAAAGR1BMIHYz/////wHQ
-        ////+////woAAAAAAAAAABgAAQAACTEAAAABzv////v///8KAAAAAAAAAAAaAAEAAQkIAAAAARgAAAAG
-        AAAABjQAAAAM5b6u6L2v6ZuF6buRAAAQQQHL////9v///wAAAAAByv////X///8DAAAAAR0AAAAGAAAA
-        BjcAAAAM5b6u6L2v6ZuF6buRAAAQQQHI////9v///wAAAAABx/////X///8DAAAAASIAAAAGAAAABjoA
-        AAAM5b6u6L2v6ZuF6buRAAAQQQHF////9v///wAAAAABxP////X///8DAAAAAScAAAAGAAAABj0AAAAM
-        5b6u6L2v6ZuF6buRAAAQQQHC////9v///wAAAAABwf////X///8DAAAAASwAAAAGAAAABkAAAAAM5b6u
-        6L2v6ZuF6buRAAAQQQG/////9v///wAAAAABvv////X///8DAAAAATEAAAAGAAAABkMAAAAM5b6u6L2v
-        6ZuF6buRAAAQQQG8////9v///wAAAAABu/////X///8DAAAACw==
-</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="itemNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemNew.Text" xml:space="preserve">
+    <value>&amp;New</value>
+  </data>
+  <data name="itemOpen.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemOpen.Text" xml:space="preserve">
+    <value>O&amp;pen</value>
+  </data>
+  <data name="itemNewWindow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemNewWindow.Text" xml:space="preserve">
+    <value>New &amp;Window</value>
+  </data>
+  <data name="toolStripMenuItem4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 6</value>
+  </data>
+  <data name="itemSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemSave.Text" xml:space="preserve">
+    <value>&amp;Save</value>
+  </data>
+  <data name="itemSaveTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemSaveTo.Text" xml:space="preserve">
+    <value>S&amp;ave to</value>
+  </data>
+  <data name="itemPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemPrint.Text" xml:space="preserve">
+    <value>&amp;Print</value>
+  </data>
+  <data name="itemSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemSetting.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="split1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 6</value>
+  </data>
+  <data name="itemQuit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemQuit.Text" xml:space="preserve">
+    <value>&amp;Quit</value>
+  </data>
   <data name="itemFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 28</value>
   </data>
   <data name="itemFile.Text" xml:space="preserve">
     <value>&amp;File</value>
-  </data>
-  <data name="itemNew.Text" xml:space="preserve">
-    <value>&amp;New</value>
-  </data>
-  <data name="itemOpen.Text" xml:space="preserve">
-    <value>O&amp;pen</value>
-  </data>
-  <data name="itemNewWindow.Text" xml:space="preserve">
-    <value>New &amp;Window</value>
-  </data>
-  <data name="itemSave.Text" xml:space="preserve">
-    <value>&amp;Save</value>
-  </data>
-  <data name="itemSaveTo.Text" xml:space="preserve">
-    <value>S&amp;ave to</value>
-  </data>
-  <data name="itemPrint.Text" xml:space="preserve">
-    <value>&amp;Print</value>
-  </data>
-  <data name="itemSetting.Text" xml:space="preserve">
-    <value>Settings</value>
-  </data>
-  <data name="itemQuit.Text" xml:space="preserve">
-    <value>&amp;Quit</value>
-  </data>
-  <data name="itemEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 28</value>
-  </data>
-  <data name="itemEdit.Text" xml:space="preserve">
-    <value>&amp;Edit</value>
   </data>
   <data name="itemCopy.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 34</value>
@@ -272,19 +200,19 @@
     <value>&amp;Paste</value>
   </data>
   <data name="itemUndo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemUndo.Text" xml:space="preserve">
     <value>U&amp;ndo</value>
   </data>
   <data name="itemRedo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemRedo.Text" xml:space="preserve">
     <value>&amp;Redo</value>
   </data>
   <data name="itemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSelectAll.Text" xml:space="preserve">
     <value>Select &amp;All</value>
@@ -292,17 +220,41 @@
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
     <value>267, 6</value>
   </data>
-  <data name="itemInsertDateTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 34</value>
+  <data name="itemDateTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
-  <data name="itemInsertDateTime.Text" xml:space="preserve">
-    <value>Insert Time and Date...</value>
+  <data name="itemDateTime.Text" xml:space="preserve">
+    <value>Date &amp;&amp; Time...</value>
+  </data>
+  <data name="itemInsertLicense.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="itemInsertLicense.Text" xml:space="preserve">
+    <value>Insert License</value>
+  </data>
+  <data name="toolInsert.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="toolInsert.Text" xml:space="preserve">
+    <value>&amp;Insert</value>
   </data>
   <data name="itemSearchWithBing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSearchWithBing.Text" xml:space="preserve">
     <value>Search with Bing...</value>
+  </data>
+  <data name="itemEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 28</value>
+  </data>
+  <data name="itemEdit.Text" xml:space="preserve">
+    <value>&amp;Edit</value>
+  </data>
+  <data name="itemOpenInBrowser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="itemOpenInBrowser.Text" xml:space="preserve">
+    <value>Open in Browser...</value>
   </data>
   <data name="itemDebug.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 28</value>
@@ -310,17 +262,17 @@
   <data name="itemDebug.Text" xml:space="preserve">
     <value>&amp;Debug</value>
   </data>
-  <data name="itemOpenInBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 34</value>
+  <data name="itemCSharp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
-  <data name="itemOpenInBrowser.Text" xml:space="preserve">
-    <value>Open in Browser...</value>
+  <data name="itemHTML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
-  <data name="itemFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 28</value>
+  <data name="itemXAML.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
-  <data name="itemFormat.Text" xml:space="preserve">
-    <value>F&amp;ormat</value>
+  <data name="itemVB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
   <data name="itemPlainC.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 34</value>
@@ -331,29 +283,44 @@
   <data name="itemCPP.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 34</value>
   </data>
-  <data name="itemHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 28</value>
+  <data name="itemCSeries.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
   </data>
-  <data name="itemHelp.Text" xml:space="preserve">
-    <value>&amp;Help</value>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 6</value>
+  </data>
+  <data name="itemMeetFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="itemFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 28</value>
+  </data>
+  <data name="itemFormat.Text" xml:space="preserve">
+    <value>F&amp;ormat</value>
   </data>
   <data name="itemAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemAbout.Text" xml:space="preserve">
     <value>&amp;About</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 6</value>
+    <value>267, 6</value>
   </data>
   <data name="itemIssues.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSysInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSysInfo.Text" xml:space="preserve">
     <value>System Info...</value>
+  </data>
+  <data name="itemHelp.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 28</value>
+  </data>
+  <data name="itemHelp.Text" xml:space="preserve">
+    <value>&amp;Help</value>
   </data>
   <data name="tlabelStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 24</value>
@@ -390,9 +357,25 @@
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAACgSURBVDhPY6ANqGfggLLIAPX8Agz1fP8Z6nlsoCJkAJAB
-        BXzfgXQGVIREAHYBGP8izxCEAWQagmoAGYZgGgANE34nqAoCAJsB1dz3gfQfhkpucagqPACbAfXcX4BR
+        +XzfgXQGVIREAHYBGP8izxCEAWQagmoAGYZgGgANE34nqAoCAJsB1dz3gfQfhkpucagqPACbAfXcX4BR
         GwBVQQCgaOT8xFDP/g7IDoPKEgFgmss4PzLU8h1lqBflgcoQCWCa6/kWAZM1C1SUSACyDewC3gSoCBkA
-        lB/oAxgYAHGaU3sDK9HnAAAAAElFTkSuQmCC
+        lB/oAxgYAGxIU3lQvmz3AAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="toolCompile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAADCSURBVDhPY8AGvn379p9YDNWCCkASTk5OBDGGAcgmE8I4
+        DUC3BRvGMADEIBbjNABmOj6M14AP7z/C8cOnb8AYWYxoA0AadQvWgDGyIUQZANPMEDwHjJENIWgATDNf
+        zML/3i3b/8ulLQezYYYQNGDpvmtgDYcvPfxfsej4f5uqjWA2SKx91RnCBsC8AKJhBoDYl24/w+oFGEYx
+        AIaRDYBhrDbDACkGwDBUKwSgGwByNsj/yGJYbYYBZJMJYagWKGBgAADqsKqwh+bMJQAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="toolCompile.Text" xml:space="preserve">
+    <value>Compile</value>
+  </data>
+  <data name="elementHost1.Text" xml:space="preserve">
+    <value>C</value>
   </data>
 </root>

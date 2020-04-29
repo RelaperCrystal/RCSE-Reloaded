@@ -50,6 +50,9 @@
             this.itemRedo = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemDateTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemInsertLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSearchWithBing = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.itemOpenInBrowser = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,11 +78,8 @@
             this.strpbtnSave = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.toolCompile = new System.Windows.Forms.ToolStripButton();
-            this.toolInsert = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemDateTime = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemInsertLicense = new System.Windows.Forms.ToolStripMenuItem();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -87,8 +87,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
@@ -113,7 +112,7 @@
             this.itemSetting,
             this.split1,
             this.itemQuit});
-            this.itemFile.ForeColor = System.Drawing.Color.White;
+            this.itemFile.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemFile.Name = "itemFile";
             resources.ApplyResources(this.itemFile, "itemFile");
             this.itemFile.Click += new System.EventHandler(this.itemFile_Click);
@@ -189,7 +188,7 @@
             this.toolStripMenuItem3,
             this.toolInsert,
             this.itemSearchWithBing});
-            this.itemEdit.ForeColor = System.Drawing.Color.White;
+            this.itemEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemEdit.Name = "itemEdit";
             resources.ApplyResources(this.itemEdit, "itemEdit");
             this.itemEdit.Click += new System.EventHandler(this.itemEdit_Click);
@@ -240,6 +239,26 @@
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
             // 
+            // toolInsert
+            // 
+            this.toolInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemDateTime,
+            this.itemInsertLicense});
+            this.toolInsert.Name = "toolInsert";
+            resources.ApplyResources(this.toolInsert, "toolInsert");
+            // 
+            // itemDateTime
+            // 
+            this.itemDateTime.Name = "itemDateTime";
+            resources.ApplyResources(this.itemDateTime, "itemDateTime");
+            this.itemDateTime.Click += new System.EventHandler(this.itemInsertDateTime_Click);
+            // 
+            // itemInsertLicense
+            // 
+            this.itemInsertLicense.Name = "itemInsertLicense";
+            resources.ApplyResources(this.itemInsertLicense, "itemInsertLicense");
+            this.itemInsertLicense.Click += new System.EventHandler(this.itemInsertLicense_Click);
+            // 
             // itemSearchWithBing
             // 
             this.itemSearchWithBing.Name = "itemSearchWithBing";
@@ -250,7 +269,7 @@
             // 
             this.itemDebug.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemOpenInBrowser});
-            this.itemDebug.ForeColor = System.Drawing.Color.White;
+            this.itemDebug.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemDebug.Name = "itemDebug";
             resources.ApplyResources(this.itemDebug, "itemDebug");
             // 
@@ -270,7 +289,7 @@
             this.itemCSeries,
             this.toolStripMenuItem1,
             this.itemMeetFile});
-            this.itemFormat.ForeColor = System.Drawing.Color.White;
+            this.itemFormat.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemFormat.Name = "itemFormat";
             resources.ApplyResources(this.itemFormat, "itemFormat");
             // 
@@ -336,16 +355,16 @@
             this.toolStripMenuItem2,
             this.itemIssues,
             this.itemSysInfo});
-            this.itemHelp.ForeColor = System.Drawing.Color.White;
+            this.itemHelp.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemHelp.Name = "itemHelp";
             resources.ApplyResources(this.itemHelp, "itemHelp");
             this.itemHelp.Click += new System.EventHandler(this.itemHelp_Click);
             // 
             // itemAbout
             // 
-            this.itemAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.itemAbout.BackColor = System.Drawing.SystemColors.Control;
             this.itemAbout.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.itemAbout.ForeColor = System.Drawing.Color.White;
+            this.itemAbout.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemAbout.Name = "itemAbout";
             resources.ApplyResources(this.itemAbout, "itemAbout");
             this.itemAbout.Click += new System.EventHandler(this.itemAbout_Click);
@@ -359,22 +378,22 @@
             // 
             // itemIssues
             // 
-            this.itemIssues.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.itemIssues.ForeColor = System.Drawing.Color.White;
+            this.itemIssues.BackColor = System.Drawing.SystemColors.Control;
+            this.itemIssues.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemIssues.Name = "itemIssues";
             resources.ApplyResources(this.itemIssues, "itemIssues");
             // 
             // itemSysInfo
             // 
-            this.itemSysInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.itemSysInfo.ForeColor = System.Drawing.Color.White;
+            this.itemSysInfo.BackColor = System.Drawing.SystemColors.Control;
+            this.itemSysInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemSysInfo.Name = "itemSysInfo";
             resources.ApplyResources(this.itemSysInfo, "itemSysInfo");
             this.itemSysInfo.Click += new System.EventHandler(this.itemSysInfo_Click);
             // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.statusStrip1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlabelStatus});
@@ -390,7 +409,7 @@
             // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.Control;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.strpbtnNew,
@@ -427,12 +446,6 @@
             this.strpbtnRun.Name = "strpbtnRun";
             this.strpbtnRun.Click += new System.EventHandler(this.strpbtnRun_Click);
             // 
-            // elementHost1
-            // 
-            resources.ApplyResources(this.elementHost1, "elementHost1");
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Child = null;
-            // 
             // toolCompile
             // 
             this.toolCompile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -440,31 +453,18 @@
             this.toolCompile.Name = "toolCompile";
             this.toolCompile.Click += new System.EventHandler(this.toolCompile_Click);
             // 
-            // toolInsert
+            // elementHost1
             // 
-            this.toolInsert.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.itemDateTime,
-            this.itemInsertLicense});
-            this.toolInsert.Name = "toolInsert";
-            resources.ApplyResources(this.toolInsert, "toolInsert");
-            // 
-            // itemDateTime
-            // 
-            this.itemDateTime.Name = "itemDateTime";
-            resources.ApplyResources(this.itemDateTime, "itemDateTime");
-            this.itemDateTime.Click += new System.EventHandler(this.itemInsertDateTime_Click);
-            // 
-            // itemInsertLicense
-            // 
-            this.itemInsertLicense.Name = "itemInsertLicense";
-            resources.ApplyResources(this.itemInsertLicense, "itemInsertLicense");
-            this.itemInsertLicense.Click += new System.EventHandler(this.itemInsertLicense_Click);
+            this.elementHost1.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.elementHost1, "elementHost1");
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Child = null;
             // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);

@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsFrm));
             this.groupDisplay = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkLightColor = new System.Windows.Forms.CheckBox();
             this.labelMainMenu = new System.Windows.Forms.Label();
             this.checkUseMainMenu = new System.Windows.Forms.CheckBox();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.groupDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,12 @@
             this.groupDisplay.Name = "groupDisplay";
             this.groupDisplay.TabStop = false;
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Name = "label1";
+            // 
             // checkBox1
             // 
             resources.ApplyResources(this.checkBox1, "checkBox1");
@@ -61,6 +68,8 @@
             // checkLightColor
             // 
             resources.ApplyResources(this.checkLightColor, "checkLightColor");
+            this.checkLightColor.Checked = true;
+            this.checkLightColor.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkLightColor.Name = "checkLightColor";
             this.checkLightColor.UseVisualStyleBackColor = true;
             // 
@@ -77,21 +86,24 @@
             // 
             // buttonOK
             // 
+            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // label1
+            // buttonCancel
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Name = "label1";
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
             // 
             // SettingsFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -116,5 +128,6 @@
         private System.Windows.Forms.CheckBox checkLightColor;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonCancel;
     }
 }

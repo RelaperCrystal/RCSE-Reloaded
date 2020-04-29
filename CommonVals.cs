@@ -9,13 +9,13 @@ namespace RCSE_Reloaded
     class CommonVals
     {
         public static string filters = "C# 源代码 (*.cs)|*.cs|C 源代码 (*.c)|*.c|C++ 源代码 (*.cpp;*.cxx)|*.cpp;*.cxx|Visual Basic 源代码 (*.vb)|*.vb|HTML (*.htm;*.html)|*.htm;*.html|XAML (*.xml)|*.xml|YAML (*.yml)|*.yml|Properties (*.properties)|*.properties|批处理文件 (*.bat;*.cmd)|*.bat;*.cmd|JAVA (*.java)|*.java|Python (*.py)|*.py|所有文件 (*.*)|*.*";
-        public const string snapshot = "21:20-17-B_ns";
+        public const string snapshot = "21:20-18-A";
         public const string verNumber = "1.1";
         public const bool isSnapshot = true;
         public const string programName = "SimpleEditor";
         public const string programFullName = "RelaperCrystal's Simple Editor";
         public const string programShortName = "RCSE";
-        public const string legacyFormVersion = snapshot + "/1--20200421A";
+        public const string legacyFormVersion = snapshot + "/1--20200429A";
     }
 
     public struct Setting
