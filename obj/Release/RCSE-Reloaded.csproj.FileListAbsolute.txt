@@ -94,3 +94,4 @@ C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE-Reload
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSC.dll
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.ErrorForm.resources
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.FrmInsertLicense.resources
+C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.ErrorForm.en.resources
