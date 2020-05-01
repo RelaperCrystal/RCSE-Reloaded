@@ -20,7 +20,15 @@ namespace RCSE_Reloaded.API
 
         private void NewAbout_Load(object sender, EventArgs e)
         {
-            label3.Text = $"版本: {Version}\r\n\r\n本软件希望其对您可能有用，但不负有任何担保责任。";
+            if(System.Threading.Thread.CurrentThread.CurrentCulture.Name != "en_US")
+            {
+                label3.Text = $"版本: {Version}\r\n\r\n本软件希望其对您可能有用，但不负有任何担保责任。";
+            }
+            else
+            {
+                label3.Text = $"Version: {Version}\r\n\r\n This program is distributed in the hope that it will be useful, but without any warranty.";
+            }
+            
         }
 
         private string Version
@@ -48,6 +56,11 @@ namespace RCSE_Reloaded.API
         private void buttonClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonLicense_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Properties.Resources.SimpleEditor_License);
         }
     }
 }

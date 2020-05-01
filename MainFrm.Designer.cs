@@ -38,7 +38,6 @@
             this.itemSave = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSaveTo = new System.Windows.Forms.ToolStripMenuItem();
             this.itemPrint = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemSetting = new System.Windows.Forms.ToolStripMenuItem();
             this.split1 = new System.Windows.Forms.ToolStripSeparator();
             this.itemQuit = new System.Windows.Forms.ToolStripMenuItem();
             this.itemEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,6 +53,9 @@
             this.itemDateTime = new System.Windows.Forms.ToolStripMenuItem();
             this.itemInsertLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSearchWithBing = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemTools = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSavePower = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDebug = new System.Windows.Forms.ToolStripMenuItem();
             this.itemOpenInBrowser = new System.Windows.Forms.ToolStripMenuItem();
             this.itemFormat = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,6 +82,8 @@
             this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
             this.toolCompile = new System.Windows.Forms.ToolStripButton();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.itemOpenFromWeb = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolProgress = new System.Windows.Forms.ToolStripProgressBar();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -88,10 +92,12 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
             this.itemEdit,
+            this.itemTools,
             this.itemDebug,
             this.itemFormat,
             this.itemHelp});
@@ -103,13 +109,13 @@
             // 
             this.itemFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemNew,
+            this.itemOpenFromWeb,
             this.itemOpen,
             this.itemNewWindow,
             this.toolStripMenuItem4,
             this.itemSave,
             this.itemSaveTo,
             this.itemPrint,
-            this.itemSetting,
             this.split1,
             this.itemQuit});
             this.itemFile.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -157,12 +163,6 @@
             this.itemPrint.Name = "itemPrint";
             resources.ApplyResources(this.itemPrint, "itemPrint");
             this.itemPrint.Click += new System.EventHandler(this.itemPrint_Click);
-            // 
-            // itemSetting
-            // 
-            this.itemSetting.Name = "itemSetting";
-            resources.ApplyResources(this.itemSetting, "itemSetting");
-            this.itemSetting.Click += new System.EventHandler(this.itemSetting_Click);
             // 
             // split1
             // 
@@ -264,6 +264,26 @@
             this.itemSearchWithBing.Name = "itemSearchWithBing";
             resources.ApplyResources(this.itemSearchWithBing, "itemSearchWithBing");
             this.itemSearchWithBing.Click += new System.EventHandler(this.itemSearchWithBing_Click);
+            // 
+            // itemTools
+            // 
+            this.itemTools.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemSettings,
+            this.itemSavePower});
+            this.itemTools.Name = "itemTools";
+            resources.ApplyResources(this.itemTools, "itemTools");
+            // 
+            // itemSettings
+            // 
+            this.itemSettings.Name = "itemSettings";
+            resources.ApplyResources(this.itemSettings, "itemSettings");
+            this.itemSettings.Click += new System.EventHandler(this.itemSettings_Click);
+            // 
+            // itemSavePower
+            // 
+            this.itemSavePower.Name = "itemSavePower";
+            resources.ApplyResources(this.itemSavePower, "itemSavePower");
+            this.itemSavePower.Click += new System.EventHandler(this.itemSavePower_Click);
             // 
             // itemDebug
             // 
@@ -393,10 +413,11 @@
             // 
             // statusStrip1
             // 
-            this.statusStrip1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.statusStrip1.BackColor = System.Drawing.Color.RoyalBlue;
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tlabelStatus});
+            this.tlabelStatus,
+            this.toolProgress});
             resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
             // 
@@ -460,6 +481,18 @@
             this.elementHost1.Name = "elementHost1";
             this.elementHost1.Child = null;
             // 
+            // itemOpenFromWeb
+            // 
+            this.itemOpenFromWeb.Name = "itemOpenFromWeb";
+            resources.ApplyResources(this.itemOpenFromWeb, "itemOpenFromWeb");
+            this.itemOpenFromWeb.Click += new System.EventHandler(this.itemOpenFromWeb_Click);
+            // 
+            // toolProgress
+            // 
+            this.toolProgress.Name = "toolProgress";
+            resources.ApplyResources(this.toolProgress, "toolProgress");
+            this.toolProgress.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
@@ -516,7 +549,6 @@
         private System.Windows.Forms.ToolStripButton strpbtnSave;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton strpbtnRun;
-        private System.Windows.Forms.ToolStripMenuItem itemSetting;
         private System.Windows.Forms.ToolStripMenuItem itemPrint;
         private System.Windows.Forms.ToolStripMenuItem itemCopy;
         private System.Windows.Forms.ToolStripMenuItem itemCut;
@@ -539,6 +571,11 @@
         private System.Windows.Forms.ToolStripMenuItem toolInsert;
         private System.Windows.Forms.ToolStripMenuItem itemDateTime;
         private System.Windows.Forms.ToolStripMenuItem itemInsertLicense;
+        private System.Windows.Forms.ToolStripMenuItem itemTools;
+        private System.Windows.Forms.ToolStripMenuItem itemSettings;
+        private System.Windows.Forms.ToolStripMenuItem itemSavePower;
+        private System.Windows.Forms.ToolStripMenuItem itemOpenFromWeb;
+        private System.Windows.Forms.ToolStripProgressBar toolProgress;
     }
 }
 

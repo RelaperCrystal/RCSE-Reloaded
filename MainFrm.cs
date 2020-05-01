@@ -1,27 +1,21 @@
 ﻿using ICSharpCode.AvalonEdit.Highlighting;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RCSE_Reloaded.API;
 using RCSE_Reloaded.API.Localization;
 using CommandLine;
 using System.CodeDom.Compiler;
 using System.Drawing.Printing;
-using System.Net;
-using Newtonsoft.Json;
-using System.Reflection;
-using Windows.UI.Notifications;
-using Windows.Data.Xml.Dom;
 using RCSE_Reloaded.API.FluentService;
 using RCSE_Reloaded.API.Launches.Form;
+using CrystalEngine.Simple.Dialogs;
+using Neon.Downloader;
+using System.Text;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace RCSE_Reloaded
 {
@@ -39,6 +33,7 @@ namespace RCSE_Reloaded
         internal string loadedContentPath;
         internal bool isLoaded;
         internal bool Changed;
+        private bool powerSaving;
         internal static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
         internal static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
 
@@ -194,7 +189,7 @@ namespace RCSE_Reloaded
             {
                 CreateMainMenu();
             }
-            if(!start)
+            if(!start && !powerSaving)
             {
                 MessageBox.Show("Fluent Design 的设置需要在重启" + CommonVals.programShortName + " 后生效。");
             }
@@ -258,7 +253,7 @@ namespace RCSE_Reloaded
             nativeOpen.Text = itemOpen.Text;
             nativeNew.Text = itemNew.Text;
             nativeNewWindow.Text = itemNewWindow.Text;
-            nativeSettings.Text = itemSetting.Text;
+            nativeSettings.Text = itemSettings.Text;
             nativeSaveTo.Text = itemSaveTo.Text;
             nativePrint.Text = itemPrint.Text;
             nativeSave.Text = itemSave.Text;
@@ -440,7 +435,15 @@ namespace RCSE_Reloaded
                     return;
                 }
                 editor.Load(ofd.FileName);
-                editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(ofd.FileName));
+                if(!powerSaving)
+                {
+                    editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinitionByExtension(Path.GetExtension(ofd.FileName));
+                }
+                else
+                {
+                    log.Warn("节电模式，不开启语法高亮");
+                }
+
                 log.Info("成功加载文件");
             }
         }
@@ -584,6 +587,11 @@ namespace RCSE_Reloaded
 
         private void itemOpenInBrowser_Click(object sender, EventArgs e)
         {
+            if(powerSaving)
+            {
+                MessageBox.Show("在节电模式下不可以打印文件。");
+                return;
+            }
             if(!isLoaded || loadedContentPath == null || loadedContentPath == "")
             {
                 if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
@@ -694,6 +702,11 @@ namespace RCSE_Reloaded
 
         private void itemPrint_Click(object sender, EventArgs e)
         {
+            if(powerSaving)
+            {
+                MessageBox.Show("现在是节电模式。不能进行打印。");
+                return;
+            }
             PrintDocument pd = new PrintDocument();
             pd.DocumentName = CommonVals.programShortName + " Text";
             pd.PrintPage += printDocument_PrintA4Page;
@@ -750,7 +763,7 @@ namespace RCSE_Reloaded
             DialogResult result;
             if(Changed)
             {
-                if(e.CloseReason == CloseReason.WindowsShutDown)
+                if(e.CloseReason == CloseReason.WindowsShutDown && !powerSaving)
                 {
                     e.Cancel = true;
                     MessageBox.Show("请先正常保存并关闭后再关机。", "错误");
@@ -797,7 +810,7 @@ namespace RCSE_Reloaded
 
         private void itemSysInfo_Click(object sender, EventArgs e)
         {
-            Process.Start("sysinfo");
+            Process.Start("msinfo32");
         }
 
         #region 表达式事件处理器
@@ -832,6 +845,64 @@ namespace RCSE_Reloaded
         private void itemInsertLicense_Click(object sender, EventArgs e)
         {
             MessageBox.Show("尚未实现");
+        }
+
+        private void itemSettings_Click(object sender, EventArgs e)
+        {
+
+            DialogResult dr = new SettingsFrm(this).ShowDialog();
+        }
+
+        private void itemSavePower_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("节电模式已开启。部分功能会被立刻禁用。");
+            log.Info("节电模式开");
+            CrystalEngine.Logging.EngineLog loge = new CrystalEngine.Logging.EngineLog();
+            loge.Info("Power Saving mode was turned ON. Some features will be disabled.", this);
+            powerSaving = true;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            tlabelStatus.Text = "节电模式";
+            statusStrip1.BackColor = SystemColors.Control;
+            tlabelStatus.ForeColor = SystemColors.ControlText;
+            Text = Text + " (节电模式)";
+        }
+
+        private void itemOpenFromWeb_Click(object sender, EventArgs e)
+        {
+            InputBox ib = new InputBox();
+            ib.Description = "请输入网络文件的地址。该地址必须可以本地下载（关闭 JS 的浏览器）。";
+            ib.Text = "从网络打开";
+            if (ib.ShowDialog() == DialogResult.OK)
+            {
+                tlabelStatus.Text = "从 Web 下载文件...";
+                WebClient dc = new WebClient();
+                toolProgress.Style = ProgressBarStyle.Marquee;
+                toolProgress.Visible = true;
+                toolProgress.MarqueeAnimationSpeed = 50;
+                try
+                {
+                    string str = dc.DownloadString(ib.ResultText);
+                    editor.Text = str;
+                    var serializer = new JavaScriptSerializer();
+                    dynamic obj = serializer.Deserialize(str, typeof(object));
+                    if(obj != null)
+                    {
+                        editor.SyntaxHighlighting = HighlightingManager.Instance.GetDefinition("JSON");
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"打开文件失败。\r\n{ex.GetType().Name}: {ex.Message}\r\n{ex.StackTrace}");
+                }
+                finally
+                {
+                    toolProgress.Visible = false;
+                    toolProgress.Style = ProgressBarStyle.Continuous;
+                    tlabelStatus.Text = "就绪";
+                }
+            }
+            
         }
     }
 }

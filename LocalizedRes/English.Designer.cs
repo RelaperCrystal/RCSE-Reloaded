@@ -196,6 +196,25 @@ namespace RCSE_Reloaded.LocalizedRes {
         }
         
         /// <summary>
+        ///   查找类似     RCSE-Reloaded Code Editor
+        ///    Copyright (C) 2018-2020  RelaperCrystal
+        ///
+        ///    This program is free software: you can redistribute it and/or modify
+        ///    it under the terms of the GNU General Public License as published by
+        ///    the Free Software Foundation, either version 3 of the License, or
+        ///    (at your option) any later version.
+        ///
+        ///    This program is distributed in the hope that it will be useful,
+        ///    but WITHOUT ANY WARRANTY; without even the implied warranty of
+        ///    MERCHANTABILITY or FITNESS FOR  [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string SimpleEditor_License {
+            get {
+                return ResourceManager.GetString("SimpleEditor_License", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 调试 的本地化字符串。
         /// </summary>
         internal static string TabDebug {

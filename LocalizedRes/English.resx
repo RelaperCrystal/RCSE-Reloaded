@@ -162,6 +162,10 @@
   <data name="MISettings" xml:space="preserve">
     <value>设置</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="SimpleEditor_License" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SimpleEditor-License.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;gb2312</value>
+  </data>
   <data name="TabDebug" xml:space="preserve">
     <value>调试</value>
   </data>

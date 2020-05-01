@@ -279,8 +279,11 @@
   <data name="&gt;&gt;checkUseMainMenu.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="groupDisplay.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
   <data name="groupDisplay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 18</value>
+    <value>20, 13</value>
   </data>
   <data name="groupDisplay.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -307,7 +310,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupDisplay.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonOK.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
@@ -337,7 +340,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonCancel.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
@@ -370,6 +373,33 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonSaveProfile.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="buttonSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 377</value>
+  </data>
+  <data name="buttonSaveProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 36</value>
+  </data>
+  <data name="buttonSaveProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonSaveProfile.Text" xml:space="preserve">
+    <value>保存用户资料</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveProfile.Name" xml:space="preserve">
+    <value>buttonSaveProfile</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonSaveProfile.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -379,7 +409,7 @@
     <value>9, 18</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>588, 380</value>
+    <value>588, 422</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

@@ -37,6 +37,7 @@
             this.checkUseMainMenu = new System.Windows.Forms.CheckBox();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonSaveProfile = new System.Windows.Forms.Button();
             this.groupDisplay.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,11 +99,20 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonSaveProfile
+            // 
+            resources.ApplyResources(this.buttonSaveProfile, "buttonSaveProfile");
+            this.buttonSaveProfile.Name = "buttonSaveProfile";
+            this.buttonSaveProfile.UseVisualStyleBackColor = true;
+            this.buttonSaveProfile.Click += new System.EventHandler(this.buttonSaveProfile_Click);
             // 
             // SettingsFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonSaveProfile);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.groupDisplay);
@@ -129,5 +139,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonSaveProfile;
     }
 }
