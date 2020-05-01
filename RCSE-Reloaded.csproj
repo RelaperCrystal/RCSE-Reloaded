@@ -59,6 +59,7 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>SimpleEditor.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup />
