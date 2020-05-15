@@ -124,6 +124,12 @@
   <data name="itemNew.Text" xml:space="preserve">
     <value>&amp;New</value>
   </data>
+  <data name="itemOpenFromWeb.Size" type="System.Drawing.Size, System.Drawing">
+    <value>346, 34</value>
+  </data>
+  <data name="itemOpenFromWeb.Text" xml:space="preserve">
+    <value>Open f&amp;rom web</value>
+  </data>
   <data name="itemOpen.Size" type="System.Drawing.Size, System.Drawing">
     <value>346, 34</value>
   </data>
@@ -156,12 +162,6 @@
   </data>
   <data name="itemPrint.Text" xml:space="preserve">
     <value>&amp;Print</value>
-  </data>
-  <data name="itemSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>346, 34</value>
-  </data>
-  <data name="itemSetting.Text" xml:space="preserve">
-    <value>Settings</value>
   </data>
   <data name="split1.Size" type="System.Drawing.Size, System.Drawing">
     <value>343, 6</value>
@@ -221,13 +221,13 @@
     <value>267, 6</value>
   </data>
   <data name="itemDateTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>262, 34</value>
   </data>
   <data name="itemDateTime.Text" xml:space="preserve">
     <value>Date &amp;&amp; Time...</value>
   </data>
   <data name="itemInsertLicense.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>262, 34</value>
   </data>
   <data name="itemInsertLicense.Text" xml:space="preserve">
     <value>Insert License</value>
@@ -249,6 +249,24 @@
   </data>
   <data name="itemEdit.Text" xml:space="preserve">
     <value>&amp;Edit</value>
+  </data>
+  <data name="itemSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="itemSettings.Text" xml:space="preserve">
+    <value>&amp;Options</value>
+  </data>
+  <data name="itemSavePower.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="itemSavePower.Text" xml:space="preserve">
+    <value>Power Saving</value>
+  </data>
+  <data name="itemTools.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 28</value>
+  </data>
+  <data name="itemTools.Text" xml:space="preserve">
+    <value>&amp;Tools</value>
   </data>
   <data name="itemOpenInBrowser.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 34</value>
@@ -298,20 +316,8 @@
   <data name="itemFormat.Text" xml:space="preserve">
     <value>F&amp;ormat</value>
   </data>
-  <data name="itemAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
-  </data>
   <data name="itemAbout.Text" xml:space="preserve">
     <value>&amp;About</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 6</value>
-  </data>
-  <data name="itemIssues.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
-  </data>
-  <data name="itemSysInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
   </data>
   <data name="itemSysInfo.Text" xml:space="preserve">
     <value>System Info...</value>
