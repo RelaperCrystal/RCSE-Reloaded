@@ -1,4 +1,7 @@
-﻿namespace RCSE_Reloaded
+﻿using System;
+using System.Windows.Forms;
+
+namespace RCSE_Reloaded
 {
     partial class MainFrm
     {
@@ -518,6 +521,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

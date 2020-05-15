@@ -16,6 +16,9 @@ using Neon.Downloader;
 using System.Text;
 using System.Net;
 using System.Web.Script.Serialization;
+using RCSE_Reloaded.LocalizedRes;
+using System.Threading;
+using System.Globalization;
 
 namespace RCSE_Reloaded
 {
@@ -43,6 +46,11 @@ namespace RCSE_Reloaded
 
         public MainFrm(CommandLineOptions options)
         {
+            if(options.Culture != "default")
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(options.Culture);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(options.Culture);
+            }
             log.Info("Legacy Form 版本 " + CommonVals.legacyFormVersion);
             InitializeComponent();
             log.Info("主窗口组件加载完成");
@@ -145,7 +153,7 @@ namespace RCSE_Reloaded
 #endif
             if(Properties.Settings.Default.UseFluentDesign)
             {
-                MessageBox.Show(CommonVals.programName + " 当前使用 Fluent Design 中的亚克力特效，在 Windows Forms 中使用\r\n没有可靠文献。请在文件 -> 设置中选择是否使用。");
+                MessageBox.Show(CommonVals.programName + MessageBoxes.FluentWarning);
                 Transparent.SetBlur(this.Handle);
                 this.TransparencyKey = Color.Black;
                 LogManager.GetLogger(typeof(MainFrm)).Warn("正在使用亚克力特效");
@@ -153,6 +161,7 @@ namespace RCSE_Reloaded
 
             if (!Properties.Settings.Default.UseFluentDesign)
             {
+#pragma warning disable CS0162 // 检测到无法访问的代码
                 // 无法访问是因为 isSnapshot 是常量，
                 // 然而会被更改
                 if (CommonVals.isSnapshot)
@@ -161,10 +170,11 @@ namespace RCSE_Reloaded
                 }
                 else
                 {
-#pragma warning disable CS0162 // 检测到无法访问的代码
+
                     Text = CommonVals.programName + " " + CommonVals.verNumber;
-#pragma warning restore CS0162 // 检测到无法访问的代码
+
                 }
+#pragma warning restore CS0162 // 检测到无法访问的代码
             }
             else
             {
@@ -191,7 +201,7 @@ namespace RCSE_Reloaded
             }
             if(!start && !powerSaving)
             {
-                MessageBox.Show("Fluent Design 的设置需要在重启" + CommonVals.programShortName + " 后生效。");
+                MessageBox.Show(MessageBoxes.FluentSave.Replace("{nameShort}", CommonVals.programShortName));
             }
         }
 
@@ -480,7 +490,7 @@ namespace RCSE_Reloaded
             log.Info("正在准备另存为");
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = CommonVals.filters;
-            sfd.Title = "另存为";
+            sfd.Title = MessageBoxes.SaveAsBoxTitle;
             sfd.CheckPathExists = true;
             sfd.AddExtension = true;
             log.Info("正在弹出另存为对话框");
@@ -549,11 +559,6 @@ namespace RCSE_Reloaded
             }
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void tlabelStatus_Click(object sender, EventArgs e)
         {
 
@@ -589,19 +594,12 @@ namespace RCSE_Reloaded
         {
             if(powerSaving)
             {
-                MessageBox.Show("在节电模式下不可以打印文件。");
+                MessageBox.Show(MessageBoxes.PowerSavingPrint);
                 return;
             }
             if(!isLoaded || loadedContentPath == null || loadedContentPath == "")
             {
-                if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
-                {
-                    MessageBox.Show("错误：您必须先保存文件至少一次。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("You must save this file as least once.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show(MessageBoxes.PrintNotSaved);
                 
                 return;
             }
@@ -615,14 +613,7 @@ namespace RCSE_Reloaded
             }
             else
             {
-                if (System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
-                {
-                    MessageBox.Show("错误：不是 HTML 或 XML 文件。\r\n如果确实是上述文件，请将其后缀名变为对应的后缀名。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Error: Not HTML or XML file. \r\nIf the file you wanna open in browser, are HTML or XAML files, please\r\nrename the extension to .htm, .html, or .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show(MessageBoxes.NotMarkup);
 #if DEBUG
                 MessageBox.Show(loadedContentPath + "\r\n" + Path.GetExtension(loadedContentPath));
 #endif
@@ -639,14 +630,7 @@ namespace RCSE_Reloaded
             if (editor.Text == "")
             {
                 log.Info("编辑框为空");
-                if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
-                {
-                    MessageBox.Show("错误：编辑框为空。", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("The textbox is empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show(MessageBoxes.EmptyTextBox, MessageBoxes.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return;
             }
@@ -670,7 +654,7 @@ namespace RCSE_Reloaded
             if (!File.Exists("rcse_compiled.cache.lk"))
             {
                 log.Info("返回: 未能找到被编译文件");
-                MessageBox.Show("无法找到编译文件: 是否编译错误?", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(MessageBoxes.CompiledNotFound, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -704,7 +688,7 @@ namespace RCSE_Reloaded
         {
             if(powerSaving)
             {
-                MessageBox.Show("现在是节电模式。不能进行打印。");
+                MessageBox.Show(MessageBoxes.PowerSavingPrint);
                 return;
             }
             PrintDocument pd = new PrintDocument();
@@ -766,10 +750,10 @@ namespace RCSE_Reloaded
                 if(e.CloseReason == CloseReason.WindowsShutDown && !powerSaving)
                 {
                     e.Cancel = true;
-                    MessageBox.Show("请先正常保存并关闭后再关机。", "错误");
+                    MessageBox.Show(MessageBoxes.CloseWindowsShutdown, MessageBoxes.TitleError);
                     return;
                 }
-                result = MessageBox.Show("此文件已被更改。\r\n如继续关闭，您将失去正在编辑的内容。是否保存后再关闭？", "警告", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                result = MessageBox.Show(MessageBoxes.CloseNotSaved, MessageBoxes.TitleWarning, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
                 switch(result)
                 {
                     case DialogResult.Cancel:
@@ -844,7 +828,7 @@ namespace RCSE_Reloaded
 
         private void itemInsertLicense_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("尚未实现");
+            MessageBox.Show(MessageBoxes.NotImplemented);
         }
 
         private void itemSettings_Click(object sender, EventArgs e)
@@ -855,7 +839,7 @@ namespace RCSE_Reloaded
 
         private void itemSavePower_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("节电模式已开启。部分功能会被立刻禁用。");
+            MessageBox.Show(MessageBoxes.PowerSavingON);
             log.Info("节电模式开");
             CrystalEngine.Logging.EngineLog loge = new CrystalEngine.Logging.EngineLog();
             loge.Info("Power Saving mode was turned ON. Some features will be disabled.", this);
@@ -871,11 +855,11 @@ namespace RCSE_Reloaded
         private void itemOpenFromWeb_Click(object sender, EventArgs e)
         {
             InputBox ib = new InputBox();
-            ib.Description = "请输入网络文件的地址。该地址必须可以本地下载（关闭 JS 的浏览器）。";
-            ib.Text = "从网络打开";
+            ib.Description = MessageBoxes.InputDownload;
+            ib.Text = MessageBoxes.InputDownloadTitle;
             if (ib.ShowDialog() == DialogResult.OK)
             {
-                tlabelStatus.Text = "从 Web 下载文件...";
+                tlabelStatus.Text = MessageBoxes.StatusDownload;
                 WebClient dc = new WebClient();
                 toolProgress.Style = ProgressBarStyle.Marquee;
                 toolProgress.Visible = true;
@@ -893,13 +877,13 @@ namespace RCSE_Reloaded
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show($"打开文件失败。\r\n{ex.GetType().Name}: {ex.Message}\r\n{ex.StackTrace}");
+                    MessageBox.Show($"{MessageBoxes.InputDownloadFailed}\r\n{ex.GetType().Name}: {ex.Message}\r\n{ex.StackTrace}");
                 }
                 finally
                 {
                     toolProgress.Visible = false;
                     toolProgress.Style = ProgressBarStyle.Continuous;
-                    tlabelStatus.Text = "就绪";
+                    tlabelStatus.Text = MessageBoxes.StatusReady;
                 }
             }
             

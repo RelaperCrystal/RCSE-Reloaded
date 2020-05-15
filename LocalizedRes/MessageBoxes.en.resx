@@ -117,67 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnCompileCSharp" xml:space="preserve">
-    <value>Compile C#</value>
+  <data name="CloseNotSaved" xml:space="preserve">
+    <value>The file has been changed. \r\nIf you continue, anything changed in this file will be lost. Do you want to save before exit?</value>
   </data>
-  <data name="MenuDebug" xml:space="preserve">
-    <value>&amp;Debug</value>
+  <data name="CloseWindowsShutdown" xml:space="preserve">
+    <value>Please save the file before turning off the computer.</value>
   </data>
-  <data name="MenuEdit" xml:space="preserve">
-    <value>&amp;Edit</value>
+  <data name="CompiledNotFound" xml:space="preserve">
+    <value>The compiler is failed to output a file. Probably the compiler was resulted an error.</value>
   </data>
-  <data name="MenuFile" xml:space="preserve">
-    <value>&amp;File</value>
+  <data name="EmptyTextBox" xml:space="preserve">
+    <value>The text box is empty.</value>
   </data>
-  <data name="MenuFormat" xml:space="preserve">
-    <value>F&amp;ormat</value>
+  <data name="FluentSave" xml:space="preserve">
+    <value>The change of Fluent Design settings will be applied after restarting {nameShort}.</value>
   </data>
-  <data name="MenuHelp" xml:space="preserve">
-    <value>&amp;Help</value>
+  <data name="FluentWarning" xml:space="preserve">
+    <value> is currenly using the Archlic effect from Fluent Design, which is not documented on Windows Forms. \r\nPlease go to File -&gt; Settings if you wanna turn off.</value>
   </data>
-  <data name="MIAbout" xml:space="preserve">
-    <value>&amp;About</value>
+  <data name="InputDownload" xml:space="preserve">
+    <value>Please enter the address of text file. The URL must be a direct download link (downloadable through no-JS browser) and it's not a temponary link.</value>
   </data>
-  <data name="MIExit" xml:space="preserve">
-    <value>&amp;Quit</value>
+  <data name="InputDownloadFailed" xml:space="preserve">
+    <value>Failed to download from web.</value>
   </data>
-  <data name="MINew" xml:space="preserve">
-    <value>&amp;New</value>
+  <data name="InputDownloadTitle" xml:space="preserve">
+    <value>Open from Web</value>
   </data>
-  <data name="MIOpen" xml:space="preserve">
-    <value>O&amp;pen</value>
+  <data name="NotImplemented" xml:space="preserve">
+    <value>Not implemented</value>
   </data>
-  <data name="MIOpenInBrowser" xml:space="preserve">
-    <value>Open In Browser</value>
+  <data name="NotMarkup" xml:space="preserve">
+    <value>The file you attmepting to open with browser is neither HTML or XML. Please save them with correct extension name if you wish to open with browser.</value>
   </data>
-  <data name="MIPrint" xml:space="preserve">
-    <value>&amp;Print</value>
+  <data name="PowerSavingON" xml:space="preserve">
+    <value>Power saving enabled. Some features have been disabled.</value>
   </data>
-  <data name="MISave" xml:space="preserve">
-    <value>&amp;Save</value>
+  <data name="PowerSavingPrint" xml:space="preserve">
+    <value>The Print feature is not available in Power Saving mode.</value>
   </data>
-  <data name="MISaveTo" xml:space="preserve">
-    <value>S&amp;ave To</value>
+  <data name="PrintNotSaved" xml:space="preserve">
+    <value>You must save this file as least once.</value>
   </data>
-  <data name="MISettings" xml:space="preserve">
-    <value>Settings</value>
+  <data name="SaveAsBoxTitle" xml:space="preserve">
+    <value>Save As</value>
   </data>
-  <data name="TabDebug" xml:space="preserve">
-    <value>Debug</value>
+  <data name="StatusDownload" xml:space="preserve">
+    <value>Downloading file from web</value>
   </data>
-  <data name="TabToolbox" xml:space="preserve">
-    <value>Toolbox</value>
+  <data name="StatusReady" xml:space="preserve">
+    <value>Ready</value>
   </data>
-  <data name="TILicense" xml:space="preserve">
-    <value>Licenses</value>
+  <data name="TitleError" xml:space="preserve">
+    <value>Error</value>
   </data>
-  <data name="ToolbarReady" xml:space="preserve">
-    <value>Idle (Ready)</value>
-  </data>
-  <data name="ToolRun" xml:space="preserve">
-    <value>Run</value>
-  </data>
-  <data name="ToolSave" xml:space="preserve">
-    <value>Save</value>
+  <data name="TitleWarning" xml:space="preserve">
+    <value>Warning</value>
   </data>
 </root>

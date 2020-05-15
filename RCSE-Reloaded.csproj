@@ -120,21 +120,16 @@
       <DependentUpon>FrmInsertLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher\FormHooks\FormHook.cs" />
+    <Compile Include="LocalizedRes\MessageBoxes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageBoxes.resx</DependentUpon>
+    </Compile>
     <Compile Include="MeetFileDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MeetFileDialog.Designer.cs">
       <DependentUpon>MeetFileDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LocalizedRes\English.Designer.cs">
-      <DependentUpon>English.resx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="LocalizedRes\Chinese.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Chinese.resx</DependentUpon>
     </Compile>
     <Compile Include="Logger.cs" />
     <Compile Include="LogManager.cs" />
@@ -172,19 +167,16 @@
     <EmbeddedResource Include="FrmInsertLicense.resx">
       <DependentUpon>FrmInsertLicense.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LocalizedRes\MessageBoxes.en.resx" />
+    <EmbeddedResource Include="LocalizedRes\MessageBoxes.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageBoxes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.zh-Hans.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MeetFileDialog.resx">
       <DependentUpon>MeetFileDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizedRes\English.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>English.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LocalizedRes\Chinese.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Chinese.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainFrm.en.resx">
       <DependentUpon>MainFrm.cs</DependentUpon>
