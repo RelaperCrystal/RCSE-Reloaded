@@ -15,7 +15,7 @@ namespace RCSE_Reloaded
         public const string programName = "SimpleEditor";
         public const string programFullName = "RelaperCrystal's Simple Editor";
         public const string programShortName = "RCSE";
-        public const string legacyFormVersion = snapshot + "/1--20200501A";
+        public const string legacyFormVersion = snapshot + "/1--20200515A";
     }
 
     public struct Setting
