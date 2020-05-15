@@ -332,3 +332,5 @@ ASALocalRun/
 # RCSE Installion Files
 *.iss
 *.exe
+obj/Release/DesignTimeResolveAssemblyReferencesInput.cache
+*.cache
