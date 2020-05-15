@@ -77,8 +77,6 @@ C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\zh-CN\RCSE-
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.exe.config
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.FindDlg.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MeetFileDialog.resources
-C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.LocalizedRes.English.resources
-C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.LocalizedRes.Chinese.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.zh-Hans.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.en.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.zh-CN.resources
@@ -114,3 +112,5 @@ C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\bin\Release\es\Common.r
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\bin\Release\fr\Common.resources.dll
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Ender\Source\Repos\RelaperCrystal\RCSE-Reloaded\bin\Release\System.Text.Encoding.CodePages.dll
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.LocalizedRes.MessageBoxes.resources
+C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.LocalizedRes.MessageBoxes.en.resources
