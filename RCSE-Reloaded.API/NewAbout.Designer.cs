@@ -36,6 +36,7 @@
             this.buttonClose = new System.Windows.Forms.Button();
             this.buttonThanks = new System.Windows.Forms.Button();
             this.buttonLicense = new System.Windows.Forms.Button();
+            this.buttonChangelog = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,10 +82,18 @@
             this.buttonLicense.UseVisualStyleBackColor = true;
             this.buttonLicense.Click += new System.EventHandler(this.buttonLicense_Click);
             // 
+            // buttonChangelog
+            // 
+            resources.ApplyResources(this.buttonChangelog, "buttonChangelog");
+            this.buttonChangelog.Name = "buttonChangelog";
+            this.buttonChangelog.UseVisualStyleBackColor = true;
+            this.buttonChangelog.Click += new System.EventHandler(this.buttonChangelog_Click);
+            // 
             // NewAbout
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonChangelog);
             this.Controls.Add(this.buttonLicense);
             this.Controls.Add(this.buttonThanks);
             this.Controls.Add(this.buttonClose);
@@ -112,5 +121,6 @@
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Button buttonThanks;
         private System.Windows.Forms.Button buttonLicense;
+        private System.Windows.Forms.Button buttonChangelog;
     }
 }

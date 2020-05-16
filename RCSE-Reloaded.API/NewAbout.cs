@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,6 +64,12 @@ namespace RCSE_Reloaded.API
         private void buttonLicense_Click(object sender, EventArgs e)
         {
             new TextDialog(Properties.Resources.SimpleEditor_License, "License").ShowDialog();
+        }
+
+        private void buttonChangelog_Click(object sender, EventArgs e)
+        {
+            string change = new WebClient().DownloadString("https://pastebin.com/raw/qi35gsuP");
+            new TextDialog(change, "修改日志").Show();
         }
     }
 }

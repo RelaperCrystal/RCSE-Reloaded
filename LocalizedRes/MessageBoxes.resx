@@ -118,7 +118,8 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CloseNotSaved" xml:space="preserve">
-    <value>此文件已被更改。\r\n如继续关闭，您将失去正在编辑的内容。是否保存后再关闭？</value>
+    <value>此文件已更改，如不保存，您在 {time} 后所做的更改将丢失。是否保存？</value>
+    <comment>{time} 是打开时间</comment>
   </data>
   <data name="CloseWindowsShutdown" xml:space="preserve">
     <value>请先保存后再关机。</value>
@@ -134,7 +135,7 @@
     <comment>{nameShort} = programShortName</comment>
   </data>
   <data name="FluentWarning" xml:space="preserve">
-    <value> 当前正在使用 Fluent Design 中的亚克力特效，在 Windows Forms 中找不到相关文档。\r\n请在 文件 -&gt; 设置中关闭。</value>
+    <value> 当前正在使用 Fluent Design 中的亚克力特效，在 Windows Forms 中找不到相关文档。请在 文件 -&gt; 设置中关闭。</value>
   </data>
   <data name="InputDownload" xml:space="preserve">
     <value>请输入网络文件的地址。该文件必须能本地下载（不开启 JS 的浏览器）且为永久链接。</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CloseNotSaved" xml:space="preserve">
-    <value>The file has been changed. \r\nIf you continue, anything changed in this file will be lost. Do you want to save before exit?</value>
+    <value>This file has been changed. If you choose not to save, you will lose works after {time}.</value>
   </data>
   <data name="CloseWindowsShutdown" xml:space="preserve">
     <value>Please save the file before turning off the computer.</value>

@@ -61,7 +61,7 @@ namespace RCSE_Reloaded.LocalizedRes {
         }
         
         /// <summary>
-        ///   查找类似 此文件已被更改。\r\n如继续关闭，您将失去正在编辑的内容。是否保存后再关闭？ 的本地化字符串。
+        ///   查找类似 此文件已更改，如不保存，您在 {time} 后所做的更改将丢失。是否保存？ 的本地化字符串。
         /// </summary>
         public static string CloseNotSaved {
             get {
@@ -106,7 +106,7 @@ namespace RCSE_Reloaded.LocalizedRes {
         }
         
         /// <summary>
-        ///   查找类似  当前正在使用 Fluent Design 中的亚克力特效，在 Windows Forms 中找不到相关文档。\r\n请在 文件 -&gt; 设置中关闭。 的本地化字符串。
+        ///   查找类似  当前正在使用 Fluent Design 中的亚克力特效，在 Windows Forms 中找不到相关文档。请在 文件 -&gt; 设置中关闭。 的本地化字符串。
         /// </summary>
         public static string FluentWarning {
             get {
