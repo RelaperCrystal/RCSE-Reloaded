@@ -57,7 +57,6 @@ C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Mono.Cecil.
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE-Reloaded.API.dll
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\RCSE-Reloaded.API.pdb
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE-Reloaded.csprojAssemblyReference.cache
-C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.About.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.DebugForm.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MainFrm.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.Properties.Resources.resources

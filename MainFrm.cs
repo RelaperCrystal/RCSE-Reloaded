@@ -888,5 +888,10 @@ namespace RCSE_Reloaded
             }
             
         }
+
+        private void itemAutoScroll_Click(object sender, EventArgs e)
+        {
+            editor.WordWrap = itemAutoScroll.Checked;
+        }
     }
 }

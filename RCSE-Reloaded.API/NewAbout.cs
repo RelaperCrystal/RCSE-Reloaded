@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CrystalEngine.Simple.Dialogs;
+using RCSE_Reloaded.API.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,7 +62,7 @@ namespace RCSE_Reloaded.API
 
         private void buttonLicense_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Properties.Resources.SimpleEditor_License);
+            new TextDialog(Properties.Resources.SimpleEditor_License, "License").ShowDialog();
         }
     }
 }
