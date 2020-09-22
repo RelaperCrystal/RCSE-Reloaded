@@ -55,7 +55,7 @@
             this.buttonShowErrorFrm.TabIndex = 1;
             this.buttonShowErrorFrm.Text = "引发异常";
             this.buttonShowErrorFrm.UseVisualStyleBackColor = true;
-            this.buttonShowErrorFrm.Click += new System.EventHandler(this.buttonShowErrorFrm_Click);
+            this.buttonShowErrorFrm.Click += new System.EventHandler(this.ButtonShowErrorFrm_Click);
             // 
             // statusStrip1
             // 
@@ -101,7 +101,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "确认";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // DebugForm
             // 
@@ -122,6 +122,7 @@
             this.MinimizeBox = false;
             this.Name = "DebugForm";
             this.Text = "调试工具";
+            this.Load += new System.EventHandler(this.DebugForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

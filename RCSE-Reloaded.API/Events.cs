@@ -8,7 +8,7 @@ namespace RCSE_Reloaded.API
 {
     public delegate void LogEventHandler(Type sender, string message);
     
-    public class Events
+    public static class Events
     {
         public static event EventHandler ProgramStartHandlingEvent;
 

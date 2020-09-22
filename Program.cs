@@ -13,7 +13,6 @@ namespace RCSE_Reloaded
 {
     static class Program
     {
-        static Logger logger;
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>

@@ -11,7 +11,7 @@ namespace RCSE_Reloaded
         private Button buttonOK;
         private Button buttonGithub;
         private Button buttonSave;
-        private Exception ex;
+        private readonly Exception ex;
 
         public ErrorForm(Exception ex)
         {
@@ -44,14 +44,14 @@ namespace RCSE_Reloaded
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // buttonGithub
             // 
             resources.ApplyResources(this.buttonGithub, "buttonGithub");
             this.buttonGithub.Name = "buttonGithub";
             this.buttonGithub.UseVisualStyleBackColor = true;
-            this.buttonGithub.Click += new System.EventHandler(this.buttonGithub_Click);
+            this.buttonGithub.Click += new System.EventHandler(this.ButtonGithub_Click);
             // 
             // buttonSave
             // 
@@ -77,8 +77,8 @@ namespace RCSE_Reloaded
 
         }
 
-        private void buttonGithub_Click(object sender, EventArgs e) => Process.Start("https://github.com/RelaperCrystal/RCSE-Reloaded/issues/new");
-        private void buttonOK_Click(object sender, EventArgs e) => Close();
+        private void ButtonGithub_Click(object sender, EventArgs e) => Process.Start("https://github.com/RelaperCrystal/RCSE-Reloaded/issues/new");
+        private void ButtonOK_Click(object sender, EventArgs e) => Close();
 
         private void ErrorForm_Load(object sender, EventArgs e)
         {

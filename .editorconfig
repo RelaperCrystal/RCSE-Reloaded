@@ -1,0 +1,12 @@
+# 若要了解有关 .editorconfig 的详细信息，请参阅 https://aka.ms/editorconfigdocs
+root = true
+
+# All files
+[*]
+indent_style = tab
+
+# Xml files
+[*.xml]
+indent_size = 2
+
+file_header_template = SimpleEditor \n(C) 2020 RelaperCrystal, licensed under GPL-3.0-or-later.

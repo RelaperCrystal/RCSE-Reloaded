@@ -51,22 +51,22 @@ namespace RCSE_Reloaded.API
             }
         }
 
-        private void buttonThanks_Click(object sender, EventArgs e)
+        private void ButtonThanks_Click(object sender, EventArgs e)
         {
             MessageBox.Show("https://www.cnblogs.com/swjian/p/9540682.html \r\n打印功能\r\n\r\n还有无数个叫不上来的名字...");
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void buttonLicense_Click(object sender, EventArgs e)
+        private void ButtonLicense_Click(object sender, EventArgs e)
         {
             new TextDialog(Properties.Resources.SimpleEditor_License, "License").ShowDialog();
         }
 
-        private void buttonChangelog_Click(object sender, EventArgs e)
+        private void ButtonChangelog_Click(object sender, EventArgs e)
         {
             string change = new WebClient().DownloadString("https://pastebin.com/raw/qi35gsuP");
             new TextDialog(change, "修改日志").Show();

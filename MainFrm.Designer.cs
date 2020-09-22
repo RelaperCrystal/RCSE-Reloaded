@@ -71,8 +71,6 @@ namespace RCSE_Reloaded
             this.itemPlainC = new System.Windows.Forms.ToolStripMenuItem();
             this.itemCPP = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.itemMeetFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
             this.itemAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,7 +95,6 @@ namespace RCSE_Reloaded
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
@@ -125,31 +122,31 @@ namespace RCSE_Reloaded
             this.itemFile.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemFile.Name = "itemFile";
             resources.ApplyResources(this.itemFile, "itemFile");
-            this.itemFile.Click += new System.EventHandler(this.itemFile_Click);
+            this.itemFile.Click += new System.EventHandler(this.ItemFile_Click);
             // 
             // itemNew
             // 
             this.itemNew.Name = "itemNew";
             resources.ApplyResources(this.itemNew, "itemNew");
-            this.itemNew.Click += new System.EventHandler(this.itemNew_Click);
+            this.itemNew.Click += new System.EventHandler(this.ItemNew_Click);
             // 
             // itemOpenFromWeb
             // 
             this.itemOpenFromWeb.Name = "itemOpenFromWeb";
             resources.ApplyResources(this.itemOpenFromWeb, "itemOpenFromWeb");
-            this.itemOpenFromWeb.Click += new System.EventHandler(this.itemOpenFromWeb_Click);
+            this.itemOpenFromWeb.Click += new System.EventHandler(this.ItemOpenFromWeb_Click);
             // 
             // itemOpen
             // 
             this.itemOpen.Name = "itemOpen";
             resources.ApplyResources(this.itemOpen, "itemOpen");
-            this.itemOpen.Click += new System.EventHandler(this.itemOpen_Click);
+            this.itemOpen.Click += new System.EventHandler(this.ItemOpen_Click);
             // 
             // itemNewWindow
             // 
             this.itemNewWindow.Name = "itemNewWindow";
             resources.ApplyResources(this.itemNewWindow, "itemNewWindow");
-            this.itemNewWindow.Click += new System.EventHandler(this.itemNewWindow_Click);
+            this.itemNewWindow.Click += new System.EventHandler(this.ItemNewWindow_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -160,19 +157,19 @@ namespace RCSE_Reloaded
             // 
             this.itemSave.Name = "itemSave";
             resources.ApplyResources(this.itemSave, "itemSave");
-            this.itemSave.Click += new System.EventHandler(this.保存SToolStripMenuItem_Click);
+            this.itemSave.Click += new System.EventHandler(this.ItemSave_Click);
             // 
             // itemSaveTo
             // 
             this.itemSaveTo.Name = "itemSaveTo";
             resources.ApplyResources(this.itemSaveTo, "itemSaveTo");
-            this.itemSaveTo.Click += new System.EventHandler(this.itemSaveTo_Click);
+            this.itemSaveTo.Click += new System.EventHandler(this.ItemSaveTo_Click);
             // 
             // itemPrint
             // 
             this.itemPrint.Name = "itemPrint";
             resources.ApplyResources(this.itemPrint, "itemPrint");
-            this.itemPrint.Click += new System.EventHandler(this.itemPrint_Click);
+            this.itemPrint.Click += new System.EventHandler(this.ItemPrint_Click);
             // 
             // split1
             // 
@@ -183,7 +180,7 @@ namespace RCSE_Reloaded
             // 
             this.itemQuit.Name = "itemQuit";
             resources.ApplyResources(this.itemQuit, "itemQuit");
-            this.itemQuit.Click += new System.EventHandler(this.itemQuit_Click);
+            this.itemQuit.Click += new System.EventHandler(this.ItemQuit_Click);
             // 
             // itemEdit
             // 
@@ -201,19 +198,18 @@ namespace RCSE_Reloaded
             this.itemEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemEdit.Name = "itemEdit";
             resources.ApplyResources(this.itemEdit, "itemEdit");
-            this.itemEdit.Click += new System.EventHandler(this.itemEdit_Click);
             // 
             // itemCopy
             // 
             this.itemCopy.Name = "itemCopy";
             resources.ApplyResources(this.itemCopy, "itemCopy");
-            this.itemCopy.Click += new System.EventHandler(this.itemCopy_Click);
+            this.itemCopy.Click += new System.EventHandler(this.ItemCopy_Click);
             // 
             // itemCut
             // 
             this.itemCut.Name = "itemCut";
             resources.ApplyResources(this.itemCut, "itemCut");
-            this.itemCut.Click += new System.EventHandler(this.itemCut_Click);
+            this.itemCut.Click += new System.EventHandler(this.ItemCut_Click);
             // 
             // itemSeperator2
             // 
@@ -224,25 +220,25 @@ namespace RCSE_Reloaded
             // 
             this.itemPaste.Name = "itemPaste";
             resources.ApplyResources(this.itemPaste, "itemPaste");
-            this.itemPaste.Click += new System.EventHandler(this.itemPaste_Click);
+            this.itemPaste.Click += new System.EventHandler(this.ItemPaste_Click);
             // 
             // itemUndo
             // 
             this.itemUndo.Name = "itemUndo";
             resources.ApplyResources(this.itemUndo, "itemUndo");
-            this.itemUndo.Click += new System.EventHandler(this.itemUndo_Click);
+            this.itemUndo.Click += new System.EventHandler(this.ItemUndo_Click);
             // 
             // itemRedo
             // 
             this.itemRedo.Name = "itemRedo";
             resources.ApplyResources(this.itemRedo, "itemRedo");
-            this.itemRedo.Click += new System.EventHandler(this.itemRedo_Click);
+            this.itemRedo.Click += new System.EventHandler(this.ItemRedo_Click);
             // 
             // itemSelectAll
             // 
             this.itemSelectAll.Name = "itemSelectAll";
             resources.ApplyResources(this.itemSelectAll, "itemSelectAll");
-            this.itemSelectAll.Click += new System.EventHandler(this.itemSelectAll_Click);
+            this.itemSelectAll.Click += new System.EventHandler(this.ItemSelectAll_Click);
             // 
             // toolStripMenuItem3
             // 
@@ -261,19 +257,19 @@ namespace RCSE_Reloaded
             // 
             this.itemDateTime.Name = "itemDateTime";
             resources.ApplyResources(this.itemDateTime, "itemDateTime");
-            this.itemDateTime.Click += new System.EventHandler(this.itemInsertDateTime_Click);
+            this.itemDateTime.Click += new System.EventHandler(this.ItemInsertDateTime_Click);
             // 
             // itemInsertLicense
             // 
             this.itemInsertLicense.Name = "itemInsertLicense";
             resources.ApplyResources(this.itemInsertLicense, "itemInsertLicense");
-            this.itemInsertLicense.Click += new System.EventHandler(this.itemInsertLicense_Click);
+            this.itemInsertLicense.Click += new System.EventHandler(this.ItemInsertLicense_Click);
             // 
             // itemSearch
             // 
             this.itemSearch.Name = "itemSearch";
             resources.ApplyResources(this.itemSearch, "itemSearch");
-            this.itemSearch.Click += new System.EventHandler(this.itemSearchWithBing_Click);
+            this.itemSearch.Click += new System.EventHandler(this.ItemSearch_Click);
             // 
             // itemTools
             // 
@@ -287,13 +283,13 @@ namespace RCSE_Reloaded
             // 
             this.itemSettings.Name = "itemSettings";
             resources.ApplyResources(this.itemSettings, "itemSettings");
-            this.itemSettings.Click += new System.EventHandler(this.itemSettings_Click);
+            this.itemSettings.Click += new System.EventHandler(this.ItemSettings_Click);
             // 
             // itemSavePower
             // 
             this.itemSavePower.Name = "itemSavePower";
             resources.ApplyResources(this.itemSavePower, "itemSavePower");
-            this.itemSavePower.Click += new System.EventHandler(this.itemSavePower_Click);
+            this.itemSavePower.Click += new System.EventHandler(this.ItemSavePower_Click);
             // 
             // itemDebug
             // 
@@ -307,7 +303,7 @@ namespace RCSE_Reloaded
             // 
             this.itemOpenInBrowser.Name = "itemOpenInBrowser";
             resources.ApplyResources(this.itemOpenInBrowser, "itemOpenInBrowser");
-            this.itemOpenInBrowser.Click += new System.EventHandler(this.itemOpenInBrowser_Click);
+            this.itemOpenInBrowser.Click += new System.EventHandler(this.ItemOpenInBrowser_Click);
             // 
             // itemFormat
             // 
@@ -318,8 +314,6 @@ namespace RCSE_Reloaded
             this.itemVB,
             this.itemCSeries,
             this.toolStripMenuItem1,
-            this.itemMeetFile,
-            this.toolStripMenuItem5,
             this.itemAutoScroll});
             this.itemFormat.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemFormat.Name = "itemFormat";
@@ -329,25 +323,25 @@ namespace RCSE_Reloaded
             // 
             this.itemCSharp.Name = "itemCSharp";
             resources.ApplyResources(this.itemCSharp, "itemCSharp");
-            this.itemCSharp.Click += new System.EventHandler(this.itemCSharp_Click);
+            this.itemCSharp.Click += new System.EventHandler(this.ItemCSharp_Click);
             // 
             // itemHTML
             // 
             this.itemHTML.Name = "itemHTML";
             resources.ApplyResources(this.itemHTML, "itemHTML");
-            this.itemHTML.Click += new System.EventHandler(this.itemHTML_Click);
+            this.itemHTML.Click += new System.EventHandler(this.ItemHTML_Click);
             // 
             // itemXAML
             // 
             this.itemXAML.Name = "itemXAML";
             resources.ApplyResources(this.itemXAML, "itemXAML");
-            this.itemXAML.Click += new System.EventHandler(this.itemXAML_Click);
+            this.itemXAML.Click += new System.EventHandler(this.ItemXAML_Click);
             // 
             // itemVB
             // 
             this.itemVB.Name = "itemVB";
             resources.ApplyResources(this.itemVB, "itemVB");
-            this.itemVB.Click += new System.EventHandler(this.itemVB_Click);
+            this.itemVB.Click += new System.EventHandler(this.ItemVB_Click);
             // 
             // itemCSeries
             // 
@@ -361,29 +355,18 @@ namespace RCSE_Reloaded
             // 
             this.itemPlainC.Name = "itemPlainC";
             resources.ApplyResources(this.itemPlainC, "itemPlainC");
-            this.itemPlainC.Click += new System.EventHandler(this.itemPlainC_Click);
+            this.itemPlainC.Click += new System.EventHandler(this.ItemPlainC_Click);
             // 
             // itemCPP
             // 
             this.itemCPP.Name = "itemCPP";
             resources.ApplyResources(this.itemCPP, "itemCPP");
-            this.itemCPP.Click += new System.EventHandler(this.itemCPP_Click);
+            this.itemCPP.Click += new System.EventHandler(this.ItemCPP_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
-            // itemMeetFile
-            // 
-            this.itemMeetFile.Name = "itemMeetFile";
-            resources.ApplyResources(this.itemMeetFile, "itemMeetFile");
-            this.itemMeetFile.Click += new System.EventHandler(this.itemMeetFile_Click);
-            // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
             // 
             // itemAutoScroll
             // 
@@ -392,7 +375,7 @@ namespace RCSE_Reloaded
             this.itemAutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
             this.itemAutoScroll.Name = "itemAutoScroll";
             resources.ApplyResources(this.itemAutoScroll, "itemAutoScroll");
-            this.itemAutoScroll.Click += new System.EventHandler(this.itemAutoScroll_Click);
+            this.itemAutoScroll.Click += new System.EventHandler(this.ItemAutoScroll_Click);
             // 
             // itemHelp
             // 
@@ -404,7 +387,7 @@ namespace RCSE_Reloaded
             this.itemHelp.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemHelp.Name = "itemHelp";
             resources.ApplyResources(this.itemHelp, "itemHelp");
-            this.itemHelp.Click += new System.EventHandler(this.itemHelp_Click);
+            this.itemHelp.Click += new System.EventHandler(this.ItemHelp_Click);
             // 
             // itemAbout
             // 
@@ -413,7 +396,7 @@ namespace RCSE_Reloaded
             this.itemAbout.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemAbout.Name = "itemAbout";
             resources.ApplyResources(this.itemAbout, "itemAbout");
-            this.itemAbout.Click += new System.EventHandler(this.itemAbout_Click);
+            this.itemAbout.Click += new System.EventHandler(this.ItemAbout_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -435,7 +418,7 @@ namespace RCSE_Reloaded
             this.itemSysInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemSysInfo.Name = "itemSysInfo";
             resources.ApplyResources(this.itemSysInfo, "itemSysInfo");
-            this.itemSysInfo.Click += new System.EventHandler(this.itemSysInfo_Click);
+            this.itemSysInfo.Click += new System.EventHandler(this.ItemSysInfo_Click);
             // 
             // statusStrip1
             // 
@@ -452,7 +435,7 @@ namespace RCSE_Reloaded
             this.tlabelStatus.ForeColor = System.Drawing.Color.White;
             this.tlabelStatus.Name = "tlabelStatus";
             resources.ApplyResources(this.tlabelStatus, "tlabelStatus");
-            this.tlabelStatus.Click += new System.EventHandler(this.tlabelStatus_Click);
+            this.tlabelStatus.Click += new System.EventHandler(this.TlabelStatus_Click);
             // 
             // toolProgress
             // 
@@ -478,14 +461,14 @@ namespace RCSE_Reloaded
             this.strpbtnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.strpbtnNew, "strpbtnNew");
             this.strpbtnNew.Name = "strpbtnNew";
-            this.strpbtnNew.Click += new System.EventHandler(this.strpbtnNew_Click);
+            this.strpbtnNew.Click += new System.EventHandler(this.StrpbtnNew_Click);
             // 
             // strpbtnSave
             // 
             this.strpbtnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.strpbtnSave, "strpbtnSave");
             this.strpbtnSave.Name = "strpbtnSave";
-            this.strpbtnSave.Click += new System.EventHandler(this.strpbtnSave_Click);
+            this.strpbtnSave.Click += new System.EventHandler(this.StrpbtnSave_Click);
             // 
             // toolStripSeparator1
             // 
@@ -497,14 +480,14 @@ namespace RCSE_Reloaded
             this.strpbtnRun.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.strpbtnRun, "strpbtnRun");
             this.strpbtnRun.Name = "strpbtnRun";
-            this.strpbtnRun.Click += new System.EventHandler(this.strpbtnRun_Click);
+            this.strpbtnRun.Click += new System.EventHandler(this.StrpbtnRun_Click);
             // 
             // toolCompile
             // 
             this.toolCompile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             resources.ApplyResources(this.toolCompile, "toolCompile");
             this.toolCompile.Name = "toolCompile";
-            this.toolCompile.Click += new System.EventHandler(this.toolCompile_Click);
+            this.toolCompile.Click += new System.EventHandler(this.ToolCompile_Click);
             // 
             // elementHost1
             // 
@@ -575,7 +558,6 @@ namespace RCSE_Reloaded
         private System.Windows.Forms.ToolStripSeparator itemSeperator2;
         private System.Windows.Forms.ToolStripMenuItem itemPaste;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem itemMeetFile;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem itemIssues;
         private System.Windows.Forms.ToolStripMenuItem itemSysInfo;
@@ -596,7 +578,6 @@ namespace RCSE_Reloaded
         private System.Windows.Forms.ToolStripMenuItem itemSavePower;
         private System.Windows.Forms.ToolStripMenuItem itemOpenFromWeb;
         private System.Windows.Forms.ToolStripProgressBar toolProgress;
-        private ToolStripSeparator toolStripMenuItem5;
         private ToolStripMenuItem itemAutoScroll;
     }
 }

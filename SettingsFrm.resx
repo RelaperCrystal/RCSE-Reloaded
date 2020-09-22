@@ -232,7 +232,7 @@
     <value>1</value>
   </data>
   <data name="labelMainMenu.Text" xml:space="preserve">
-    <value>使用 MainMenu 替代 MenuStrip 作为 RCSE 的菜单栏控件。</value>
+    <value>已弃用，并被从代码中移除。</value>
   </data>
   <data name="&gt;&gt;labelMainMenu.Name" xml:space="preserve">
     <value>labelMainMenu</value>
@@ -248,6 +248,9 @@
   </data>
   <data name="checkUseMainMenu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="checkUseMainMenu.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="checkUseMainMenu.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
@@ -292,7 +295,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="groupDisplay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>430, 350</value>
+    <value>461, 197</value>
   </data>
   <data name="groupDisplay.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -310,13 +313,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupDisplay.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="buttonOK.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
   </data>
   <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 18</value>
+    <value>766, 581</value>
   </data>
   <data name="buttonOK.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -340,7 +343,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="buttonCancel.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
@@ -349,7 +352,7 @@
     <value>NoControl</value>
   </data>
   <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>458, 60</value>
+    <value>886, 581</value>
   </data>
   <data name="buttonCancel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -373,13 +376,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="buttonSaveProfile.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft YaHei UI, 9pt</value>
   </data>
   <data name="buttonSaveProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>18, 377</value>
+    <value>12, 581</value>
   </data>
   <data name="buttonSaveProfile.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 36</value>
@@ -400,6 +403,81 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonSaveProfile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="textSearchEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>94, 23</value>
+  </data>
+  <data name="textSearchEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 30</value>
+  </data>
+  <data name="textSearchEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textSearchEngine.Name" xml:space="preserve">
+    <value>textSearchEngine</value>
+  </data>
+  <data name="&gt;&gt;textSearchEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textSearchEngine.Parent" xml:space="preserve">
+    <value>groupGeneric</value>
+  </data>
+  <data name="&gt;&gt;textSearchEngine.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelSearchEngine.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelSearchEngine.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="labelSearchEngine.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 24</value>
+  </data>
+  <data name="labelSearchEngine.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="labelSearchEngine.Text" xml:space="preserve">
+    <value>搜索引擎</value>
+  </data>
+  <data name="&gt;&gt;labelSearchEngine.Name" xml:space="preserve">
+    <value>labelSearchEngine</value>
+  </data>
+  <data name="&gt;&gt;labelSearchEngine.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSearchEngine.Parent" xml:space="preserve">
+    <value>groupGeneric</value>
+  </data>
+  <data name="&gt;&gt;labelSearchEngine.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupGeneric.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft YaHei UI, 9pt</value>
+  </data>
+  <data name="groupGeneric.Location" type="System.Drawing.Point, System.Drawing">
+    <value>488, 13</value>
+  </data>
+  <data name="groupGeneric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>510, 197</value>
+  </data>
+  <data name="groupGeneric.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="groupGeneric.Text" xml:space="preserve">
+    <value>通用</value>
+  </data>
+  <data name="&gt;&gt;groupGeneric.Name" xml:space="preserve">
+    <value>groupGeneric</value>
+  </data>
+  <data name="&gt;&gt;groupGeneric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupGeneric.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupGeneric.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -409,7 +487,7 @@
     <value>9, 18</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>588, 422</value>
+    <value>1011, 629</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

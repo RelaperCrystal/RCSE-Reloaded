@@ -66,28 +66,28 @@
             resources.ApplyResources(this.buttonClose, "buttonClose");
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
             // 
             // buttonThanks
             // 
             resources.ApplyResources(this.buttonThanks, "buttonThanks");
             this.buttonThanks.Name = "buttonThanks";
             this.buttonThanks.UseVisualStyleBackColor = true;
-            this.buttonThanks.Click += new System.EventHandler(this.buttonThanks_Click);
+            this.buttonThanks.Click += new System.EventHandler(this.ButtonThanks_Click);
             // 
             // buttonLicense
             // 
             resources.ApplyResources(this.buttonLicense, "buttonLicense");
             this.buttonLicense.Name = "buttonLicense";
             this.buttonLicense.UseVisualStyleBackColor = true;
-            this.buttonLicense.Click += new System.EventHandler(this.buttonLicense_Click);
+            this.buttonLicense.Click += new System.EventHandler(this.ButtonLicense_Click);
             // 
             // buttonChangelog
             // 
             resources.ApplyResources(this.buttonChangelog, "buttonChangelog");
             this.buttonChangelog.Name = "buttonChangelog";
             this.buttonChangelog.UseVisualStyleBackColor = true;
-            this.buttonChangelog.Click += new System.EventHandler(this.buttonChangelog_Click);
+            this.buttonChangelog.Click += new System.EventHandler(this.ButtonChangelog_Click);
             // 
             // NewAbout
             // 

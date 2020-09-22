@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace RCSE_Reloaded
 {
-    public partial class FindDlg : Form
-    {
-        TextEditor editor;
-        public FindDlg(ref TextEditor edit)
-        {
-            InitializeComponent();
-            editor = edit;
-        }
+	public partial class FindDlg : Form
+	{
+		//readonly TextEditor Editor;
+		public FindDlg()
+		{
+			InitializeComponent();
+			//Editor = edit;
+		}
 
-        private void FindDlg_Load(object sender, EventArgs e)
-        {
+		private void FindDlg_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }

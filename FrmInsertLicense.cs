@@ -10,33 +10,30 @@ using System.Windows.Forms;
 
 namespace RCSE_Reloaded
 {
-    public partial class FrmInsertLicense : Form
-    {
-        public string outputString;
+	public partial class FrmInsertLicense : Form
+	{
+		public string outputString;
 
-        public FrmInsertLicense()
-        {
-            InitializeComponent();
-        }
+		public FrmInsertLicense()
+		{
+			InitializeComponent();
+		}
 
-        private void FrmInsertLicense_Load(object sender, EventArgs e)
-        {
-            
-        }
+		private void FrmInsertLicense_Load(object sender, EventArgs e)
+		{
+			
+		}
 
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+		private void ButtonCancel_Click(object sender, EventArgs e) => Close();
 
-        private void buttonOK_Click(object sender, EventArgs e)
-        {
-            string oper = radioC.Checked ? "//" : ";";
-            switch(comboBox1.SelectedIndex)
-            {
-                case 0:
-                    break;
-            }
-        }
-    }
+		private void ButtonOK_Click(object sender, EventArgs e)
+		{
+			// string oper = radioC.Checked ? "//" : ";";
+			switch(comboBox1.SelectedIndex)
+			{
+				case 0:
+					break;
+			}
+		}
+	}
 }

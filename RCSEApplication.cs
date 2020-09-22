@@ -23,7 +23,7 @@ namespace RCSE_Reloaded
 
         public void Launching(string[] args)
         {
-            MainFrm.ParseArgsAndRun(args, new Logger());
+            MainFrm.ParseArgsAndRun(args);
         }
 
         public void Start()

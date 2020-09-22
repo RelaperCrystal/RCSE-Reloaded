@@ -38,7 +38,11 @@
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSaveProfile = new System.Windows.Forms.Button();
+            this.groupGeneric = new System.Windows.Forms.GroupBox();
+            this.textSearchEngine = new System.Windows.Forms.TextBox();
+            this.labelSearchEngine = new System.Windows.Forms.Label();
             this.groupDisplay.SuspendLayout();
+            this.groupGeneric.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupDisplay
@@ -91,7 +95,7 @@
             resources.ApplyResources(this.buttonOK, "buttonOK");
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
             // 
             // buttonCancel
             // 
@@ -99,19 +103,38 @@
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.buttonCancel.Click += new System.EventHandler(this.ButtonCancel_Click);
             // 
             // buttonSaveProfile
             // 
             resources.ApplyResources(this.buttonSaveProfile, "buttonSaveProfile");
             this.buttonSaveProfile.Name = "buttonSaveProfile";
             this.buttonSaveProfile.UseVisualStyleBackColor = true;
-            this.buttonSaveProfile.Click += new System.EventHandler(this.buttonSaveProfile_Click);
+            this.buttonSaveProfile.Click += new System.EventHandler(this.ButtonSaveProfile_Click);
+            // 
+            // groupGeneric
+            // 
+            this.groupGeneric.Controls.Add(this.textSearchEngine);
+            this.groupGeneric.Controls.Add(this.labelSearchEngine);
+            resources.ApplyResources(this.groupGeneric, "groupGeneric");
+            this.groupGeneric.Name = "groupGeneric";
+            this.groupGeneric.TabStop = false;
+            // 
+            // textSearchEngine
+            // 
+            resources.ApplyResources(this.textSearchEngine, "textSearchEngine");
+            this.textSearchEngine.Name = "textSearchEngine";
+            // 
+            // labelSearchEngine
+            // 
+            resources.ApplyResources(this.labelSearchEngine, "labelSearchEngine");
+            this.labelSearchEngine.Name = "labelSearchEngine";
             // 
             // SettingsFrm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupGeneric);
             this.Controls.Add(this.buttonSaveProfile);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
@@ -125,6 +148,8 @@
             this.Load += new System.EventHandler(this.SettingsFrm_Load);
             this.groupDisplay.ResumeLayout(false);
             this.groupDisplay.PerformLayout();
+            this.groupGeneric.ResumeLayout(false);
+            this.groupGeneric.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -140,5 +165,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonSaveProfile;
+        private System.Windows.Forms.GroupBox groupGeneric;
+        private System.Windows.Forms.TextBox textSearchEngine;
+        private System.Windows.Forms.Label labelSearchEngine;
     }
 }
