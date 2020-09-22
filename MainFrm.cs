@@ -311,7 +311,7 @@ namespace RCSE_Reloaded
             nativeRedo.Text = itemRedo.Text;
             nativeSelectAll.Text = itemSelectAll.Text;
 //            nativeDateTime.Text = itemInsert.Text;
-            nativeBingSearch.Text = itemSearchWithBing.Text;
+            nativeBingSearch.Text = itemSearch.Text;
 
             nativeSplit2 = new MenuItem();
             nativeSplit2.Text = "-";
@@ -807,9 +807,17 @@ namespace RCSE_Reloaded
         private void itemSearchWithBing_Click(object sender, EventArgs e)
         {
             string text = editor.SelectedText;
+            string searcher = Properties.Settings.Default.SearchURL;
+            if(string.IsNullOrWhiteSpace(searcher))
+            {
+                log.Warn("搜索引擎为空");
+                searcher = "https://cn.bing.com/search?q=";
+                Properties.Settings.Default.SearchURL = "https://cn.bing.com/search?q=";
+                Properties.Settings.Default.Save();
+            }
             if (!string.IsNullOrWhiteSpace(text))
             {
-                Process.Start("https://cn.bing.com/search?q=" + text);
+                Process.Start(searcher + text);
             }
             else return;
         }

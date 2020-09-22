@@ -179,46 +179,46 @@
     <value>&amp;File</value>
   </data>
   <data name="itemCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemCopy.Text" xml:space="preserve">
     <value>&amp;Copy</value>
   </data>
   <data name="itemCut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemCut.Text" xml:space="preserve">
     <value>C&amp;ut</value>
   </data>
   <data name="itemSeperator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 6</value>
+    <value>267, 6</value>
   </data>
   <data name="itemPaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemPaste.Text" xml:space="preserve">
     <value>&amp;Paste</value>
   </data>
   <data name="itemUndo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemUndo.Text" xml:space="preserve">
     <value>U&amp;ndo</value>
   </data>
   <data name="itemRedo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemRedo.Text" xml:space="preserve">
     <value>&amp;Redo</value>
   </data>
   <data name="itemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSelectAll.Text" xml:space="preserve">
     <value>Select &amp;All</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 6</value>
+    <value>267, 6</value>
   </data>
   <data name="itemDateTime.Size" type="System.Drawing.Size, System.Drawing">
     <value>262, 34</value>
@@ -233,13 +233,13 @@
     <value>Insert License</value>
   </data>
   <data name="toolInsert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="toolInsert.Text" xml:space="preserve">
     <value>&amp;Insert</value>
   </data>
   <data name="itemSearchWithBing.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSearchWithBing.Text" xml:space="preserve">
     <value>Search with Bing...</value>
@@ -251,13 +251,13 @@
     <value>&amp;Edit</value>
   </data>
   <data name="itemSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSettings.Text" xml:space="preserve">
     <value>&amp;Options</value>
   </data>
   <data name="itemSavePower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSavePower.Text" xml:space="preserve">
     <value>Power Saving</value>
@@ -269,7 +269,7 @@
     <value>&amp;Tools</value>
   </data>
   <data name="itemOpenInBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemOpenInBrowser.Text" xml:space="preserve">
     <value>Open in Browser...</value>
@@ -310,6 +310,15 @@
   <data name="itemMeetFile.Size" type="System.Drawing.Size, System.Drawing">
     <value>270, 34</value>
   </data>
+  <data name="toolStripMenuItem5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>267, 6</value>
+  </data>
+  <data name="itemAutoScroll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>270, 34</value>
+  </data>
+  <data name="itemAutoScroll.Text" xml:space="preserve">
+    <value>&amp;Auto Scroll...</value>
+  </data>
   <data name="itemFormat.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 28</value>
   </data>
@@ -317,19 +326,19 @@
     <value>F&amp;ormat</value>
   </data>
   <data name="itemAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemAbout.Text" xml:space="preserve">
     <value>&amp;About</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 6</value>
+    <value>267, 6</value>
   </data>
   <data name="itemIssues.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSysInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 34</value>
+    <value>270, 34</value>
   </data>
   <data name="itemSysInfo.Text" xml:space="preserve">
     <value>System Info...</value>

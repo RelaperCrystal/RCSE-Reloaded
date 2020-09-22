@@ -34,7 +34,6 @@ namespace RCSE_Reloaded.API.Plugin
         public static void LoadAllPlugins()
         {
             string[] files = Directory.GetFiles(Application.StartupPath + "\\plugin\\");
-            int i = 0;
             foreach (string file in files)
             {
                 string ext = file.Substring(file.LastIndexOf("."));
@@ -43,7 +42,6 @@ namespace RCSE_Reloaded.API.Plugin
                 {
                     Assembly tmp = Assembly.LoadFile(file);
                     Type[] types = tmp.GetTypes();
-                    bool ok = false;
                     foreach (Type t in types)
                         if (IsPluginImplementedInterface(t))
                         {
@@ -51,9 +49,9 @@ namespace RCSE_Reloaded.API.Plugin
                             plugins.Add(plugin);
                         }
                 }
-                catch (Exception err)
+                catch
                 {
-                    
+                    throw;
                 }
             }
         }

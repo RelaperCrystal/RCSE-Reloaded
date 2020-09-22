@@ -56,7 +56,7 @@ namespace RCSE_Reloaded
             this.toolInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.itemDateTime = new System.Windows.Forms.ToolStripMenuItem();
             this.itemInsertLicense = new System.Windows.Forms.ToolStripMenuItem();
-            this.itemSearchWithBing = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.itemTools = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.itemSavePower = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,6 +72,8 @@ namespace RCSE_Reloaded
             this.itemCPP = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.itemMeetFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
+            this.itemAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
             this.itemHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.itemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -87,8 +89,6 @@ namespace RCSE_Reloaded
             this.strpbtnRun = new System.Windows.Forms.ToolStripButton();
             this.toolCompile = new System.Windows.Forms.ToolStripButton();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripSeparator();
-            this.itemAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -97,6 +97,7 @@ namespace RCSE_Reloaded
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.itemFile,
@@ -196,7 +197,7 @@ namespace RCSE_Reloaded
             this.itemSelectAll,
             this.toolStripMenuItem3,
             this.toolInsert,
-            this.itemSearchWithBing});
+            this.itemSearch});
             this.itemEdit.ForeColor = System.Drawing.SystemColors.ControlText;
             this.itemEdit.Name = "itemEdit";
             resources.ApplyResources(this.itemEdit, "itemEdit");
@@ -268,11 +269,11 @@ namespace RCSE_Reloaded
             resources.ApplyResources(this.itemInsertLicense, "itemInsertLicense");
             this.itemInsertLicense.Click += new System.EventHandler(this.itemInsertLicense_Click);
             // 
-            // itemSearchWithBing
+            // itemSearch
             // 
-            this.itemSearchWithBing.Name = "itemSearchWithBing";
-            resources.ApplyResources(this.itemSearchWithBing, "itemSearchWithBing");
-            this.itemSearchWithBing.Click += new System.EventHandler(this.itemSearchWithBing_Click);
+            this.itemSearch.Name = "itemSearch";
+            resources.ApplyResources(this.itemSearch, "itemSearch");
+            this.itemSearch.Click += new System.EventHandler(this.itemSearchWithBing_Click);
             // 
             // itemTools
             // 
@@ -378,6 +379,20 @@ namespace RCSE_Reloaded
             this.itemMeetFile.Name = "itemMeetFile";
             resources.ApplyResources(this.itemMeetFile, "itemMeetFile");
             this.itemMeetFile.Click += new System.EventHandler(this.itemMeetFile_Click);
+            // 
+            // toolStripMenuItem5
+            // 
+            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
+            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+            // 
+            // itemAutoScroll
+            // 
+            this.itemAutoScroll.Checked = true;
+            this.itemAutoScroll.CheckOnClick = true;
+            this.itemAutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.itemAutoScroll.Name = "itemAutoScroll";
+            resources.ApplyResources(this.itemAutoScroll, "itemAutoScroll");
+            this.itemAutoScroll.Click += new System.EventHandler(this.itemAutoScroll_Click);
             // 
             // itemHelp
             // 
@@ -498,20 +513,6 @@ namespace RCSE_Reloaded
             this.elementHost1.Name = "elementHost1";
             this.elementHost1.Child = null;
             // 
-            // toolStripMenuItem5
-            // 
-            this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-            resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
-            // 
-            // itemAutoScroll
-            // 
-            this.itemAutoScroll.Checked = true;
-            this.itemAutoScroll.CheckOnClick = true;
-            this.itemAutoScroll.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.itemAutoScroll.Name = "itemAutoScroll";
-            resources.ApplyResources(this.itemAutoScroll, "itemAutoScroll");
-            this.itemAutoScroll.Click += new System.EventHandler(this.itemAutoScroll_Click);
-            // 
             // MainFrm
             // 
             resources.ApplyResources(this, "$this");
@@ -582,7 +583,7 @@ namespace RCSE_Reloaded
         private System.Windows.Forms.ToolStripMenuItem itemRedo;
         private System.Windows.Forms.ToolStripMenuItem itemSelectAll;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem itemSearchWithBing;
+        private System.Windows.Forms.ToolStripMenuItem itemSearch;
         private System.Windows.Forms.ToolStripMenuItem itemNewWindow;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem4;
         private System.Windows.Forms.Integration.ElementHost elementHost1;

@@ -72,7 +72,6 @@ C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\Newtonsoft.
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\CrystalEngine.dll
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\CrystalEngine.pdb
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\en\RCSE-Reloaded.API.resources.dll
-C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\bin\Release\zh-CN\RCSE-Reloaded.API.resources.dll
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.exe.config
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.FindDlg.resources
 C:\Users\Ender\source\repos\RelaperCrystal\RCSE-Reloaded\obj\Release\RCSE_Reloaded.MeetFileDialog.resources
