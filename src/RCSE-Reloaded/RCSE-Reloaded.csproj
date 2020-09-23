@@ -60,7 +60,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
-    <AssemblyOriginatorKeyFile>SimpleEditor.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -194,7 +195,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SimpleEditor.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -220,11 +220,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="CrystalEngine\CrystalEngine.csproj">
+    <ProjectReference Include="..\CrystalEngine\CrystalEngine.csproj">
       <Project>{8CB6F6CD-4443-4F63-8670-C388FDB71FCD}</Project>
       <Name>CrystalEngine</Name>
     </ProjectReference>
-    <ProjectReference Include="RCSE-Reloaded.API\RCSE-Reloaded.API.csproj">
+    <ProjectReference Include="..\RCSE-Reloaded.API\RCSE-Reloaded.API.csproj">
       <Project>{ad89a202-e9ac-49f3-8d37-6de09a1b4544}</Project>
       <Name>RCSE-Reloaded.API</Name>
     </ProjectReference>
