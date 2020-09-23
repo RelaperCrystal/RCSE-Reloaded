@@ -1,9 +1,7 @@
-﻿using CrystalEngine.Launcher;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// RelaperCrystal's Simple Editor
+// Copyright (C) RelaperCrystal and contributors 2020.
+
+using CrystalEngine.Launcher;
 
 namespace RCSE_Reloaded
 {

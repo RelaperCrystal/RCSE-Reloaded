@@ -1,6 +1,18 @@
 ﻿// RelaperCrystal's Simple Editor
 // Copyright (C) RelaperCrystal and contributors 2020.
 
+/* Classifier 规范
+ * #Classifier 开头：等同于声明公开类 Program。
+ * #Markings：标记产品。
+ * #DefineImport：引用 .NET 命名空间，等同于 using。
+ * #End：行尾，等同于 ;。
+ * #MainMethod：等同于声明 Main。
+ * #EndMainMethod：等同于关闭 Main 方法。
+ * #EndClassifier：等同于关闭公开类 Program。
+ * 
+ * Classifier 转换类如下提供。请先去除 Obsolete。本类不再被编译。
+ */
+
 
 using System;
 

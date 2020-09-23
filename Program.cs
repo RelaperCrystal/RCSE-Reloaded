@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿// RelaperCrystal's Simple Editor
+// Copyright (C) RelaperCrystal and contributors 2020.
+
+using System;
 using System.Windows.Forms;
-using Common.Log;
-using CommandLine;
-using CommandLine.Text;
 using CrystalEngine.Logging;
-using RCSE_Reloaded.API;
 
 namespace RCSE_Reloaded
 {

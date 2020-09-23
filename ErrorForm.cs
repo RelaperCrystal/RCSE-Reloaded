@@ -1,4 +1,7 @@
-﻿using System;
+﻿// RelaperCrystal's Simple Editor
+// Copyright (C) RelaperCrystal and contributors 2020.
+
+using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 

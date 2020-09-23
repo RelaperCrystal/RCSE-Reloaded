@@ -195,7 +195,7 @@
     <value>退出(&amp;Q)</value>
   </data>
   <data name="itemFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 28</value>
+    <value>84, 30</value>
   </data>
   <data name="itemFile.Text" xml:space="preserve">
     <value>文件(&amp;F)</value>
@@ -204,7 +204,7 @@
     <value>Ctrl+C</value>
   </data>
   <data name="itemCopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemCopy.Text" xml:space="preserve">
     <value>复制(&amp;C)</value>
@@ -213,19 +213,19 @@
     <value>Ctrl+X</value>
   </data>
   <data name="itemCut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemCut.Text" xml:space="preserve">
     <value>剪切(&amp;U)</value>
   </data>
   <data name="itemSeperator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="itemPaste.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>Ctrl+V</value>
   </data>
   <data name="itemPaste.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemPaste.Text" xml:space="preserve">
     <value>粘贴(P)</value>
@@ -234,7 +234,7 @@
     <value>Ctrl+Z</value>
   </data>
   <data name="itemUndo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemUndo.Text" xml:space="preserve">
     <value>撤销(&amp;N)</value>
@@ -243,7 +243,7 @@
     <value>Ctrl+Y</value>
   </data>
   <data name="itemRedo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemRedo.Text" xml:space="preserve">
     <value>重做(&amp;R)</value>
@@ -252,13 +252,13 @@
     <value>Ctrl+A</value>
   </data>
   <data name="itemSelectAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemSelectAll.Text" xml:space="preserve">
     <value>全选(&amp;A)</value>
   </data>
   <data name="toolStripMenuItem3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 6</value>
+    <value>241, 6</value>
   </data>
   <data name="itemDateTime.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
     <value>F5</value>
@@ -276,73 +276,73 @@
     <value>插入许可证...</value>
   </data>
   <data name="toolInsert.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="toolInsert.Text" xml:space="preserve">
     <value>插入(&amp;I)</value>
   </data>
   <data name="itemSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>244, 34</value>
   </data>
   <data name="itemSearch.Text" xml:space="preserve">
     <value>在 Web 中搜索...</value>
   </data>
   <data name="itemEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 28</value>
+    <value>84, 30</value>
   </data>
   <data name="itemEdit.Text" xml:space="preserve">
     <value>编辑(&amp;E)</value>
   </data>
   <data name="itemSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>182, 34</value>
   </data>
   <data name="itemSettings.Text" xml:space="preserve">
     <value>选项(&amp;O)</value>
   </data>
   <data name="itemSavePower.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>182, 34</value>
   </data>
   <data name="itemSavePower.Text" xml:space="preserve">
     <value>节电模式</value>
   </data>
   <data name="itemTools.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 28</value>
+    <value>84, 30</value>
   </data>
   <data name="itemTools.Text" xml:space="preserve">
     <value>工具(&amp;T)</value>
   </data>
   <data name="itemOpenInBrowser.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>248, 34</value>
   </data>
   <data name="itemOpenInBrowser.Text" xml:space="preserve">
     <value>在浏览器中打开...</value>
   </data>
   <data name="itemDebug.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 28</value>
+    <value>88, 30</value>
   </data>
   <data name="itemDebug.Text" xml:space="preserve">
     <value>调试(&amp;D)</value>
   </data>
   <data name="itemCSharp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>209, 34</value>
   </data>
   <data name="itemCSharp.Text" xml:space="preserve">
     <value>C#</value>
   </data>
   <data name="itemHTML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>209, 34</value>
   </data>
   <data name="itemHTML.Text" xml:space="preserve">
     <value>HTML</value>
   </data>
   <data name="itemXAML.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>209, 34</value>
   </data>
   <data name="itemXAML.Text" xml:space="preserve">
     <value>XAML</value>
   </data>
   <data name="itemVB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>209, 34</value>
   </data>
   <data name="itemVB.Text" xml:space="preserve">
     <value>Visual Basic</value>
@@ -360,22 +360,22 @@
     <value>C++</value>
   </data>
   <data name="itemCSeries.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>209, 34</value>
   </data>
   <data name="itemCSeries.Text" xml:space="preserve">
     <value>C</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 6</value>
+    <value>206, 6</value>
   </data>
   <data name="itemAutoScroll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>270, 34</value>
+    <value>209, 34</value>
   </data>
   <data name="itemAutoScroll.Text" xml:space="preserve">
     <value>自动换行(&amp;A)</value>
   </data>
   <data name="itemFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 28</value>
+    <value>89, 30</value>
   </data>
   <data name="itemFormat.Text" xml:space="preserve">
     <value>格式(&amp;O)</value>
@@ -402,7 +402,7 @@
     <value>系统信息...</value>
   </data>
   <data name="itemHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 28</value>
+    <value>88, 30</value>
   </data>
   <data name="itemHelp.Text" xml:space="preserve">
     <value>帮助(&amp;H)</value>
@@ -411,7 +411,7 @@
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1461, 32</value>
+    <value>1461, 36</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
@@ -491,7 +491,7 @@
     <value>Magenta</value>
   </data>
   <data name="strpbtnNew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 28</value>
+    <value>34, 33</value>
   </data>
   <data name="strpbtnNew.Text" xml:space="preserve">
     <value>toolStripButton1</value>
@@ -509,13 +509,13 @@
     <value>Magenta</value>
   </data>
   <data name="strpbtnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 28</value>
+    <value>34, 33</value>
   </data>
   <data name="strpbtnSave.Text" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 33</value>
+    <value>6, 38</value>
   </data>
   <data name="strpbtnRun.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -530,7 +530,7 @@
     <value>Magenta</value>
   </data>
   <data name="strpbtnRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 28</value>
+    <value>34, 33</value>
   </data>
   <data name="strpbtnRun.Text" xml:space="preserve">
     <value>Run</value>
@@ -549,19 +549,19 @@
     <value>Magenta</value>
   </data>
   <data name="toolCompile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 28</value>
+    <value>34, 33</value>
   </data>
   <data name="toolCompile.Text" xml:space="preserve">
     <value>编译</value>
   </data>
   <data name="toolStrip1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 32</value>
+    <value>0, 36</value>
   </data>
   <data name="toolStrip1.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 3, 0</value>
   </data>
   <data name="toolStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1461, 33</value>
+    <value>1461, 38</value>
   </data>
   <data name="toolStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -588,13 +588,13 @@
     <value>Consolas, 9pt</value>
   </data>
   <data name="elementHost1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 65</value>
+    <value>0, 74</value>
   </data>
   <data name="elementHost1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="elementHost1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1461, 694</value>
+    <value>1461, 685</value>
   </data>
   <data name="elementHost1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>

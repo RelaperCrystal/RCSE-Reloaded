@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// CrystalEngine
+// Copyright (C) RelaperCrystal 2020
+
+using System;
 
 namespace CrystalEngine.Launcher
 {

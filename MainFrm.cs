@@ -8,7 +8,6 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using RCSE_Reloaded.API;
-using RCSE_Reloaded.API.Localization;
 using CommandLine;
 using System.CodeDom.Compiler;
 using System.Drawing.Printing;
@@ -20,6 +19,7 @@ using System.Web.Script.Serialization;
 using RCSE_Reloaded.LocalizedRes;
 using System.Threading;
 using System.Globalization;
+using log4net;
 
 namespace RCSE_Reloaded
 {
@@ -781,7 +781,7 @@ namespace RCSE_Reloaded
 			MessageBox.Show(MessageBoxes.PowerSavingON);
 			log.Info("节电模式开");
 			CrystalEngine.Logging.EngineLog loge = new CrystalEngine.Logging.EngineLog();
-			loge.Info("Power Saving mode was turned ON. Some features will be disabled.", this);
+			loge.Info("Power Saving mode was turned ON. Some features will be disabled.", "RCSE");
 			powerSaving = true;
 			this.FormBorderStyle = FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;

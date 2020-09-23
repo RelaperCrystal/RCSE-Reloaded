@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// CrystalEngine
+// Copyright (C) RelaperCrystal 2020
+
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CrystalEngine.Logging
 {
@@ -20,10 +19,10 @@ namespace CrystalEngine.Logging
 		}
 
 #pragma warning disable IDE0060 // 删除未使用的参数
-		public void Info(string text, object sender)
+		public void Info(string text, string sender)
 
 		{
-			File.WriteAllText(file, string.Format("[{0}] [{1}/INFO]\r\n" ,nameof(sender), DateTime.Now.ToString(), text));
+			File.WriteAllText(file, string.Format("[{0}] [{1}/INFO]\r\n" , sender, DateTime.Now.ToString(), text));
 		}
 
 		public void Warning(string text, object sender)
