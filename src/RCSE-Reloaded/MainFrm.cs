@@ -108,9 +108,9 @@ namespace RCSE_Reloaded
 		private void MainFrm_Load(object sender, EventArgs e)
 		{
 #if DEBUG
-			DebugForm debug = new DebugForm(editor);
+			DebugForm debug = new DebugForm(Editor);
 			debug.Show();
-			editor.Text = "请注意，个别杀毒软件将本软件列为病毒。本人郑重宣布，此软件非病毒。\r\n" +
+			Editor.Text = "请注意，个别杀毒软件将本软件列为病毒。本人郑重宣布，此软件非病毒。\r\n" +
 				"------------------------------------------\r\nAttention\r\n\r\nSome AntiVirus softwares mark" + CommonVals.programShortName +" as virus.\r\n" +
 				"I declare this software is not a virus.";
 			MessageBox.Show("载入测试");
@@ -147,6 +147,7 @@ namespace RCSE_Reloaded
 			}
 
 			RefreshSettings(true);
+			Common.formInstance = this;
 		}
 
 		public void ApplyAndSaveConfiguration(Setting settings)

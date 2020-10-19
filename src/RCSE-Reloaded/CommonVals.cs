@@ -24,6 +24,8 @@ namespace RCSE_Reloaded
 		private const bool isSnapshot = true;
 		private const string legacyFormVersion = snapshot + "/1--20200515A";
 
+		public static MainFrm formInstance;
+
 		/// <summary>
 		/// 获取本产品的名称。
 		/// </summary>
