@@ -7,7 +7,7 @@ using System.Threading;
 using System.Windows.Forms;
 using ICSharpCode.AvalonEdit;
 
-namespace RCSE_Reloaded
+namespace RCSE_Reloaded.Util.Dialogs
 {
 	public partial class DebugForm : Form
 	{

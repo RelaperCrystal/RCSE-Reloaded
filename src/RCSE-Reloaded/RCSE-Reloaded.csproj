@@ -114,13 +114,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonVals.cs" />
-    <Compile Include="DebugForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DebugForm.Designer.cs">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </Compile>
+    <Compile Include="CommonValues.cs" />
     <Compile Include="ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +131,11 @@
       <DependentUpon>FrmInsertLicense.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher\FormHooks\FormHook.cs" />
+    <Compile Include="LocalizedRes\Dialogs.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Dialogs.resx</DependentUpon>
+    </Compile>
     <Compile Include="LocalizedRes\MessageBoxes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -148,7 +147,20 @@
     <Compile Include="MainFrm.Designer.cs">
       <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
-    <None Include="ClassifierParser.cs" />
+    <Compile Include="Util\Dialogs\DebugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Util\Dialogs\DebugForm.Designer.cs">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LocalizedRes\Dialogs.en.resx" />
+    <EmbeddedResource Include="LocalizedRes\Dialogs.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Dialogs.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Util\Dialogs\DebugForm.resx">
+      <DependentUpon>DebugForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RCSEApplication.cs" />
@@ -159,9 +171,6 @@
     <Compile Include="SettingsFrm.Designer.cs">
       <DependentUpon>SettingsFrm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="DebugForm.resx">
-      <DependentUpon>DebugForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ErrorForm.en.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +227,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Util\Deprecated\ClassifierParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

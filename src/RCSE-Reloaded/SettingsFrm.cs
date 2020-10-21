@@ -58,10 +58,10 @@ namespace RCSE_Reloaded
 			UserName = Environment.UserName;
 			MachineName = Environment.MachineName;
 			CurrentSettings = set;
-			Version = CommonVals.verNumber;
-			Snapshot = CommonVals.isSnapshot;
-			SnapshotNumber = CommonVals.snapshot;
-			ProgName = CommonVals.programName;
+			Version = CommonValues.VerNumber;
+			Snapshot = CommonValues.IsSnapshot;
+			SnapshotNumber = CommonValues.Snapshot;
+			ProgName = CommonValues.ProgramName;
 		}
 		public string UserName;
 		public string MachineName;

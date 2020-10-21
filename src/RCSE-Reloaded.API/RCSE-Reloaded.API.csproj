@@ -111,6 +111,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\APITexts.en.resx" />
     <EmbeddedResource Include="Resources\APITexts.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>APITexts.Designer.cs</LastGenOutput>

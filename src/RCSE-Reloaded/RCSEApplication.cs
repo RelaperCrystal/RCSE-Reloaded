@@ -5,14 +5,9 @@ using CrystalEngine.Launcher;
 
 namespace RCSE_Reloaded
 {
-    public class RCSEApplication : IApplication
+    public class RcseApplication : IApplication
     {
         public IMainForm StartForm { get; set; }
-
-        public RCSEApplication()
-        {
-            
-        }
 
         public void End()
         {

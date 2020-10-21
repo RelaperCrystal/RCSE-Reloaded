@@ -6,9 +6,7 @@ namespace RCSE_Reloaded.API
     
     public static class Events
     {
-        public static event EventHandler ProgramStartHandlingEvent;
-
-        public delegate void FileChangedStateUpdateHandler(object sender, bool changed);
+	    public delegate void FileChangedStateUpdateHandler(object sender, bool changed);
         public static event FileChangedStateUpdateHandler FileChangedStateUpdate;
 
         public delegate void FileSavingHandler(object sender, string targetPath);

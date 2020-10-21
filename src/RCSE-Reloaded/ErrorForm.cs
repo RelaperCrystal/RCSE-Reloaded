@@ -3,6 +3,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 
 namespace RCSE_Reloaded
@@ -11,7 +12,7 @@ namespace RCSE_Reloaded
     {
         private Label label1;
         private TextBox textErrorDescription;
-        private Button buttonOK;
+        private Button buttonOk;
         private Button buttonGithub;
         private Button buttonSave;
         private readonly Exception ex;
@@ -24,70 +25,72 @@ namespace RCSE_Reloaded
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorForm));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textErrorDescription = new System.Windows.Forms.TextBox();
-            this.buttonOK = new System.Windows.Forms.Button();
-            this.buttonGithub = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            var resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorForm));
+            label1 = new Label();
+            textErrorDescription = new TextBox();
+            buttonOk = new Button();
+            buttonGithub = new Button();
+            buttonSave = new Button();
+            SuspendLayout();
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(label1, "label1");
+            label1.Name = "label1";
             // 
             // textErrorDescription
             // 
-            resources.ApplyResources(this.textErrorDescription, "textErrorDescription");
-            this.textErrorDescription.Name = "textErrorDescription";
+            resources.ApplyResources(textErrorDescription, "textErrorDescription");
+            textErrorDescription.Name = "textErrorDescription";
             // 
             // buttonOK
             // 
-            resources.ApplyResources(this.buttonOK, "buttonOK");
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.UseVisualStyleBackColor = true;
-            this.buttonOK.Click += new System.EventHandler(this.ButtonOK_Click);
+            resources.ApplyResources(buttonOk, "buttonOk");
+            buttonOk.Name = "buttonOk";
+            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += ButtonOK_Click;
             // 
             // buttonGithub
             // 
-            resources.ApplyResources(this.buttonGithub, "buttonGithub");
-            this.buttonGithub.Name = "buttonGithub";
-            this.buttonGithub.UseVisualStyleBackColor = true;
-            this.buttonGithub.Click += new System.EventHandler(this.ButtonGithub_Click);
+            resources.ApplyResources(buttonGithub, "buttonGithub");
+            buttonGithub.Name = "buttonGithub";
+            buttonGithub.UseVisualStyleBackColor = true;
+            buttonGithub.Click += ButtonGithub_Click;
             // 
             // buttonSave
             // 
-            resources.ApplyResources(this.buttonSave, "buttonSave");
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.UseVisualStyleBackColor = true;
+            resources.ApplyResources(buttonSave, "buttonSave");
+            buttonSave.Name = "buttonSave";
+            buttonSave.UseVisualStyleBackColor = true;
             // 
             // ErrorForm
             // 
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.buttonGithub);
-            this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.textErrorDescription);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ErrorForm";
-            this.Load += new System.EventHandler(this.ErrorForm_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            Controls.Add(buttonSave);
+            Controls.Add(buttonGithub);
+            Controls.Add(buttonOk);
+            Controls.Add(textErrorDescription);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ErrorForm";
+            Load += ErrorForm_Load;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
         private void ButtonGithub_Click(object sender, EventArgs e) => Process.Start("https://github.com/RelaperCrystal/RCSE-Reloaded/issues/new");
         private void ButtonOK_Click(object sender, EventArgs e) => Close();
 
+        [SuppressMessage("ReSharper", "LocalizableElement")]
         private void ErrorForm_Load(object sender, EventArgs e)
         {
-            textErrorDescription.Text = $"=========== 报告开始 ===========\r\n时间：{DateTime.Now}\r\n异常名称：{nameof(ex)}\r\n异常信息：" +
-                $"{ex.Message}\r\n异常 StackTrace：\r\n{ex.StackTrace}\r\n\r\n造成异常的方法：{ex.TargetSite}\r\n造成异常的类：{ex.Source}\r\nHRESULT：{ex.HResult}\r\n" +
-                $"=========== 报告结束 ===========";
+	        // ReSharper disable once LocalizableElement
+	        textErrorDescription.Text = $"=========== 报告开始 ===========\r\n时间：{DateTime.Now}\r\n异常名称：{nameof(ex)}\r\n异常信息：" +
+	                                    $"{ex.Message}\r\n异常 StackTrace：\r\n{ex.StackTrace}\r\n\r\n造成异常的方法：{ex.TargetSite}\r\n造成异常的类：{ex.Source}\r\nHRESULT：{ex.HResult}\r\n" +
+	                                    $"=========== 报告结束 ===========";
         }
     }
 }

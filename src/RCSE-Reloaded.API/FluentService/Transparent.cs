@@ -6,12 +6,12 @@ namespace RCSE_Reloaded.API.FluentService
 	public static class Transparent
 	{
 		[DllImport("user32.dll")]
-		internal static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
-		public static void SetBlur(IntPtr Handle)
+		private static extern int SetWindowCompositionAttribute(IntPtr hwnd, ref WindowCompositionAttributeData data);
+		public static void SetBlur(IntPtr handle)
 		{
 			var accent = new AccentPolicy
 			{
-				AccentState = AccentState.ACCENT_ENABLE_BLURBEHIND
+				AccentState = AccentState.AccentEnableBlurBehind
 			};
 
 			var accentStructSize = Marshal.SizeOf(accent);
@@ -20,12 +20,12 @@ namespace RCSE_Reloaded.API.FluentService
 
 			var data = new WindowCompositionAttributeData
 			{
-				Attribute = WindowCompositionAttribute.WCA_ACCENT_POLICY,
+				Attribute = WindowCompositionAttribute.WcaAccentPolicy,
 				SizeOfData = accentStructSize,
 				Data = accentPtr
 			};
 
-			SetWindowCompositionAttribute(Handle, ref data);
+			SetWindowCompositionAttribute(handle, ref data);
 
 			Marshal.FreeHGlobal(accentPtr);
 		}
@@ -33,11 +33,11 @@ namespace RCSE_Reloaded.API.FluentService
 
 	public enum AccentState
 	{
-		ACCENT_DISABLED = 0,
-		ACCENT_ENABLE_GRADIENT = 1,
-		ACCENT_ENABLE_TRANSPARENTGRADIENT = 2,
-		ACCENT_ENABLE_BLURBEHIND = 3,
-		ACCENT_INVALID_STATE = 4
+		AccentDisabled = 0,
+		AccentEnableGradient = 1,
+		AccentEnableTransparentGradient = 2,
+		AccentEnableBlurBehind = 3,
+		AccentInvalidState = 4
 	}
 
 	public struct AccentPolicy
@@ -71,7 +71,7 @@ namespace RCSE_Reloaded.API.FluentService
 	public enum WindowCompositionAttribute
 	{
 		// ...
-		WCA_ACCENT_POLICY = 19
+		WcaAccentPolicy = 19
 		// ...
 	}
 

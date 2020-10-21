@@ -174,4 +174,10 @@
   <data name="TitleWarning" xml:space="preserve">
     <value>Warning</value>
   </data>
+  <data name="ErrorReadConsoleFile" xml:space="preserve">
+	  <value>Cannot parse &amp; open file from console, \r\nbecause there's error on console.</value>
+  </data>
+  <data name="ErrorReadConsoleFileTitle" xml:space="preserve">
+	  <value>ConsoleError</value>
+  </data>
 </root>

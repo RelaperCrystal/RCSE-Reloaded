@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>1.3</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="AboutVersion" xml:space="preserve">
+		<value>版本: </value>
+	</data>
+	<data name="AboutNoWarrenty" xml:space="preserve">
+		<value>本软件希望其对您可能有用，但不负有任何担保责任。</value>
+	</data>
+	<data name="DialogSaveTo" xml:space="preserve">
+		<value>另存为</value>
+	</data>
+	<data name="MainFrmTitleSnapshot" xml:space="preserve">
+		<value> 快照 - 版本 </value>
+	</data>
+	<data name="CommonForIndented" xml:space="preserve">
+		<value> 为 </value>
+	</data>
+	<data name="DialogOpenFile" xml:space="preserve">
+		<value>打开文件</value>
+	</data>
+	<data name="MainFrmTitleChanged" xml:space="preserve">
+		<value>(已更改) </value>
+	</data>
+	<data name="TextFailedToRun" xml:space="preserve">
+		<value>运行失败</value>
+	</data>
+	<data name="TextPowerSaving" xml:space="preserve">
+		<value>节电模式</value>
+	</data>
+	<data name="MainFrmTitlePowerSaving" xml:space="preserve">
+		<value> (节电模式)</value>
+	</data>
+</root>

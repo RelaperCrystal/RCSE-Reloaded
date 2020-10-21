@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CrystalEngine.Simple.Dialogs
@@ -18,6 +11,12 @@ namespace CrystalEngine.Simple.Dialogs
             Text = title;
             Content = content;
             textContent.Text = Content;
+        }
+
+        public sealed override string Text
+        {
+	        get => base.Text;
+	        set => base.Text = value;
         }
 
         public string Content { get; private set; }

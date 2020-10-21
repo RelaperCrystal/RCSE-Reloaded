@@ -124,7 +124,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>An error has occoured.</value>
   </data>
-  <data name="buttonOK.Text" xml:space="preserve">
+  <data name="buttonOk.Text" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="buttonSave.Text" xml:space="preserve">

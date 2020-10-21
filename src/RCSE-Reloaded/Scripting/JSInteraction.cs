@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
 using System.Windows.Forms;
 
 namespace RCSE_Reloaded.Scripting
 {
+	[SuppressMessage("ReSharper", "InconsistentNaming")]
 	public static class JSInteraction
 	{
 		public static string windowTitle
 		{
-			get => Common.formInstance.Text;
-			set => Common.formInstance.Text = value;
+			get => Common.FormInstance.Text;
+			set => Common.FormInstance.Text = value;
 		}
 
 		public static void messageBox(string text)

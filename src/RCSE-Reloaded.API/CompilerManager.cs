@@ -9,27 +9,27 @@ namespace RCSE_Reloaded.API
         public static CompilerResults CompileFromFile(string fileName)
         {
             CompilerLog(typeof(CompilerManager), "正在启动编译");
-            CompilerParameters para = new CompilerParameters();
-            CSharpCodeProvider CodeProvider = new CSharpCodeProvider();
+            var para = new CompilerParameters();
+            var codeProvider = new CSharpCodeProvider();
             para.GenerateExecutable = true;
             CompilerLog(typeof(CompilerManager), "输出为 rcse_compiled.cache.lk");
             para.OutputAssembly = "rcse_compiled.cache.lk";
             para.IncludeDebugInformation = true;
             CompilerLog(typeof(CompilerManager), "正在编译");
-            return CodeProvider.CompileAssemblyFromFile(para, fileName);
+            return codeProvider.CompileAssemblyFromFile(para, fileName);
         }
 
         public static CompilerResults CompileFromString(string source)
         {
             CompilerLog(typeof(CompilerManager), "正在启动编译");
             CompilerParameters para = new CompilerParameters();
-            CSharpCodeProvider CodeProvider = new CSharpCodeProvider();
+            CSharpCodeProvider codeProvider = new CSharpCodeProvider();
             para.GenerateExecutable = true;
             CompilerLog(typeof(CompilerManager), "输出为 rcse_compiled.cache.lk");
             para.OutputAssembly = "rcse_compiled.cache.lk";
             para.IncludeDebugInformation = true;
             CompilerLog(typeof(CompilerManager), "正在编译");
-            return CodeProvider.CompileAssemblyFromSource(para, source);
+            return codeProvider.CompileAssemblyFromSource(para, source);
         }
     }
 }

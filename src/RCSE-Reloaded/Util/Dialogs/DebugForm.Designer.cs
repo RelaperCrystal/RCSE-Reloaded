@@ -1,4 +1,4 @@
-﻿namespace RCSE_Reloaded
+﻿namespace RCSE_Reloaded.Util.Dialogs
 {
     partial class DebugForm
     {

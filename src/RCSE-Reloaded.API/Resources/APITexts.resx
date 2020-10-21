@@ -123,4 +123,7 @@
   <data name="NoWarranty" xml:space="preserve">
     <value>本软件希望其对您可能有用，但不对其适用于特定用途及其有经济价值甚至是否可用而做担保或保证。详情请按”许可证“。</value>
   </data>
+  <data name="Version" xml:space="preserve">
+	  <value>版本: </value>
+  </data>
 </root>

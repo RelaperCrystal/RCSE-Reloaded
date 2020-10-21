@@ -20,6 +20,7 @@ using RCSE_Reloaded.LocalizedRes;
 using System.Threading;
 using System.Globalization;
 using log4net;
+using RCSE_Reloaded.Util.Dialogs;
 
 namespace RCSE_Reloaded
 {
@@ -27,70 +28,57 @@ namespace RCSE_Reloaded
 	{
 		internal ICSharpCode.AvalonEdit.TextEditor Editor { get; }
 
-		internal string loadedContentPath;
-		internal bool isLoaded;
-		internal bool Changed;
+		internal string LoadedContentPath;
+		internal bool IsLoaded;
 		private bool powerSaving;
-		internal static readonly log4net.ILog log = LogManager.GetLogger(typeof(MainFrm));
-		internal static readonly log4net.ILog logc = LogManager.GetLogger(typeof(CompilerManager));
+		internal static readonly ILog Log = LogManager.GetLogger(typeof(MainFrm));
+		private static readonly ILog CompilerLog = LogManager.GetLogger(typeof(CompilerManager));
 
 		public bool CanExit => throw new NotImplementedException();
 
-		public MainFrm(CommandLineOptions options)
+		private MainFrm(CommandLineOptions options)
 		{
 			if(options.Culture != "default")
 			{
 				Thread.CurrentThread.CurrentCulture = new CultureInfo(options.Culture);
 				Thread.CurrentThread.CurrentUICulture = new CultureInfo(options.Culture);
 			}
-			log.Info("Legacy Form 版本 " + CommonVals.legacyFormVersion);
+			Log.Info("Legacy Form 版本 " + CommonValues.LegacyFormVersion);
 			InitializeComponent();
-			log.Info("主窗口组件加载完成");
+			Log.Info("主窗口组件加载完成");
 			Editor = new ICSharpCode.AvalonEdit.TextEditor();
 			elementHost1.Child = Editor;
-			log.Info("编辑器加载完成");
+			Log.Info("编辑器加载完成");
 			this.SizeChanged += MainFrm_SizeChanged;
 			CompilerManager.CompilerLog += CompilerManager_CompilerLog;
 			Editor.TextChanged += Editor_TextChanged;
 
-			log.Info("正在尝试解析命令行参数");
-			if(options != null && string.IsNullOrWhiteSpace(options.File))
+			Log.Info("正在尝试解析命令行参数");
+			if(string.IsNullOrWhiteSpace(options.File))
 			{
 				if(File.Exists(options.File))
 				{
-					log.Info("文件存在，正在打开");
+					Log.Info("文件存在，正在打开");
 					OpenFileWithOptions(options);
 				}
 				else
 				{
-					log.Error("无法解析命令行参数");
-					if(System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN")
-					{
-						MessageBox.Show("Cannot parse & open file from console, \r\nbecause there's error on console.", "Console Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					}
-					else
-					{
-						MessageBox.Show("无法从命令行解析文件。文件未找到。", "命令行错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					}
+					Log.Error("无法解析命令行参数");
+					MessageBox.Show(MessageBoxes.ErrorReadConsoleFile, MessageBoxes.ErrorReadConsoleFileTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 			}
 		}
 
-		private void CompilerManager_CompilerLog(Type sender, string message) => logc.Info(message);
+		private void CompilerManager_CompilerLog(Type sender, string message) => CompilerLog.Info(message);
 
 		private void OpenFileWithOptions(CommandLineOptions options)
 		{
-			isLoaded = true;
-			loadedContentPath = options.File;
+			IsLoaded = true;
+			LoadedContentPath = options.File;
 			Editor.Load(options.File);
 		}
 
 		private void MainFrm_SizeChanged(object sender, EventArgs e) { }
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
-		}
 
 		/*
 		public Task<bool> IsVersionCurrent()
@@ -111,14 +99,13 @@ namespace RCSE_Reloaded
 			DebugForm debug = new DebugForm(Editor);
 			debug.Show();
 			Editor.Text = "请注意，个别杀毒软件将本软件列为病毒。本人郑重宣布，此软件非病毒。\r\n" +
-				"------------------------------------------\r\nAttention\r\n\r\nSome AntiVirus softwares mark" + CommonVals.programShortName +" as virus.\r\n" +
+				"------------------------------------------\r\nAttention\r\n\r\nSome AntiVirus softwares mark" + CommonValues.ProgramShortName +" as virus.\r\n" +
 				"I declare this software is not a virus.";
-			MessageBox.Show("载入测试");
-		   
+
 #endif
 			if(Properties.Settings.Default.UseFluentDesign)
 			{
-				MessageBox.Show(CommonVals.programName + MessageBoxes.FluentWarning);
+				MessageBox.Show(CommonValues.ProgramName + MessageBoxes.FluentWarning);
 				Transparent.SetBlur(this.Handle);
 				this.TransparencyKey = Color.Black;
 				LogManager.GetLogger(typeof(MainFrm)).Warn("正在使用亚克力特效");
@@ -129,14 +116,17 @@ namespace RCSE_Reloaded
 #pragma warning disable CS0162 // 检测到无法访问的代码
 				// 无法访问是因为 isSnapshot 是常量，
 				// 然而会被更改
-				if (CommonVals.isSnapshot)
+				// ReSharper disable once ConditionIsAlwaysTrueOrFalse
+				if (CommonValues.IsSnapshot)
 				{
-					Text = CommonVals.programName + " Snapshot - code version " + CommonVals.snapshot + " for " + CommonVals.verNumber;
+					Text = CommonValues.ProgramName + Dialogs.MainFrmTitleSnapshot+ CommonValues.Snapshot + Dialogs.CommonForIndented + CommonValues.VerNumber;
 				}
 				else
+					// ReSharper disable once HeuristicUnreachableCode
 				{
 
-					Text = CommonVals.programName + " " + CommonVals.verNumber;
+					// ReSharper disable once LocalizableElement
+					Text = CommonValues.ProgramName + " " + CommonValues.VerNumber;
 
 				}
 #pragma warning restore CS0162 // 检测到无法访问的代码
@@ -147,7 +137,7 @@ namespace RCSE_Reloaded
 			}
 
 			RefreshSettings(true);
-			Common.formInstance = this;
+			Common.FormInstance = this;
 		}
 
 		public void ApplyAndSaveConfiguration(Setting settings)
@@ -155,211 +145,23 @@ namespace RCSE_Reloaded
 			Properties.Settings.Default.UseMainMenu = settings.UseMainMenu;
 			Properties.Settings.Default.UseLightTheme = settings.UseWhiteColor;
 			Properties.Settings.Default.UseFluentDesign = settings.UseFluentDesign;
-			Properties.Settings.Default.SearchURL = settings.SearchURL;
+			Properties.Settings.Default.SearchURL = settings.SearchUrl;
 			Properties.Settings.Default.Save();
 			RefreshSettings();
 		}
 
 		public void RefreshSettings(bool start = false)
 		{
-			if(Properties.Settings.Default.UseMainMenu)
-			{
-				CreateMainMenu();
-			}
+			// if(Properties.Settings.Default.UseMainMenu)
+			// {
+			// 	CreateMainMenu();
+			// }
 			if(!start && !powerSaving)
 			{
-				MessageBox.Show(MessageBoxes.FluentSave.Replace("{nameShort}", CommonVals.programShortName));
+				MessageBox.Show(MessageBoxes.FluentSave.Replace("{nameShort}", CommonValues.ProgramShortName));
 			}
 		}
-
-		#region MainMenu
-
-		MainMenu nativeMenu;
-		private MenuItem nativeFile;
-		MenuItem nativeNew;
-		MenuItem nativeOpen;
-		MenuItem nativeNewWindow;
-		MenuItem nativeSettings;
-		MenuItem nativeSaveTo;
-		MenuItem nativeSave;
-		MenuItem nativePrint;
-		MenuItem nativeSplit1;
-		MenuItem nativeExit;
-
-		MenuItem nativeEdit;
-		MenuItem nativeCopy;
-		MenuItem nativeCut;
-		MenuItem nativeSplit2;
-		MenuItem nativePaste;
-		MenuItem nativeUndo;
-		MenuItem nativeRedo;
-		MenuItem nativeSelectAll;
-		MenuItem nativeDateTime;
-		MenuItem nativeBingSearch;
-
-		MenuItem nativeDebug;
-		MenuItem nativeOpenInBrowser;
-
-		MenuItem nativeFormat;
-		MenuItem nativeHTML;
-		MenuItem nativeXAML;
-		MenuItem nativeVB;
-		MenuItem nativeC;
-
-		MenuItem nativeHelp;
-		MenuItem nativeAbout;
-		private MenuItem nativeCSharp;
-
-		public void CreateMainMenu()
-		{
-			nativeMenu = new MainMenu();
-
-			nativeFile = new MenuItem();
-
-			nativeOpen = new MenuItem();
-			nativeNew = new MenuItem();
-			nativeNewWindow = new MenuItem();
-			nativeSettings = new MenuItem();
-			nativeSaveTo = new MenuItem();
-			nativeSave = new MenuItem();
-			nativePrint = new MenuItem();
-			nativeExit = new MenuItem();
-			nativeSplit1 = new MenuItem();
-
-			nativeOpen.Text = itemOpen.Text;
-			nativeNew.Text = itemNew.Text;
-			nativeNewWindow.Text = itemNewWindow.Text;
-			nativeSettings.Text = itemSettings.Text;
-			nativeSaveTo.Text = itemSaveTo.Text;
-			nativePrint.Text = itemPrint.Text;
-			nativeSave.Text = itemSave.Text;
-			nativeSplit1.Text = "-";
-			nativeExit.Text = itemQuit.Text;
-			nativeFile.Text = itemFile.Text;
-
-			nativeOpen.Click += NativeOpen_Click;
-			nativeNew.Click += NativeNew_Click;
-			nativeSettings.Click += ItemSetting_Click;
-			nativeSaveTo.Click += ItemSaveTo_Click;
-			nativeSave.Click += ItemSave_Click;
-			nativePrint.Click += ItemPrint_Click;
-			nativeExit.Click += ItemQuit_Click;
-			nativeNewWindow.Click += ItemNewWindow_Click;
-
-			menuStrip1.Visible = false;
-
-			nativeFile.MenuItems.Add(nativeNew);
-			nativeFile.MenuItems.Add(nativeOpen);
-			nativeFile.MenuItems.Add(nativeNewWindow);
-			nativeFile.MenuItems.Add(nativeSettings);
-			nativeFile.MenuItems.Add(nativeSaveTo);
-			nativeFile.MenuItems.Add(nativeSave);
-			nativeFile.MenuItems.Add(nativePrint);
-			nativeFile.MenuItems.Add(nativeSettings);
-			nativeFile.MenuItems.Add(nativeSplit1);
-			nativeFile.MenuItems.Add(nativeExit);
-
-			nativeEdit = new MenuItem();
-			nativeCopy = new MenuItem();
-			nativeCut = new MenuItem();
-			nativePaste = new MenuItem();
-			nativeUndo = new MenuItem();
-			nativeRedo = new MenuItem();
-			nativeSelectAll = new MenuItem();
-			nativeDateTime = new MenuItem();
-			nativeBingSearch = new MenuItem();
-
-			nativeEdit.Text = "编辑(&E)";
-			nativeCopy.Text = itemCopy.Text;
-			nativeCut.Text = itemCut.Text;
-			nativePaste.Text = itemPaste.Text;
-			nativeUndo.Text = itemUndo.Text;
-			nativeRedo.Text = itemRedo.Text;
-			nativeSelectAll.Text = itemSelectAll.Text;
-//            nativeDateTime.Text = itemInsert.Text;
-			nativeBingSearch.Text = itemSearch.Text;
-
-			nativeSplit2 = new MenuItem
-			{
-				Text = "-"
-			};
-
-			nativeEdit.MenuItems.Add(nativeCopy);
-			nativeEdit.MenuItems.Add(nativeCut);
-			nativeEdit.MenuItems.Add(nativeSplit2);
-			nativeEdit.MenuItems.Add(nativePaste);
-			nativeEdit.MenuItems.Add(nativeUndo);
-			nativeEdit.MenuItems.Add(nativeRedo);
-			nativeEdit.MenuItems.Add(nativeSelectAll);
-			nativeEdit.MenuItems.Add(nativeDateTime);
-			nativeEdit.MenuItems.Add(nativeBingSearch);
-
-			nativeCopy.Click += ItemCopy_Click;
-			nativeCut.Click += ItemCut_Click;
-			nativePaste.Click += ItemPaste_Click;
-			nativeUndo.Click += ItemUndo_Click;
-			nativeRedo.Click += ItemRedo_Click;
-			nativeSelectAll.Click += ItemSelectAll_Click;
-			nativeDateTime.Click += ItemInsertDateTime_Click;
-			nativeBingSearch.Click += ItemSearch_Click;
-
-			nativeDebug = new MenuItem();
-			nativeOpenInBrowser = new MenuItem();
-
-			nativeDebug.Text = "调试(&D)";
-			nativeOpenInBrowser.Text = itemOpenInBrowser.Text;
-			nativeDebug.MenuItems.Add(nativeOpenInBrowser);
-
-			nativeFormat = new MenuItem();
-			nativeHTML = new MenuItem();
-			nativeXAML = new MenuItem();
-			nativeVB = new MenuItem();
-			nativeC = new MenuItem();
-
-			nativeFormat.Text = itemFormat.Text;
-			nativeCSharp = new MenuItem
-			{
-				Text = itemCSharp.Text
-			};
-			nativeHTML.Text = itemHTML.Text;
-			nativeXAML.Text = itemXAML.Text;
-			nativeVB.Text = itemVB.Text;
-			nativeC.Text = itemCSeries.Text;
-
-			nativeFormat.MenuItems.Add(nativeCSharp);
-			nativeFormat.MenuItems.Add(nativeHTML);
-			nativeFormat.MenuItems.Add(nativeXAML);
-			nativeFormat.MenuItems.Add(nativeVB);
-			nativeFormat.MenuItems.Add(nativeC);
-
-			nativeHelp = new MenuItem();
-			nativeAbout = new MenuItem();
-
-			nativeOpenInBrowser.Click += ItemOpenInBrowser_Click;
-			nativeCSharp.Click += ItemCSharp_Click;
-			nativeHTML.Click += ItemHTML_Click;
-			nativeXAML.Click += ItemXAML_Click;
-			nativeVB.Click += ItemXAML_Click;
-
-			nativeHelp.Text = itemHelp.Text;
-			nativeAbout.Text = itemAbout.Text;
-
-			nativeAbout.Click += ItemAbout_Click;
-			nativeHelp.MenuItems.Add(nativeAbout);
-
-			nativeMenu.MenuItems.Add(nativeFile);
-			nativeMenu.MenuItems.Add(nativeEdit);
-			nativeMenu.MenuItems.Add(nativeDebug);
-			nativeMenu.MenuItems.Add(nativeFormat);
-			nativeMenu.MenuItems.Add(nativeHelp);
-			Menu = nativeMenu;
-		}
-
-		private void NativeNew_Click(object sender, EventArgs e) => ItemNew_Click(sender, e);
-		private void NativeOpen_Click(object sender, EventArgs e) => ItemOpen_Click(sender, e);
-
-		#endregion
-
+		
 		public static void ParseArgsAndRun(string[] args)
 		{
 			ParserResult<CommandLineOptions> Option;
@@ -371,7 +173,7 @@ namespace RCSE_Reloaded
 #pragma warning disable CA1031 // Do not catch general exception types
 			catch (Exception ex)
 			{
-				log.Fatal("在运行时发生错误。消息: " + ex.Message + "，来源: " + ex.Source, ex);
+				Log.Fatal("在运行时发生错误。消息: " + ex.Message + "，来源: " + ex.Source, ex);
 				Application.Run(new ErrorForm(ex));
 			}
 #pragma warning restore CA1031 // Do not catch general exception types
@@ -384,21 +186,21 @@ namespace RCSE_Reloaded
 
 		private void OpenFile()
 		{
-			log.Info("正在准备打开新文件");
+			Log.Info("正在准备打开新文件");
 			OpenFileDialog ofd = new OpenFileDialog
 			{
-				Filter = CommonVals.filters,
-				Title = "打开文件",
+				Filter = CommonValues.Filters,
+				Title = Dialogs.DialogOpenFile,
 				CheckFileExists = true
 			};
-			log.Info("正在弹出选择文件对话框");
+			Log.Info("正在弹出选择文件对话框");
 			DialogResult dr = ofd.ShowDialog();
-			log.Info("文件选择对话框显示完成");
+			Log.Info("文件选择对话框显示完成");
 			if(dr == DialogResult.OK && File.Exists(ofd.FileName))
 			{
-				log.Info("用户选择确定，文件存在");
-				isLoaded = true;
-				loadedContentPath = ofd.FileName;
+				Log.Info("用户选择确定，文件存在");
+				IsLoaded = true;
+				LoadedContentPath = ofd.FileName;
 				if (ofd.FileName.EndsWith(".pko"))
 				{
 					HighlightingManager.Instance.GetDefinitionByExtension(".txt");
@@ -411,25 +213,25 @@ namespace RCSE_Reloaded
 				}
 				else
 				{
-					log.Warn("节电模式，不开启语法高亮");
+					Log.Warn("节电模式，不开启语法高亮");
 				}
 
-				log.Info("成功加载文件");
+				Log.Info("成功加载文件");
 			}
 		}
 
 		void SaveFileAdjust()
 		{
-			if(!isLoaded || loadedContentPath == null || string.IsNullOrWhiteSpace(loadedContentPath))
+			if(!IsLoaded || LoadedContentPath == null || string.IsNullOrWhiteSpace(LoadedContentPath))
 			{
 				InternalSaveFile();
 			}
 			else
 			{
-				Editor.Save(loadedContentPath);
+				Editor.Save(LoadedContentPath);
 			}
 			Changed = false;
-			this.Text.Remove(0, 6);
+			Text = Text.Remove(0, 6);
 		}
 
 		private void Editor_TextChanged(object sender, EventArgs e)
@@ -437,32 +239,34 @@ namespace RCSE_Reloaded
 			if(!Changed)
 			{
 				this.Changed = true;
-				Text = "(已更改) " + this.Text;
+				Text = Dialogs.MainFrmTitleChanged + this.Text;
 
 			}
 			
 		}
 
+		public bool Changed { get; set; }
+
 		void ILaunchForm.SaveFile() => InternalSaveFile();
 
 		private void InternalSaveFile()
 		{
-			log.Info("正在准备另存为");
+			Log.Info("正在准备另存为");
 			SaveFileDialog sfd = new SaveFileDialog
 			{
-				Filter = CommonVals.filters,
+				Filter = CommonValues.Filters,
 				Title = MessageBoxes.SaveAsBoxTitle,
 				CheckPathExists = true,
 				AddExtension = true
 			};
-			log.Info("正在弹出另存为对话框");
+			Log.Info("正在弹出另存为对话框");
 			DialogResult dr = sfd.ShowDialog();
-			log.Info("另存为对话框弹出完毕");
+			Log.Info("另存为对话框弹出完毕");
 			if (dr == DialogResult.OK)
 			{
 				Editor.Save(sfd.FileName);
-				isLoaded = true;
-				loadedContentPath = sfd.FileName;
+				IsLoaded = true;
+				LoadedContentPath = sfd.FileName;
 			}
 			/* else if(sfd.FileName.EndsWith(".pko"))
 			{
@@ -478,8 +282,6 @@ namespace RCSE_Reloaded
 			}*/
 		}
 
-		private void RButtonOpen_Click(object sender, EventArgs e) => OpenFile();
-
 		#region 菜单
 		private void ItemQuit_Click(object sender, EventArgs e) => Close();
 		private void ItemNew_Click(object sender, EventArgs e) => NewFile();
@@ -488,8 +290,8 @@ namespace RCSE_Reloaded
 		{
 			Editor.Text = "";
 			Editor.SyntaxHighlighting = null;
-			isLoaded = false;
-			loadedContentPath = "";
+			IsLoaded = false;
+			LoadedContentPath = "";
 			Changed = false;
 		}
 		#endregion
@@ -508,15 +310,15 @@ namespace RCSE_Reloaded
 
 		private void DetectAndSaveFile()
 		{
-			log.Info("保存文件中");
-			if (isLoaded && !string.IsNullOrWhiteSpace(loadedContentPath))
+			Log.Info("保存文件中");
+			if (IsLoaded && !string.IsNullOrWhiteSpace(LoadedContentPath))
 			{
-				log.Info("文件已被保存过，正在覆盖");
-				Editor.Save(loadedContentPath);
+				Log.Info("文件已被保存过，正在覆盖");
+				Editor.Save(LoadedContentPath);
 			}
 			else
 			{
-				log.Info("文件未被保存过，正在执行另存为");
+				Log.Info("文件未被保存过，正在执行另存为");
 				InternalSaveFile();
 			}
 		}
@@ -548,7 +350,7 @@ namespace RCSE_Reloaded
 				MessageBox.Show(MessageBoxes.PowerSavingPrint);
 				return;
 			}
-			if (!isLoaded || string.IsNullOrWhiteSpace(loadedContentPath))
+			if (!IsLoaded || string.IsNullOrWhiteSpace(LoadedContentPath))
 			{
 				MessageBox.Show(MessageBoxes.PrintNotSaved);
 				
@@ -558,17 +360,16 @@ namespace RCSE_Reloaded
 			{
 				SaveFileAdjust();
 			}
-			if (Path.GetExtension(loadedContentPath) == ".htm"|| Path.GetExtension(loadedContentPath) == ".html" || Path.GetExtension(loadedContentPath) == ".xml")
+			if (Path.GetExtension(LoadedContentPath) == ".htm"|| Path.GetExtension(LoadedContentPath) == ".html" || Path.GetExtension(LoadedContentPath) == ".xml")
 			{
-				Process.Start(loadedContentPath);
+				Process.Start(LoadedContentPath);
 			}
 			else
 			{
 				MessageBox.Show(MessageBoxes.NotMarkup);
 #if DEBUG
-				MessageBox.Show(loadedContentPath + "\r\n" + Path.GetExtension(loadedContentPath));
+				MessageBox.Show(LoadedContentPath + Environment.NewLine + Path.GetExtension(LoadedContentPath));
 #endif
-				return;
 			}
 
 
@@ -577,41 +378,41 @@ namespace RCSE_Reloaded
 
 		private void CompileWithErrorHandler()
 		{
-			log.Info("编译程序启动");
+			Log.Info("编译程序启动");
 			if (string.IsNullOrWhiteSpace(Editor.Text))
 			{
-				log.Info("编辑框为空");
+				Log.Info("编辑框为空");
 				MessageBox.Show(MessageBoxes.EmptyTextBox, MessageBoxes.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 				return;
 			}
 
-			log.Info("正在进行编译");
+			Log.Info("正在进行编译");
 			CompilerResults cr = CompilerManager.CompileFromString(Editor.Text);
-			log.Info("输出框弹出");
+			Log.Info("输出框弹出");
 			OutputForm of = new OutputForm
 			{
 				Owner = this
 			};
-			string tempcr = System.Threading.Thread.CurrentThread.CurrentCulture.Name == "zh-CN"
+			string temp = Thread.CurrentThread.CurrentCulture.Name == "zh-CN"
 				? "================ Compiler Output ================"
 				: "=================== 编译器输出 ===================";
 			foreach (string str in cr.Output)
 			{
-				tempcr = tempcr + "\r\n" + str;
+				temp = temp + "\r\n" + str;
 			}
-			of.OutputText = tempcr;
+			of.OutputText = temp;
 			of.Show();
 
-			log.Info("正在检查操作");
+			Log.Info("正在检查操作");
 			if (!File.Exists("rcse_compiled.cache.lk"))
 			{
-				log.Info("返回: 未能找到被编译文件");
-				MessageBox.Show(MessageBoxes.CompiledNotFound, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				Log.Info("返回: 未能找到被编译文件");
+				MessageBox.Show(MessageBoxes.CompiledNotFound, MessageBoxes.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return;
 			}
 
-			log.Info("编译成功，正在重命名文件");
+			Log.Info("编译成功，正在重命名文件");
 			File.Move("rcse_compiled.cache.lk", "dbgcache.exe");
 		}
 
@@ -623,18 +424,12 @@ namespace RCSE_Reloaded
 			CompileWithErrorHandler();
 			if (!File.Exists("rcse_compiled.cache.lk"))
 			{
-				log.Info("运行状态: 运行失败");
-				tlabelStatus.Text = "运行失败";
+				Log.Info("运行状态: 运行失败");
+				tlabelStatus.Text = Dialogs.TextFailedToRun;
 				return;
 			}
-			log.Info("编译成功，启动程序");
+			Log.Info("编译成功，启动程序");
 			Process.Start("dbgcache.exe");
-		}
-
-		private void ItemSetting_Click(object sender, EventArgs e)
-		{
-			SettingsFrm settingsFrm = new SettingsFrm(this);
-			settingsFrm.Show();
 		}
 
 		private void ItemPrint_Click(object sender, EventArgs e)
@@ -646,20 +441,20 @@ namespace RCSE_Reloaded
 			}
 			PrintDocument pd = new PrintDocument
 			{
-				DocumentName = CommonVals.programShortName + " Text"
+				DocumentName = CommonValues.ProgramShortName + " Text"
 			};
 			pd.PrintPage += PrintDocument_PrintA4Page;
 			PrintDialog pdi = new PrintDialog();
 			if(pdi.ShowDialog() == DialogResult.OK)
 			{
-				log.Info("用户确定进行打印");
+				Log.Info("用户确定进行打印");
 				pd.PrinterSettings = pdi.PrinterSettings;
 				
 				pd.Print();
 			}
 			else
 			{
-				log.Info("用户取消打印，正在强制清理对象");
+				Log.Info("用户取消打印，正在强制清理对象");
 				GC.Collect();
 			}
 		}
@@ -667,12 +462,15 @@ namespace RCSE_Reloaded
 		private void PrintDocument_PrintA4Page(object sender, PrintPageEventArgs e)
 		{
 #pragma warning disable IDE0059 // 不需要赋值
-			Font titleFont = new Font("黑体", 11, System.Drawing.FontStyle.Bold);//标题字体           
+			// ReSharper disable once UnusedVariable
+			Font titleFont = new Font("黑体", 11, FontStyle.Bold);//标题字体           
 
-			Font fntTxt = new Font("宋体", 10, System.Drawing.FontStyle.Regular);//正文文字         
-			Font fntTxt1 = new Font("宋体", 8, System.Drawing.FontStyle.Regular);//正文文字           
-			System.Drawing.Brush brush = new SolidBrush(System.Drawing.Color.Black);//画刷           
-			System.Drawing.Pen pen = new System.Drawing.Pen(System.Drawing.Color.Black);           //线条颜色
+			Font fntTxt = new Font("宋体", 10, FontStyle.Regular);//正文文字         
+			// ReSharper disable once UnusedVariable
+			Font fntTxt1 = new Font("宋体", 8, FontStyle.Regular);//正文文字           
+			Brush brush = new SolidBrush(Color.Black);//画刷           
+			// ReSharper disable once UnusedVariable
+			Pen pen = new Pen(Color.Black);           //线条颜色
 #pragma warning restore IDE0059 // 不需要赋值
 
 			try
@@ -694,7 +492,7 @@ namespace RCSE_Reloaded
 
 		private void MainFrm_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			log.Info("用户尝试退出");
+			Log.Info("用户尝试退出");
 			DialogResult result;
 			if(Changed)
 			{
@@ -714,7 +512,6 @@ namespace RCSE_Reloaded
 						DetectAndSaveFile();
 						break;
 					default:
-					case DialogResult.No:
 						return;
 				}
 			}
@@ -747,7 +544,7 @@ namespace RCSE_Reloaded
 		private void ItemUndo_Click(object sender, EventArgs e) => Editor.Undo();
 		private void ItemRedo_Click(object sender, EventArgs e) => Editor.Redo();
 		private void ItemSelectAll_Click(object sender, EventArgs e) => Editor.SelectAll();
-		private void ItemInsertDateTime_Click(object sender, EventArgs e) => Editor.AppendText(DateTime.Now.ToString());
+		private void ItemInsertDateTime_Click(object sender, EventArgs e) => Editor.AppendText(DateTime.Now.ToString(CultureInfo.CurrentCulture));
 		#endregion
 
 		private void ItemSearch_Click(object sender, EventArgs e)
@@ -756,7 +553,7 @@ namespace RCSE_Reloaded
 			string searcher = Properties.Settings.Default.SearchURL;
 			if(string.IsNullOrWhiteSpace(searcher))
 			{
-				log.Warn("搜索引擎为空");
+				Log.Warn("搜索引擎为空");
 				searcher = "https://cn.bing.com/search?q=";
 				Properties.Settings.Default.SearchURL = "https://cn.bing.com/search?q=";
 				Properties.Settings.Default.Save();
@@ -765,7 +562,6 @@ namespace RCSE_Reloaded
 			{
 				Process.Start(searcher + text);
 			}
-			else return;
 		}
 
 		private void ItemNewWindow_Click(object sender, EventArgs e)
@@ -780,16 +576,16 @@ namespace RCSE_Reloaded
 		private void ItemSavePower_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show(MessageBoxes.PowerSavingON);
-			log.Info("节电模式开");
+			Log.Info("节电模式开");
 			CrystalEngine.Logging.EngineLog loge = new CrystalEngine.Logging.EngineLog();
 			loge.Info("Power Saving mode was turned ON. Some features will be disabled.", "RCSE");
 			powerSaving = true;
 			this.FormBorderStyle = FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
-			tlabelStatus.Text = "节电模式";
+			tlabelStatus.Text = Dialogs.TextPowerSaving;
 			statusStrip1.BackColor = SystemColors.Control;
 			tlabelStatus.ForeColor = SystemColors.ControlText;
-			Text += " (节电模式)";
+			Text += Dialogs.MainFrmTitlePowerSaving;
 		}
 
 		private void ItemOpenFromWeb_Click(object sender, EventArgs e)
@@ -820,6 +616,7 @@ namespace RCSE_Reloaded
 #pragma warning disable CA1031 // Do not catch general exception types
 				catch (Exception ex)
 				{
+					// ReSharper disable once LocalizableElement
 					MessageBox.Show($"{MessageBoxes.InputDownloadFailed}\r\n{ex.GetType().Name}: {ex.Message}\r\n{ex.StackTrace}");
 				}
 #pragma warning restore CA1031 // Do not catch general exception types

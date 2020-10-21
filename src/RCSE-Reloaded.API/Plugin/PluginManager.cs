@@ -8,7 +8,7 @@ namespace RCSE_Reloaded.API.Plugin
 {
     internal static class PluginManager
     {
-        public static List<IPlugin> plugins;
+        public static List<IPlugin> Plugins;
 
         private static bool IsPluginImplementedInterface(Type t)
         {
@@ -33,7 +33,7 @@ namespace RCSE_Reloaded.API.Plugin
             string[] files = Directory.GetFiles(Application.StartupPath + "\\plugin\\");
             foreach (string file in files)
             {
-                string ext = file.Substring(file.LastIndexOf("."));
+                string ext = file.Substring(file.LastIndexOf(".", StringComparison.Ordinal));
                 if (ext != ".dll") continue;
                 try
                 {
@@ -43,7 +43,7 @@ namespace RCSE_Reloaded.API.Plugin
                         if (IsPluginImplementedInterface(t))
                         {
                             IPlugin plugin = (IPlugin)tmp.CreateInstance(t.FullName);
-                            plugins.Add(plugin);
+                            Plugins.Add(plugin);
                         }
                 }
                 catch

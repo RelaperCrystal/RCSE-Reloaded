@@ -36,12 +36,11 @@ namespace RCSE_Reloaded.API
 					treeView.Nodes.Add(file[j].Name);
 				}
 			}
-#pragma warning disable CA1031 // Do not catch general exception types
-			catch (Exception ex)
+			catch
 			{
-				MessageBox.Show(ex.Message + "\r\n出错的位置为：Form1.PaintTreeView()");
+				// ReSharper disable once LocalizableElement
+				Console.WriteLine("Looks like something wrong!!!");
 			}
-#pragma warning restore CA1031 // Do not catch general exception types
 		}
 
 		public static  bool GetMultiNode(TreeNode treeNode, string path)

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CrystalEngine.Simple.Dialogs
@@ -17,6 +10,12 @@ namespace CrystalEngine.Simple.Dialogs
             InitializeComponent();
             this.Text = title;
             this.Description = description;
+        }
+
+        public sealed override string Text
+        {
+	        get => base.Text;
+	        set => base.Text = value;
         }
 
         private void InputBox_Load(object sender, EventArgs e)

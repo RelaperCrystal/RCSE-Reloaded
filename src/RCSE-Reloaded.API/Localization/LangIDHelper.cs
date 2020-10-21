@@ -6,7 +6,7 @@ namespace RCSE_Reloaded.API.Localization
 	/// 控制语言代码的识别。
 	/// </summary>
 	[Obsolete]
-	public static class LangIDHelper
+	public static class LangIdHelper
 	{
 		public static Language GetLanguage()
 		{

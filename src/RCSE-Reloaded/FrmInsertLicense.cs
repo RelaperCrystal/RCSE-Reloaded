@@ -8,7 +8,7 @@ namespace RCSE_Reloaded
 {
 	public partial class FrmInsertLicense : Form
 	{
-		public string outputString;
+		public string OutputString;
 
 		public FrmInsertLicense()
 		{
